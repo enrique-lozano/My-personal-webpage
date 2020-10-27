@@ -1,0 +1,350 @@
+<!--The container contains the whole set of tabs-->
+<div class="container" id="container">
+    <!--The first tab is set to containt the home-->
+    <div id="inicio" class="home">
+        <div class="container_name">
+            <div class="name">
+                Soy {{name}}
+            </div>
+            <div class="description">
+                <p>{{description}}</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <a [routerLink]="['']" fragment="sobre"><button color="warn" mat-raised-button class="button">Conoce más sobre mí</button></a>
+        </div>
+    </div>
+
+    <div id="sobre" class="about-me">
+        <app-tab-header [parentData]="about"></app-tab-header>
+        <div class="about-photo">
+            <img class="profile-picture" src="../../assets/images/IMGP0592.jpg">
+        </div>
+        <div class="about-text">
+            <div class="about-hello">
+                Hola,
+            </div>
+            <div class="about-description">
+                {{about_description}}
+            </div>
+            <div class="about-data">
+                <div class="about-data-left"> 
+                    <span style="color: rgb(68, 68, 68);"><b>Nombre:</b></span> {{name}}
+                    <br>
+                    <span style="color: rgb(68, 68, 68);"><b>Cumpleaños:</b></span> Junio de 1999
+                </div>
+                <div class="about-data-right">
+                    <span style="color: rgb(68, 68, 68);"><b>Localización:</b></span> Madrid
+                    <br>
+                    <span style="color: rgb(68, 68, 68);"><b>Email:</b></span> kikelozano8@gmail.com
+                </div>
+            </div>
+            <div class="about-buttons">
+                <a target="_blank" href="../../assets/Documents/cv1.pdf"><button mat-raised-button color="warn" class="button" style="margin-right:20%;">Descarga mi CV</button></a>
+                <a [routerLink]="['']" fragment="contacto"> <button mat-raised-button color="primary" class="button">Contratame</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="educacion" class="time">
+        <app-tab-header [parentData]="education"></app-tab-header>
+        <app-timeline></app-timeline>
+        <br>
+        
+    </div>
+
+    <!--This tab is dedicated to the main skill set-->
+    <div id="habilidades1" class="main-skills">
+        <div class="main-skill">            
+            <img class="skill-picture" src="../../assets/icons/python.png">
+            <div class="text-skill"> Python </div>
+        </div>
+        <div class="main-skill">
+            <img class="skill-picture" src="../../assets/icons/ai.png">
+            <div class="text-skill"> Artificial Intelligence</div>
+        </div>
+        <div class="main-skill">
+            <img class="skill-picture" src="../../assets/icons/social.png">
+            <div class="text-skill"> Teamwork</div>
+        </div>
+        <div class="main-skill">
+            <img class="skill-picture" src="../../assets/icons/linux.png">
+            <div class="text-skill"> Linux</div>
+
+        </div>
+        
+       
+    </div>
+
+    <!--This tab is dedicated to the skill set-->
+    <div id="habilidades" class="skills">
+        <app-tab-header [parentData]="skills"></app-tab-header>
+
+        <mat-expansion-panel class="skill-set first">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span class="skill-title">Technical skills</span> 
+            </mat-panel-title>
+            </mat-expansion-panel-header> <!--Only visible on open-->
+            <div class="skill-title-column">
+                <h2>Destacados</h2>
+                <ul>
+                    <li>Inteligencia artificial</li>
+                    <li>Desarrollo web/apps</li>
+                    <li>Bases de datos</li>
+                </ul>
+            </div>
+            <div class="skill-title-column">
+                <h2>Sistemas y Ofimática</h2>
+                <ul>
+                    <li>Linux</li>
+                    <li>Windows</li>
+                    <li>Microsoft Excel</li>
+                    <li>Office avanzado y Prezi</li>
+                </ul>
+            </div>
+            <div class="skill-title-column">
+                <h2>Lenguajes y frameworks</h2>
+                <ul>
+                    <li>Angular</li>
+                    <li>Ionic</li>
+                    <li>SQL</li>
+                    <li>Java</li>
+                    <li>C/C++</li>
+                    <li>HTML/CSS</li>
+                    <li>Bash</li>
+                    <li>MIPS 32 Ensamblador</li>
+                </ul>
+            </div>
+            <div class="skill-title-column">
+                <h2>Otras herramientas</h2>
+                <ul>
+                    <li>Git</li>
+                    <li>Adobe Photoshop/GIMP</li>
+                    <li>Audacity</li>
+                    <li>Quartus</li>
+                    <li>Weka</li>
+                    <li>JFlap</li>
+                </ul>
+            </div>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel class="skill-set">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span class="skill-title">Soft skills</span> 
+            </mat-panel-title>
+            </mat-expansion-panel-header> <!--Only visible on open-->
+            <div class="skill-title-column">
+                <ul>
+                    <li>Trabajo en equipo</li>
+                    <li>Resiliencia</li>
+                </ul>
+            </div>
+            <div class="skill-title-column">
+                <ul>
+                    <li>Organización</li>
+                </ul>
+            </div>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel class="skill-set">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span class="skill-title">Idiomas</span> 
+            </mat-panel-title>
+            </mat-expansion-panel-header> <!--Only visible on open-->
+            <img class="flag" src="../../assets/icons/uk.png">
+            <h2 class="flag-title"> Inglés, B2 - First</h2>
+            <br>
+            <img class="flag last" src="../../assets/icons/spain.png">
+            <h2 class="flag-title"> Español, Nativo</h2>
+        </mat-expansion-panel>
+    </div>
+<!--
+    
+    <div id="reconocimientos">
+        <app-tab-header [parentData]="rewards"></app-tab-header>
+        <div class="card first_card">
+            <div class="front">
+                <div class="left-card"><p class="description-card">Beca de Excelencia Universitaria de la Comunidad de Madrid. Año 2019-2020</p></div>
+                <div class="right-card"><img class="reward" src="../../assets/icons/medalla.png"> </div>
+            </div>
+            <div class="back">
+              <p class="back-card">Beca que busca el fomento  de  la  excelencia  en  educación reconociendo y premiando el esfuerzo y el talento de los mejores estudiantes universitarios de la Comunidad de Madrid.</p>
+            </div>
+        </div>  
+        
+        <div class="card">
+            <div class="front">
+                <div class="left-card"><p class="description-card">Beca de Excelencia Universitaria de la Comunidad de Madrid. Año 2018-2019</p></div>
+                <div class="right-card"><img class="reward" src="../../assets/icons/medalla.png"> </div>
+            </div>
+            <div class="back">
+              <p class="back-card">Beca que busca el fomento  de  la  excelencia  en  educación reconociendo y premiando el esfuerzo y el talento de los mejores estudiantes universitarios de la Comunidad de Madrid.</p>
+            </div>
+        </div>  
+
+        <div class="card">
+            <div class="front">
+                <div class="left-card"><p class="description-card">100 Mejores notas de la Prueba de Acceso a la Universidad. UC3M. 2017</p></div>
+                <div class="right-card"><img class="reward" src="../../assets/icons/medalla.png"> </div>
+            </div>
+            <div class="back">
+              <p class="back-card">Excelente resultado obtenido en la Evaluación para el Acceso a la Universidad de junio 2017, estando mi calificación final entre las 100 mejores de los 3.958 examinados en esta convocatoria en la Universidad Carlos III de Madrid.</p>
+            </div>
+        </div>  
+
+        <div class="card">
+            <div class="front">
+                <div class="left-card"><p class="description-card">Bachillerato con Honores</p></div>
+                <div class="right-card"><img class="reward" src="../../assets/icons/medalla.png"> </div>
+            </div>
+            <div class="back">
+              <p class="back-card">Media de 10/10 en la etapa de Bachillerato.</p>
+            </div>
+        </div>  
+
+        <div class="card">
+            <div class="front">
+                <div class="left-card"><p class="description-card">Participante del proceso de selección de Becas Europa</p></div>
+                <div class="right-card"><img class="reward" src="../../assets/icons/medalla.png"> </div>
+            </div>
+            <div class="back">
+              <p class="back-card">Iniciativa única promovida por el Banco Santander y la Universidad Francisco de Vitoria para potenciar el talento, premiar la excelencia y apoyar la creación de redes de liderazgo cuyo objetivo es premiar y potenciar el talento de los mejores alumnos preuniversitarios de España.</p>
+            </div>
+        </div>  
+
+    </div>-->
+
+    <!--This tab is dedicated to the experience tab-->
+    <div id="experiencia" class="experience">
+        <app-tab-header [parentData]="experience"></app-tab-header>
+        <div class="post-experience left-post">
+            <img class ="post-picture" (click)="openDialog(1)" src="../../assets/images/t3f_icon_deg.png">
+            <span class="text-post">Voluntario evento tecnológico T3chfest</span>
+        </div>
+        <div class="post-experience right-post">
+            <img class="post-picture" (click)="openDialog(2)" src="../../assets/images/uc3m.png">
+            <span class="text-post">Profesor particular</span>
+        </div>
+    </div>
+
+    <!--This tab is dedicated to the contact-me tab-->
+    <div id="contacto" class="about-me last">
+        <app-tab-header [parentData]="contact"></app-tab-header>
+        <div class="contact-left">
+            <div class="contact-mini">
+                <div class="contact-mini-left">
+                    <a target="_blank" rel="noopener noreferrer" href="mailto:kikelozano8@gmail.com"><img class="contact-icon" src="../../assets/icons/correo.png"></a>
+                </div>
+                <div class="contact-mini-right">
+                    <h2>Email</h2>
+                    <div class="section">
+                        <div class="section__item">
+                            <a target="_blank" rel="noopener noreferrer" href="mailto:kikelozano8@gmail.com" class="sm-link sm-link_padding-bottom sm-link3">
+                                <span class="sm-link__label">kikelozano8@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-mini">
+                <div class="contact-mini-left">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/enrique-lozano-cebriano-5859031a2/"> <img class="contact-icon" src="../../assets/icons/linkedin (azul).png"> </a>
+                </div>
+                <div class="contact-mini-right">
+                    <h2>LinkedIn</h2>
+                    <div class="section">
+                        <div class="section__item">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/enrique-lozano-cebriano-5859031a2/" class="sm-link sm-link_padding-bottom sm-link3">
+                                <span class="sm-link__label">Mi LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-mini">
+                <div class="contact-mini-left">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.google.es/maps/place/Madrid/@40.4378698,-3.8196201,11z/data=!3m1!4b1!4m5!3m4!1s0xd422997800a3c81:0xc436dec1618c2269!8m2!3d40.4167754!4d-3.7037902"><img class="contact-icon" src="../../assets/icons/alfiler.png"> </a>
+                </div>
+                <div class="contact-mini-right">
+                    <h2>Ubicación</h2>
+                    <div class="section">
+                        <div class="section__item">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.google.es/maps/place/Madrid/@40.4378698,-3.8196201,11z/data=!3m1!4b1!4m5!3m4!1s0xd422997800a3c81:0xc436dec1618c2269!8m2!3d40.4167754!4d-3.7037902" class="sm-link sm-link_padding-bottom sm-link3">
+                                <span class="sm-link__label">Madrid, España</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Space for the contacts infos-->
+        <div class="contact-right">
+
+            <form id="light-form" class="contact-form" >
+                <mat-form-field  appearance= 'fill' class="example-full-width">
+                  <mat-label>Tu email</mat-label>
+                  <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" name="email" [(ngModel)]="email">
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance= 'fill' class="example-full-width">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Ex. Carolina, Mateo" value="" name="name_email" [(ngModel)]="name_email">
+                </mat-form-field>
+
+                <mat-form-field appearance= 'fill'  class="example-full-width">
+                    <mat-label>Asunto</mat-label>
+                    <input matInput placeholder="Ex. Propuesta de empleo" value="" name="subject" [(ngModel)]="subject">
+                </mat-form-field>
+
+                <mat-form-field appearance= 'fill' class="example-full-width">
+                    <mat-label>Tu mensaje</mat-label>
+                    <textarea matInput placeholder="Ex. Hola, me gustaría conocer..." name="text" rows="3" [(ngModel)]="text"></textarea>
+                  </mat-form-field>
+            </form>
+
+            <form id="dark-form" class="contact-form" >
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tu email</mat-label>
+                  <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" name="email" [(ngModel)]="email">
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Ex. Carolina, Mateo" value="" name="name_email" [(ngModel)]="name_email">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Asunto</mat-label>
+                    <input matInput placeholder="Ex. Propuesta de empleo" value="" name="subject" [(ngModel)]="subject">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Tu mensaje</mat-label>
+                    <textarea matInput placeholder="Ex. Hola, me gustaría conocer..." name="text" rows="3" [(ngModel)]="text"></textarea>
+                  </mat-form-field>
+            </form>
+
+            <a href="mailto:kikelozano8@gmail.com?Subject={{subject}}&body=Hola%20{{name}},%20soy%20{{name_email}}.%0A%0A%20%20%20{{text}}"><button mat-raised-button color="warn" style="float: right; margin-right: 8%; margin-top: 5%; margin-bottom: 10%;">Enviar</button></a>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+<div class = "main-tab" id="main-tab">
+    <!--Part for the profile picture-->
+    <div class = "face-image">
+        <img class="profile-picture" src="../../assets/images/IMGP0592.jpg">
+    </div>
+
+    <!--Part for the profile name and job-->
+    <div class = "name">
+        <div class="name-font">{{name}}</div>
+        <br>
+        <div class="job">{{job}}</div>
+    </div>
+
+    <!--Part for the links included at the page-->
+    <div class = "page-links">
+        <a [routerLink]="['']" fragment="inicio" ><div class="category"> <img class="icon" src="../../assets/icons/home.png">Inicio</div></a>
+        <a [routerLink]="['']" fragment="sobre"><div class="category"> <img class="icon" src="../../assets/icons/user-1.png">Sobre mi</div></a> 
+        <a [routerLink]="['']" fragment="educacion"><div class="category"> <img class="icon" src="../../assets/icons/atomic.png">Educación</div></a>
+        <a [routerLink]="['']" fragment="habilidades"><div class="category"> <img class="icon" src="../../assets/icons/monitor.png">Habilidades</div></a>
+        <a [routerLink]="['']" fragment="experiencia"><div class="category"> <img class="icon" src="../../assets/icons/layers.png">Experiencia</div></a>
+        <a [routerLink]="['']" fragment="contacto"><div class="category"> <img class="icon" src="../../assets/icons/chat.png">Contacto</div></a>
+        <a (click)=openNav()><div class="category"><img class="icon" src="../../assets/icons/settings.png">Ajustes</div></a>
+    </div>
+
+    <!--Part for the social media icons-->
+    <div class = "social-media">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/enriqueloz88"> <img class= "social-icon" src="../../assets/icons/github.png"></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/enrique-lozano-cebriano-5859031a2/"> <img class= "social-icon" src="../../assets/icons/linkedin.png"> </a>
+        <a target="_blank" rel="noopener noreferrer" href="mailto:kikelozano8@gmail.com"> <img class= "social-icon" src="../../assets/icons/email.png"></a>        
+    </div>
+
+</div>
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" (click)=closeNav()>&times;</a>
+    <div class="overlay-content">
+        <span class="title_settings">Settings</span><br>
+        <img class="selector" src="../../assets/icons/moon.png">
+        <div class="aux-container">
+            <div class="aux-top" (click)="toDark()"><mat-slide-toggle [(ngModel)]="isCheckedDark"></mat-slide-toggle></div>
+            <!--TRANSPARENT DIV-->
+            <div class="aux-bottom">hello</div>
+        </div>
+        <img class="selector" src="../../assets/icons/sun.png">
+        
+        <br>
+
+        <div class="aux">
+            <img class="flags" src="../../assets/icons/spain.png">
+            <div class="aux-container">
+                <div class="aux-top" (click)="language()"><mat-slide-toggle [(ngModel)]="isChecked2"></mat-slide-toggle></div>
+                <!--TRANSPARENT DIV-->
+                <div class="aux-bottom">hello</div>
+            </div>
+            <img class="flags" src="../../assets/icons/uk.png">
+        </div>
+    
+    </div>
+</div>
+  
