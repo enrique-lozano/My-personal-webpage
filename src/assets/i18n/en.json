@@ -7,40 +7,34 @@
     "first_button": "Know more about me",
     "loc_title": "Ubication",
     "email_title": "Email",
-    "about_me": 
-        {
-            "title": "About me",
-            "hello": "Hello,",
-            "intro": "In this section you can consult other information of interest about me, as well as consult my CV. Feel free to browse this website and to contact me if you are interested :)",
-            "name_title": "Name",
-            "birthday_title": "Birthday",
-            "cv_button": "Download my cv",
-            "hire_button": "Hire me"
-        },
-    "education": 
-        {
-            "title": "Education"
-        },
-    "skills": 
-        {
-            "title": "Skills",
-            "important": "Highlighted",
-            "office": "Systems and office technology",
-            "frameworks": "Languages and Frameworks",
-            "other_tools": "Other tools",
-            "languages": "Languages"
-        },
-    "experience": 
-        {
-            "title": "Experience"
-        },
-    "contact": 
-        {
-            "title": "Contact",
-            "your_email": "Your email",
-            "your_name": "Your name",
-            "subject": "Subject",
-            "your_message": "Your message"
-        }
-    
+    "about_me": {
+        "title": "About me",
+        "hello": "Hello,",
+        "intro": "In this section you can consult other information of interest about me, as well as consult my CV. Feel free to browse this website and to contact me if you are interested :)",
+        "name_title": "Name",
+        "birthday_title": "Birthday",
+        "cv_button": "Download my CV",
+        "hire_button": "Hire me"
+    },
+    "education": {
+        "title": "Education"
+    },
+    "skills": {
+        "title": "Skills",
+        "important": "Highlighted",
+        "office": "Systems and office technology",
+        "frameworks": "Languages and Frameworks",
+        "other_tools": "Other tools",
+        "languages": "Languages"
+    },
+    "experience": {
+        "title": "Experience"
+    },
+    "contact": {
+        "title": "Contact",
+        "your_email": "Your email",
+        "your_name": "Your name",
+        "subject": "Subject",
+        "your_message": "Your message"
+    }
 }
