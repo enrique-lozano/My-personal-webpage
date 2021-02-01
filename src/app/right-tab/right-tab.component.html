@@ -512,9 +512,9 @@
             <a
                 href="mailto:kikelozano8@gmail.com?Subject={{
                     subject
-                }}&body=Hola%20{{ name }},%20soy%20{{ name_email }}.%0A%0A%20%20%20{{
-                    text
-                }}"
+                }}&body=Hola%20{{ 'full_name' | translate }},%20soy%20{{
+                    'email' | translate
+                }}.%0A%0A%20%20%20{{ text }}"
                 ><button
                     mat-raised-button
                     color="warn"
