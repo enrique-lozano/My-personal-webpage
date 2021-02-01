@@ -2,16 +2,26 @@
 <div class="container" id="container">
     <!--The first tab is set to containt the home-->
     <div id="inicio" class="home">
+        <select 
+            class="form-control" 
+            #selectedLang 
+            (change)="switchLang(selectedLang.value)">
+                <option *ngFor="let language of translate.getLangs()" 
+                    [value]="language"
+                    [selected]="language === translate.currentLang">
+                    {{ language }}
+                </option>
+        </select>
         <div class="container_name">
             <div class="name">
-                Soy {{name}}
+                {{'name' | translate }}
             </div>
             <div class="description">
-                <p>{{description}}</p>
+                <p>{{'presentation' | translate }}</p>
             </div>
         </div>
         <div class="buttons">
-            <a [routerLink]="['']" fragment="sobre"><button color="warn" mat-raised-button class="button">Conoce más sobre mí</button></a>
+            <a [routerLink]="['']" fragment="sobre"><button color="warn" mat-raised-button class="button">{{'first_button' | translate }}</button></a>
         </div>
     </div>
 
@@ -22,26 +32,26 @@
         </div>
         <div class="about-text">
             <div class="about-hello">
-                Hola,
+                {{'about_me.hello' | translate }}
             </div>
             <div class="about-description">
-                {{about_description}}
+                {{'about_me.intro' | translate }}
             </div>
             <div class="about-data">
                 <div class="about-data-left"> 
-                    <span style="color: rgb(68, 68, 68);"><b>Nombre:</b></span> {{name}}
+                    <span style="color: rgb(68, 68, 68);"><b>{{'about_me.name_title' | translate }}:</b></span> {{'full_name' | translate }}
                     <br>
-                    <span style="color: rgb(68, 68, 68);"><b>Cumpleaños:</b></span> Junio de 1999
+                    <span style="color: rgb(68, 68, 68);"><b>{{'about_me.birthday_title' | translate }}:</b></span> 1999
                 </div>
                 <div class="about-data-right">
-                    <span style="color: rgb(68, 68, 68);"><b>Localización:</b></span> Madrid
+                    <span style="color: rgb(68, 68, 68);"><b>{{'loc_title' | translate }}:</b></span> Madrid
                     <br>
-                    <span style="color: rgb(68, 68, 68);"><b>Email:</b></span> kikelozano8@gmail.com
+                    <span style="color: rgb(68, 68, 68);"><b>{{'email_title' | translate }}:</b></span> kikelozano8@gmail.com
                 </div>
             </div>
             <div class="about-buttons">
-                <a target="_blank" href="../../assets/Documents/cv1.pdf"><button mat-raised-button color="warn" class="button" style="margin-right:20%;">Descarga mi CV</button></a>
-                <a [routerLink]="['']" fragment="contacto"> <button mat-raised-button color="primary" class="button">Contratame</button></a>
+                <a target="_blank" href="../../assets/Documents/cv1.pdf"><button mat-raised-button color="warn" class="button" style="margin-right:20%;">{{'about_me.cv_button' | translate }}</button></a>
+                <a [routerLink]="['']" fragment="contacto"> <button mat-raised-button color="primary" class="button">{{'about_me.hire_button' | translate }}</button></a>
             </div>
         </div>
     </div>
@@ -87,7 +97,7 @@
             </mat-panel-title>
             </mat-expansion-panel-header> <!--Only visible on open-->
             <div class="skill-title-column">
-                <h2>Destacados</h2>
+                <h2>{{'skills.important' | translate }}</h2>
                 <ul>
                     <li>Inteligencia artificial</li>
                     <li>Desarrollo web/apps</li>
@@ -95,7 +105,7 @@
                 </ul>
             </div>
             <div class="skill-title-column">
-                <h2>Sistemas y Ofimática</h2>
+                <h2>{{'skills.office' | translate }}</h2>
                 <ul>
                     <li>Linux</li>
                     <li>Windows</li>
@@ -104,7 +114,7 @@
                 </ul>
             </div>
             <div class="skill-title-column">
-                <h2>Lenguajes y frameworks</h2>
+                <h2>{{'skills.frameworks' | translate }}</h2>
                 <ul>
                     <li>Angular</li>
                     <li>Ionic</li>
@@ -117,7 +127,7 @@
                 </ul>
             </div>
             <div class="skill-title-column">
-                <h2>Otras herramientas</h2>
+                <h2>{{'skills.other_tools' | translate }}</h2>
                 <ul>
                     <li>Git</li>
                     <li>Adobe Photoshop/GIMP</li>
@@ -151,7 +161,7 @@
         <mat-expansion-panel class="skill-set">
             <mat-expansion-panel-header>
             <mat-panel-title>
-                <span class="skill-title">Idiomas</span> 
+                <span class="skill-title">{{'skills.languages' | translate }}</span> 
             </mat-panel-title>
             </mat-expansion-panel-header> <!--Only visible on open-->
             <img class="flag" src="../../assets/icons/uk.png">
@@ -271,7 +281,7 @@
                     <a target="_blank" rel="noopener noreferrer" href="https://www.google.es/maps/place/Madrid/@40.4378698,-3.8196201,11z/data=!3m1!4b1!4m5!3m4!1s0xd422997800a3c81:0xc436dec1618c2269!8m2!3d40.4167754!4d-3.7037902"><img class="contact-icon" src="../../assets/icons/alfiler.png"> </a>
                 </div>
                 <div class="contact-mini-right">
-                    <h2>Ubicación</h2>
+                    <h2>{{'loc_title' | translate}}</h2>
                     <div class="section">
                         <div class="section__item">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.google.es/maps/place/Madrid/@40.4378698,-3.8196201,11z/data=!3m1!4b1!4m5!3m4!1s0xd422997800a3c81:0xc436dec1618c2269!8m2!3d40.4167754!4d-3.7037902" class="sm-link sm-link_padding-bottom sm-link3">
@@ -316,7 +326,7 @@
 
             <form id="dark-form" class="contact-form" >
                 <mat-form-field class="example-full-width">
-                  <mat-label>Tu email</mat-label>
+                  <mat-label>{{'contact.your_email' | translate }}</mat-label>
                   <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" name="email" [(ngModel)]="email">
                   <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Please enter a valid email address
@@ -327,17 +337,17 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label>Nombre</mat-label>
+                    <mat-label>{{'contact.your_name' | translate }}</mat-label>
                     <input matInput placeholder="Ex. Carolina, Mateo" value="" name="name_email" [(ngModel)]="name_email">
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label>Asunto</mat-label>
+                    <mat-label>{{'contact.subject' | translate }}</mat-label>
                     <input matInput placeholder="Ex. Propuesta de empleo" value="" name="subject" [(ngModel)]="subject">
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label>Tu mensaje</mat-label>
+                    <mat-label>{{'contact.your_message' | translate }}</mat-label>
                     <textarea matInput placeholder="Ex. Hola, me gustaría conocer..." name="text" rows="3" [(ngModel)]="text"></textarea>
                   </mat-form-field>
             </form>

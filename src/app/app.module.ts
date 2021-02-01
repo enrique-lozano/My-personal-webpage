@@ -16,6 +16,10 @@ import { TimelineComponent } from './timeline/timeline.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SpeedDialFabComponent } from './speed-dial-fab/speed-dial-fab.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +39,21 @@ import { SpeedDialFabComponent } from './speed-dial-fab/speed-dial-fab.component
     MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [TabHeaderComponent, RightTabComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
