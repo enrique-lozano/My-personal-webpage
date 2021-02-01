@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import * as myGlobals from "../../globals"; //Global variables
 import { TabHeaderComponent } from "../tab-header/tab-header.component";
-//import { RightTabComponent } from "../right-tab/right-tab.component";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -20,7 +19,6 @@ export class LeftTabComponent implements OnInit {
 
     constructor(
         public tabHeader: TabHeaderComponent,
-        //public rightTab: RightTabComponent,
         public translate: TranslateService
     ) {
         translate.addLangs(["es", "en"]);
@@ -28,14 +26,6 @@ export class LeftTabComponent implements OnInit {
     }
 
     ngOnInit(): void {}
-
-    openNav() {
-        document.getElementById("myNav").style.width = "100%";
-    }
-
-    closeNav() {
-        document.getElementById("myNav").style.width = "0%";
-    }
 
     toDark() {
         this.tabHeader.toDark();
@@ -46,6 +36,4 @@ export class LeftTabComponent implements OnInit {
         this.tabHeader.toLight();
         document.getElementById("main-tab").style.backgroundColor = "#3248F4";
     }
-
-    language() {}
 }
