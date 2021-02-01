@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import * as myGlobals from "../../globals"; //Global variables
 import { TabHeaderComponent } from "../tab-header/tab-header.component";
-import { RightTabComponent } from "../right-tab/right-tab.component";
+//import { RightTabComponent } from "../right-tab/right-tab.component";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: "app-left-tab",
     templateUrl: "./left-tab.component.html",
-    providers: [TabHeaderComponent, RightTabComponent],
+    providers: [TabHeaderComponent],
     styleUrls: ["./left-tab.component.scss"],
 })
 export class LeftTabComponent implements OnInit {
@@ -20,7 +20,7 @@ export class LeftTabComponent implements OnInit {
 
     constructor(
         public tabHeader: TabHeaderComponent,
-        public rightTab: RightTabComponent,
+        //public rightTab: RightTabComponent,
         public translate: TranslateService
     ) {
         translate.addLangs(["es", "en"]);
@@ -38,23 +38,13 @@ export class LeftTabComponent implements OnInit {
     }
 
     toDark() {
-        if (this.isCheckedDark == true) {
-            //Dark
-            //We change the right tab, the headers and the left tab
-            console.log("Dark mode.....");
-            this.rightTab.darkModeRight();
-            this.tabHeader.toDark();
-            document.getElementById("main-tab").style.backgroundColor =
-                "#151C21";
-        } else {
-            //Light
-            //We change the right tab, the headers and the left tab
-            console.log("Light mode.....");
-            this.tabHeader.toLight();
-            this.rightTab.lightModeRight();
-            document.getElementById("main-tab").style.backgroundColor =
-                "#3248F4";
-        }
+        this.tabHeader.toDark();
+        document.getElementById("main-tab").style.backgroundColor = "#151C21";
+    }
+
+    toLight() {
+        this.tabHeader.toLight();
+        document.getElementById("main-tab").style.backgroundColor = "#3248F4";
     }
 
     language() {}
