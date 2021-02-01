@@ -1,0 +1,42 @@
+{
+    "name": "Soy Enrique",
+    "full_name": "Enrique Lozano",
+    "job": "Ingeniero Informático",
+    "email": "kikelozano8@gmail.com",
+    "presentation": "Estudiante de Ingeniería Informática. Me considero una persona abierta y sociable, con una gran pasión por la tecnología y muchas ganas de aprender nuevos conocimientos y vivir nuevas experiencias.",
+    "first_button": "Conoce más sobre mí",
+    "loc_title": "Localización",
+    "email_title": "Email",
+    "dark_mode": "Modo oscuro",
+    "light_mode": "Modo Claro",
+    "about_me": {
+        "title": "Sobre mi",
+        "hello": "Hola,",
+        "intro": "en esta sección podras consultar otros datos de interés sobre mi, asi como consultar mi CV. Sientete libre de navegar por esta página web y de ponerte en contacto conmigo si te interesa :)",
+        "name_title": "Nombre",
+        "birthday_title": "Cumpleaños",
+        "cv_button": "Descarga mi CV",
+        "hire_button": "Contrátame"
+    },
+    "education": {
+        "title": "Educación"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "important": "Destacados",
+        "office": "Sistemas y Ofimática",
+        "frameworks": "Lenguajes y Frameworks",
+        "other_tools": "Otras herramientas",
+        "languages": "Idiomas"
+    },
+    "experience": {
+        "title": "Experiencia"
+    },
+    "contact": {
+        "title": "Contacto",
+        "your_email": "Tu email",
+        "your_name": "Tu nombre",
+        "subject": "Asunto",
+        "your_message": "Tu mensaje"
+    }
+}
