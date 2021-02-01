@@ -2,19 +2,33 @@
 <div class="container" id="container">
     <!--The first tab is set to containt the home-->
     <div id="inicio" class="home">
-        <select
-            class="form-control"
-            #selectedLang
-            (change)="switchLang(selectedLang.value)"
-        >
-            <option
-                *ngFor="let language of translate.getLangs()"
-                [value]="language"
-                [selected]="language === translate.currentLang"
+        <button class="nightModeButton">
+            <img
+                class="button-image"
+                src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c399.png"
+            />Night Mode
+        </button>
+
+        <!--Select language-->
+        <div class="select">
+            <select
+                class="select-text"
+                required
+                #selectedLang
+                (change)="switchLang(selectedLang.value)"
             >
-                {{ language }}
-            </option>
-        </select>
+                <option
+                    *ngFor="let language of translate.getLangs()"
+                    [value]="language"
+                    [selected]="language === translate.currentLang"
+                >
+                    {{ language }}
+                </option>
+            </select>
+            <span class="select-highlight"></span>
+            <span class="select-bar"></span>
+            <label class="select-label">Language</label>
+        </div>
 
         <div class="container_name">
             <div class="name">

@@ -1,5 +1,5 @@
 //The full page is organised in two components, the right one and the left one
-.container{
+.container {
     display: inline-block;
     width: 65%;
     margin-top: 3%;
@@ -10,7 +10,7 @@
 }
 
 //The classes for the card set to fit the home
-.home{
+.home {
     background-color: rgb(50, 72, 244);
     height: 90%;
     border-radius: 22px;
@@ -18,12 +18,12 @@
     position: relative;
 }
 
-.container_name{
+.container_name {
     height: 72%;
     position: relative;
 }
 
-.name{
+.name {
     font-size: 4.5em;
     line-height: 1em;
     position: absolute;
@@ -34,7 +34,7 @@
     font-weight: bold;
 }
 
-.description{
+.description {
     position: absolute;
     bottom: 10%;
     margin-left: 10%;
@@ -44,40 +44,188 @@
     font-size: 1.1em;
 }
 
-.button{
-  padding-left: 3%; 
-  padding-right: 3%;
+.button {
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.buttons{
+.buttons {
     margin-left: 10%;
     margin-right: 10%;
 }
 
+//-----Night mode button-------
+.nightModeButton {
+    padding: 15px 15px 10px 15px;
+    border: none;
+    text-align: center;
+    background: #333333;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
+.nightModeButton:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button-image {
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+button.night-mode {
+    color: #333333;
+    background-color: white;
+}
+
+//-----Translation select
+//-----Thanks to https://codepen.io/pavelvaravko/pen/qjojOr-----
+//-----------------------
+.select {
+    position: relative;
+    width: 15%;
+    left: 80%;
+    top: 5%;
+}
+
+.select-text {
+    position: relative;
+    z-index: 1; // To the front
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 10px 10px 0;
+    font-size: 1.1em;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Remove focus */
+.select-text:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* Use custom arrow */
+.select .select-text {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.select:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.82);
+    pointer-events: none;
+}
+
+/* LABEL ======================================= */
+.select-label {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+
+/* active state */
+.select-text:focus ~ .select-label,
+.select-text:valid ~ .select-label {
+    color: #fff;
+    top: -20px;
+    transition: 0.2s ease all;
+    font-size: 1.1em;
+}
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.select-bar:before,
+.select-bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #fff;
+    transition: 0.2s ease all;
+}
+
+.select-bar:before {
+    left: 50%;
+}
+
+.select-bar:after {
+    right: 50%;
+}
+
+/* active state */
+.select-text:focus ~ .select-bar:before,
+.select-text:focus ~ .select-bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.select-highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 //The classes for the card set to fix the about me
-.about-me{
+.about-me {
     background-color: white;
     height: 70%;
     border-radius: 22px;
     margin-top: 5%;
 }
 
-.about-photo{
+.about-photo {
     width: 35%;
     height: 70%;
     display: inline-block;
 }
 
-.profile-picture{
+.profile-picture {
     height: 12em;
     width: 12em;
     border-radius: 100%;
     margin: 19%;
     margin-top: 7%;
-    border: 0.2em solid white
+    border: 0.2em solid white;
 }
 
-.about-text{
+.about-text {
     width: 60%;
     margin-right: 5%;
     height: 70%;
@@ -85,52 +233,52 @@
     vertical-align: top;
 }
 
-.about-hello{
+.about-hello {
     margin-top: 7%;
     font-size: 3em;
     font-weight: bold;
     height: 13%;
 }
 
-.about-description{
+.about-description {
     height: 30%;
     color: rgb(150, 150, 150);
     text-align: justify;
 }
 
-.about-data{
+.about-data {
     height: 20%;
     color: rgb(150, 150, 150);
 }
 
-.about-data-left{
+.about-data-left {
     width: 50%;
     height: 100%;
     display: inline-block;
     vertical-align: top;
 }
 
-.about-data-right{
+.about-data-right {
     width: 50%;
     height: 100%;
     display: inline-block;
     vertical-align: top;
 }
 
-.about-buttons{
+.about-buttons {
     height: 30%;
 }
 
-.last{
+.last {
     margin-bottom: 3%;
 }
 
-.first{
+.first {
     margin-top: 5%;
 }
 
 //The classes for the card set to fix the timeline
-.time{
+.time {
     background-color: white;
     height: auto;
     border-radius: 22px;
@@ -139,7 +287,7 @@
 }
 
 //The classes for the card set to fix the skills
-.skills{
+.skills {
     background-color: white;
     height: auto;
     border-radius: 22px;
@@ -149,31 +297,31 @@
     padding-bottom: 5%;
 }
 
-.skill-set{
+.skill-set {
     margin-left: 7%;
     margin-right: 5%;
 }
 
-.skill-title{
+.skill-title {
     font-size: 1.5em;
     font-weight: bold;
     color: rgb(50, 72, 244);
 }
 
-.skill-title-column{
+.skill-title-column {
     display: inline-block;
     width: 49%;
     margin-top: 2%;
     vertical-align: top;
 }
-.flag{
+.flag {
     width: 7%;
 }
-.flag-title{
-  margin-top: 2%;
+.flag-title {
+    margin-top: 2%;
 }
 
-.skill-set h2{
+.skill-set h2 {
     display: inline-block;
     vertical-align: top;
     padding-top: 1.7%;
@@ -181,8 +329,8 @@
 }
 
 //The classes for the card set to fix the main-skills
-.main-skills{
-    background-color:rgb(50, 72, 244);
+.main-skills {
+    background-color: rgb(50, 72, 244);
     height: auto;
     border-radius: 22px;
     margin-top: 5%;
@@ -191,7 +339,7 @@
     color: white;
 }
 
-.main-skill{
+.main-skill {
     width: 25%;
     display: inline-block;
     -webkit-transition-duration: 1s;
@@ -203,16 +351,17 @@
 .main-skill:hover {
     -ms-transform: scale(1.15); /* IE 9 */
     -webkit-transform: scale(1.15); /* Safari 3-8 */
-    transform: scale(1.15); 
+    transform: scale(1.15);
 }
 
-.main-skill img{ //This is to align a picture in the middte of a div
+.main-skill img {
+    //This is to align a picture in the middte of a div
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-.text-skill{
+.text-skill {
     width: 100%;
     display: inline-block;
     font-size: large;
@@ -220,7 +369,7 @@
     padding-bottom: 7%;
 }
 
-.skill-picture{
+.skill-picture {
     height: 20%;
     width: 25%;
     padding-top: 20%;
@@ -229,38 +378,40 @@
 }
 
 //The classes for the card set to fix the acknowledgements
-#reconocimientos{
+#reconocimientos {
     background-color: white;
     height: 100%;
     border-radius: 22px;
     margin-top: 5%;
 }
 
-.description-card{
+.description-card {
     margin-left: 16px;
     font-weight: bold;
 }
 
-.back-card{
+.back-card {
     margin-left: 10%;
     margin-right: 10%;
     font-style: italic;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Bangers');
-*,*::before,*::after{
-  margin:0;
-  box-sizing:border-box;
+@import url("https://fonts.googleapis.com/css?family=Bangers");
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.reward{
+.reward {
     width: 4em;
 }
 
-.card{
-    height:12%;
+.card {
+    height: 12%;
     width: 86%;
-    transform-style:preserve-3d;
+    transform-style: preserve-3d;
     position: relative;
     transition: all 1s ease-in-out;
     -webkit-transition-duration: 1s;
@@ -271,54 +422,54 @@
     backface-visibility: hidden;
     margin-left: 7%;
     color: black;
-    margin-bottom: 3%;;
-  }
-  
-  .front, .back{
+    margin-bottom: 3%;
+}
+
+.front,
+.back {
     position: absolute;
     backface-visibility: hidden;
     background-color: rgb(253, 252, 252);
     //background-image: linear-gradient(135deg, rgb(50, 72, 244) 0%, rgb(65, 86, 247) 100%);
-    height:100%;
-    width:100%;
-    border-radius:1em;
+    height: 100%;
+    width: 100%;
+    border-radius: 1em;
     border: black;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
-    transform-style:preserve-3d;
+    align-items: center;
+    transform-style: preserve-3d;
     color: black;
     perspective: 1000px;
-    box-shadow: 2px 4px 8px 1px rgba(black,0.4);
-  }
+    box-shadow: 2px 4px 8px 1px rgba(black, 0.4);
+}
 
-  .left-card{
-      display: inline-block;
-      width: 90%;
-      font-size: large;
-  }
+.left-card {
+    display: inline-block;
+    width: 90%;
+    font-size: large;
+}
 
-  .right-card{
+.right-card {
     display: inline-block;
     width: 10%;
-  }
-  
-  
-  .back{
-    transform: rotateY( 180deg );
-  }
-  
-  .front > p , .back > p {
-    transform:translateZ(120px);
-  }
-  
-  .card:hover{
-    transform:rotateY(180deg);
-  }
+}
 
+.back {
+    transform: rotateY(180deg);
+}
+
+.front > p,
+.back > p {
+    transform: translateZ(120px);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
 
 //The classes for the card set to fix the experience
-.experience{
+.experience {
     background-color: white;
     height: auto;
     border-radius: 22px;
@@ -328,23 +479,23 @@
     padding-bottom: 2%;
 }
 
-.post-experience{
+.post-experience {
     width: 30%;
     margin-top: 5%;
     display: inline-block;
 }
 
-.left-post{
+.left-post {
     margin-left: 13%;
     margin-right: 7%;
 }
 
-.right-post{
+.right-post {
     margin-right: 20%;
     vertical-align: top;
 }
 
-.post-picture{
+.post-picture {
     width: 100%;
     height: auto;
     margin-left: auto;
@@ -355,18 +506,18 @@
     cursor: pointer;
 }
 
-.text-post{
+.text-post {
     font-size: 1.5em;
     font-weight: bold;
     text-align: justify;
 }
 
 //The classes for the card set to fix the contact
-#contacto{
+#contacto {
     height: auto;
 }
 
-.contact-left{
+.contact-left {
     width: 30%;
     display: inline-block;
     margin-left: 7%;
@@ -374,249 +525,247 @@
     vertical-align: top;
 }
 
-.contact-mini{
+.contact-mini {
     height: 33%;
     width: 100%;
     padding-top: 10%;
 }
 
-.contact-mini-left{
+.contact-mini-left {
     width: 30%;
     display: inline-block;
-
 }
 
-.contact-mini-right{
+.contact-mini-right {
     width: 70%;
     display: inline-block;
     padding-top: 4%;
     vertical-align: top;
 }
 
-.contact-right{
+.contact-right {
     width: 60%;
     display: inline-block;
 }
 
-.contact-icon{
+.contact-icon {
     width: 60%;
 }
 
-.link-contact{
+.link-contact {
     line-height: 0.5;
 }
 
-h2{
+h2 {
     line-height: 0;
 }
 
-#dark-form{
-  display: none;
+#dark-form {
+    display: none;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: rgb(50, 72, 244) !important;
- }
+    /*change color of label*/
+    color: rgb(50, 72, 244) !important;
+}
 
- ::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
-  background-color: rgb(50, 72, 244) !important;
-} 
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(50, 72, 244) !important;
+}
 
 ::ng-deep.mat-form-field-ripple {
- /*change color of underline when focused*/
- background-color: rgb(50, 72, 244) !important;;
+    /*change color of underline when focused*/
+    background-color: rgb(50, 72, 244) !important;
 }
 
 .contact-form {
     min-width: 100px;
     max-width: 500px;
     width: 100%;
-    margin-top:5%;
+    margin-top: 5%;
     margin-left: 2%;
     margin-right: 1%;
-  }
-  
+}
+
 .example-full-width {
     width: 100%;
-  }
-  
+}
+
 //General Animations
 
 /*
 * core styles
 */
 
-.sm-link{
-	--uismLinkDisplay: var(--smLinkDisplay, inline-flex);	
-	--uismLinkTextColor: var(--smLinkTextColor);
-	--uismLinkTextColorHover: var(--smLinkTextColorHover);	
-	
-	display: var(--uismLinkDisplay);
-	color: var(--uismLinkTextColor);
-	position: relative;
-	overflow: hidden;
+.sm-link {
+    --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+    --uismLinkTextColor: var(--smLinkTextColor);
+    --uismLinkTextColorHover: var(--smLinkTextColorHover);
+
+    display: var(--uismLinkDisplay);
+    color: var(--uismLinkTextColor);
+    position: relative;
+    overflow: hidden;
 }
 
-a.sm-link{
-	text-decoration: none;
+a.sm-link {
+    text-decoration: none;
 }
 
-.sm-link__label{
-  display: block;
-  //font-size: x-small;
+.sm-link__label {
+    display: block;
+    //font-size: x-small;
 }
 
-/* sm-link_padding-all */ 
+/* sm-link_padding-all */
 
-.sm-link_padding-all{
-	--uismLinkLineWeight: var(--smLinkLineWeight, 2px);
-	--uismLinkLineColor: var(--smLinkLineColor, #000);
-	--uismLinkPadding: var(--smLinkPadding, 5px);
-	
-	padding: var(--uismLinkPadding);
+.sm-link_padding-all {
+    --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
+    --uismLinkLineColor: var(--smLinkLineColor, #000);
+    --uismLinkPadding: var(--smLinkPadding, 5px);
+
+    padding: var(--uismLinkPadding);
 }
 
-.sm-link_padding-all::before, 
-.sm-link_padding-all::after{
-  width: 100%;
-  height: var(--uismLinkLineWeight);
-  left: 0;
+.sm-link_padding-all::before,
+.sm-link_padding-all::after {
+    width: 100%;
+    height: var(--uismLinkLineWeight);
+    left: 0;
 }
 
-.sm-link_padding-all::before{
-  top: 0;
+.sm-link_padding-all::before {
+    top: 0;
 }
 
-.sm-link_padding-all::after{
-  bottom: 0;
+.sm-link_padding-all::after {
+    bottom: 0;
 }
 
 .sm-link_padding-all .sm-link__label::before,
-.sm-link_padding-all .sm-link__label::after{
-  width: var(--uismLinkLineWeight);
-  height: 100%;
-  top: 0;
+.sm-link_padding-all .sm-link__label::after {
+    width: var(--uismLinkLineWeight);
+    height: 100%;
+    top: 0;
 }
 
-.sm-link_padding-all .sm-link__label::before{
-  left: 0;
+.sm-link_padding-all .sm-link__label::before {
+    left: 0;
 }
 
-.sm-link_padding-all .sm-link__label::after{
-  right: 0;
+.sm-link_padding-all .sm-link__label::after {
+    right: 0;
 }
 
 .sm-link_padding-all::before,
 .sm-link_padding-all::after,
 .sm-link_padding-all .sm-link__label::before,
-.sm-link_padding-all .sm-link__label::after{
-  content: "";     
-	background-color: var(--uismLinkLineColor);
-  position: absolute; 
-	opacity: 0;
-	
-	will-change: transform, opacity;
-	transition-property: transform, opacity;
+.sm-link_padding-all .sm-link__label::after {
+    content: "";
+    background-color: var(--uismLinkLineColor);
+    position: absolute;
+    opacity: 0;
+
+    will-change: transform, opacity;
+    transition-property: transform, opacity;
 }
 
 .sm-link_padding-all:hover::before,
 .sm-link_padding-all:hover::after,
 .sm-link_padding-all:hover .sm-link__label::before,
-.sm-link_padding-all:hover .sm-link__label::after{
-	opacity: 1;
+.sm-link_padding-all:hover .sm-link__label::after {
+    opacity: 1;
 }
 
-/* sm-link_padding-bottom */ 
+/* sm-link_padding-bottom */
 
-.sm-link_padding-bottom{
-	--uismLinkLineWeight: var(--smLinkLineWeight, 2px);
-	--uismLinkLineColor: var(--smLinkLineColor, #000);	
-	
-	padding-bottom: var(--uismLinkLineWeight);	
-	position: relative;
+.sm-link_padding-bottom {
+    --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
+    --uismLinkLineColor: var(--smLinkLineColor, #000);
+
+    padding-bottom: var(--uismLinkLineWeight);
+    position: relative;
 }
 
-.sm-link_padding-bottom::after{
-  content: "";
-  width: 100%;
-  height: var(--uismLinkLineWeight);
-	background-color: var(--uismLinkLineColor);
-	
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.sm-link_padding-bottom::after {
+    content: "";
+    width: 100%;
+    height: var(--uismLinkLineWeight);
+    background-color: var(--uismLinkLineColor);
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
-/* sm-link_bg */ 
+/* sm-link_bg */
 
 .sm-link_bg {
-	--uismLinkLineColor: var(--smLinkLineColor, #000);	
-	--uismLinkTextColorHover: var(--smLinkTextColorHover, #fff);	
-	--uismLinkPadding: var(--smLinkPadding, 5px);
-	
-	padding: var(--uismLinkPadding);
-	transition: color .3s ease-out;
+    --uismLinkLineColor: var(--smLinkLineColor, #000);
+    --uismLinkTextColorHover: var(--smLinkTextColorHover, #fff);
+    --uismLinkPadding: var(--smLinkPadding, 5px);
+
+    padding: var(--uismLinkPadding);
+    transition: color 0.3s ease-out;
 }
 
-.sm-link_bg::before, 
-.sm-link_bg::after{
-  content: "";
-	background-color: var(--uismLinkLineColor);	
-  opacity: 0;
-  position: absolute;
-	
-	transition: transform .2s ease-out, opacity .2s ease-out .03s;
+.sm-link_bg::before,
+.sm-link_bg::after {
+    content: "";
+    background-color: var(--uismLinkLineColor);
+    opacity: 0;
+    position: absolute;
+
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out 0.03s;
 }
 
-.sm-link_bg .sm-link__label{
-  position: relative;
-  z-index: 2;
+.sm-link_bg .sm-link__label {
+    position: relative;
+    z-index: 2;
 }
 
-.sm-link_bg:hover::before, 
-.sm-link_bg:hover::after{
-  opacity: 1;
-	transition-duration: .35s, .35s;
-	transition-delay: 0s, 0s;
+.sm-link_bg:hover::before,
+.sm-link_bg:hover::after {
+    opacity: 1;
+    transition-duration: 0.35s, 0.35s;
+    transition-delay: 0s, 0s;
 }
 
-.sm-link_bg:hover{
-	color: var(--uismLinkTextColorHover);
+.sm-link_bg:hover {
+    color: var(--uismLinkTextColorHover);
 }
 
-/* sm-link_text */ 
+/* sm-link_text */
 
-.sm-link_text::before{
-  content: attr(data-sm-link-text);
-	color: var(--uismLinkTextColorHover);
-  position: absolute;
+.sm-link_text::before {
+    content: attr(data-sm-link-text);
+    color: var(--uismLinkTextColorHover);
+    position: absolute;
 }
 
-.sm-link_text::before, 
-.sm-link_text .sm-link__label{
-  transition-property: transform;
-	transition-timing-function: cubic-bezier(.86, .6, .08, 1.01); 
-	transition-duration: .3s;
+.sm-link_text::before,
+.sm-link_text .sm-link__label {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.86, 0.6, 0.08, 1.01);
+    transition-duration: 0.3s;
 }
 
 .sm-link_text:hover::before,
-.sm-link_text:hover .sm-link__label{
-	transition-duration: .4s;
+.sm-link_text:hover .sm-link__label {
+    transition-duration: 0.4s;
 }
 
 /* effect 3 */
 
-.sm-link3::after{
-  transform: translate3d(-100%, 0, 0);
-  transition: transform .2s ease-in;
+.sm-link3::after {
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 0.2s ease-in;
 }
 
-.sm-link3:hover::after{
-  transform: translate3d(0, 0, 0);
+.sm-link3:hover::after {
+    transform: translate3d(0, 0, 0);
 }
-
 
 /*-------------------------------------
 ---------------------------------------
@@ -624,291 +773,290 @@ a.sm-link{
 ---------------------------------------
 ---------------------------------------*/
 
-@media only screen and (max-width: 600px){
-  .container{
-    margin-left: 3%;
-    margin-right: 3%;
-    width: 94%;
-    max-width: 95%;
-  }
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-left: 3%;
+        margin-right: 3%;
+        width: 94%;
+        max-width: 95%;
+    }
 
-  //The classes for the card set to fit the home
-  .home{
-    background-color: rgb(50, 72, 244);
-    height: 100%;
-    border-radius: 22px;
-    color: white;
-    position: relative;
-  }
+    //The classes for the card set to fit the home
+    .home {
+        background-color: rgb(50, 72, 244);
+        height: 100%;
+        border-radius: 22px;
+        color: white;
+        position: relative;
+    }
 
-  //The classes for the card set to fit the home
-  .container_name{
-      height: 80%;
-      position: relative;
-  }
+    //The classes for the card set to fit the home
+    .container_name {
+        height: 80%;
+        position: relative;
+    }
 
-  .name{
-      position: absolute;
-      bottom: 50%;
-      font-size: 4.5em;
-      line-height: 1em;
-      margin-left: 10%;
-      margin-right: 10%;
-      font-weight: bold;
-  }
+    .name {
+        position: absolute;
+        bottom: 50%;
+        font-size: 4.5em;
+        line-height: 1em;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-weight: bold;
+    }
 
-  .description{
-      position: absolute;
-      bottom: 7%;
-      margin-left: 10%;
-      margin-right: 10%;
-      text-align: justify;
-      line-height: 1.5em;
-      font-size: 1.1em;
-  }
+    .description {
+        position: absolute;
+        bottom: 7%;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: justify;
+        line-height: 1.5em;
+        font-size: 1.1em;
+    }
 
-  //The classes for the card set to fix the about me
-  .about-me{
-    background-color: white;
-    height: 100%;
-    border-radius: 22px;
-    margin-top: 5%;
-  }
+    //The classes for the card set to fix the about me
+    .about-me {
+        background-color: white;
+        height: 100%;
+        border-radius: 22px;
+        margin-top: 5%;
+    }
 
-  .about-photo{
-    width: 100%;
-    height: 20%;
-    position: relative;
-  }
+    .about-photo {
+        width: 100%;
+        height: 20%;
+        position: relative;
+    }
 
-  .profile-picture{
-    height: 12em;
-    width: 12em;
-    border-radius: 100%;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border: 0.2em solid white;
-  }
+    .profile-picture {
+        height: 12em;
+        width: 12em;
+        border-radius: 100%;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border: 0.2em solid white;
+    }
 
-  .about-text{
-    margin-top: 6%;
-    width: 86%;
-    margin-right: 7%;
-    margin-left: 7%;
-    height: 70%;
-    vertical-align: top;
-  }
+    .about-text {
+        margin-top: 6%;
+        width: 86%;
+        margin-right: 7%;
+        margin-left: 7%;
+        height: 70%;
+        vertical-align: top;
+    }
 
-  .about-hello{
-    font-size: 2.5em;
-    font-weight: bold;
-    height: 8%;
-  }
+    .about-hello {
+        font-size: 2.5em;
+        font-weight: bold;
+        height: 8%;
+    }
 
-  .about-description{
-    height: 20%;
-    color: rgb(150, 150, 150);
-    text-align: justify;
-  }
+    .about-description {
+        height: 20%;
+        color: rgb(150, 150, 150);
+        text-align: justify;
+    }
 
-  .about-data{
-    height: 15%;
-    padding-top: 5%;
-    color: rgb(150, 150, 150);
-  }
+    .about-data {
+        height: 15%;
+        padding-top: 5%;
+        color: rgb(150, 150, 150);
+    }
 
-  .about-data-left{
-    width: 100%;
-    height: 45%;
-    margin-bottom: 4%;
-  }
+    .about-data-left {
+        width: 100%;
+        height: 45%;
+        margin-bottom: 4%;
+    }
 
-  .about-data-right{
-    width: 100%;
-    height: 45%;
-  }
+    .about-data-right {
+        width: 100%;
+        height: 45%;
+    }
 
-  .about-buttons{
-    padding-top: 22%;
-    height: 30%;
-    align-items: center;
-  }
+    .about-buttons {
+        padding-top: 22%;
+        height: 30%;
+        align-items: center;
+    }
 
-  .button{
-    font-size: 1.15em;
-    padding: 3% 3%;
-    margin-bottom: 4%;
-  }
+    .button {
+        font-size: 1.15em;
+        padding: 3% 3%;
+        margin-bottom: 4%;
+    }
 
-  //The classes for the card set to fix the main-skills
-  .main-skills{
-    background-color:rgb(50, 72, 244);
-    height: auto;
-    padding: 4%;
-    border-radius: 22px;
-    margin-top: 5%;
-    line-height: 1.2em;
-    color: white;
-  }
-  
-  .main-skill{
-    width: 50%;
-    display: inline-block;
-  }
+    //The classes for the card set to fix the main-skills
+    .main-skills {
+        background-color: rgb(50, 72, 244);
+        height: auto;
+        padding: 4%;
+        border-radius: 22px;
+        margin-top: 5%;
+        line-height: 1.2em;
+        color: white;
+    }
 
-  .main-skill img{ //This is to align a picture in the middte of a div
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
+    .main-skill {
+        width: 50%;
+        display: inline-block;
+    }
 
-  .text-skill{
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 7%;
-    font-size: 0.94em;
-  }
+    .main-skill img {
+        //This is to align a picture in the middte of a div
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 
-  .skill-picture{
-    height: 7em;
-    width: auto;
-    padding-top: 10%;
-    padding-bottom: 13%;
-    cursor: pointer;
-  }
+    .text-skill {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        padding-bottom: 7%;
+        font-size: 0.94em;
+    }
 
-  
-  .skill-title-column{
-    display: inline-block;
-    width: 99%;
-    margin-top: 3%;
-    vertical-align: top;
-  }
+    .skill-picture {
+        height: 7em;
+        width: auto;
+        padding-top: 10%;
+        padding-bottom: 13%;
+        cursor: pointer;
+    }
 
-  .flag{
-    width: 47%;
-  }
-    
-  .flag-title{
-    margin-top: 0;
-    min-width: 80%;
-  }
+    .skill-title-column {
+        display: inline-block;
+        width: 99%;
+        margin-top: 3%;
+        vertical-align: top;
+    }
 
-  //The classes for the card set to fix the contact
-  #contacto{
-    height: auto;
-  }
+    .flag {
+        width: 47%;
+    }
 
-  .contact-left{
-    width: 100%;
-    display: inline-block;
-    margin-left: 7%;
-    margin-top: 2%;
-    vertical-align: top;
-  }
+    .flag-title {
+        margin-top: 0;
+        min-width: 80%;
+    }
 
-  .contact-mini{
-    height: 33%;
-    width: 100%;
-    padding-top: 10%;
-  }
+    //The classes for the card set to fix the contact
+    #contacto {
+        height: auto;
+    }
 
-  .contact-mini-left{
-    width: 25%;
-    display: inline-block;
+    .contact-left {
+        width: 100%;
+        display: inline-block;
+        margin-left: 7%;
+        margin-top: 2%;
+        vertical-align: top;
+    }
 
-  }
+    .contact-mini {
+        height: 33%;
+        width: 100%;
+        padding-top: 10%;
+    }
 
-  .contact-mini-right{
-    width: 75%;
-    display: inline-block;
-    padding-top: 5%;
-    vertical-align: top;
-  }
+    .contact-mini-left {
+        width: 25%;
+        display: inline-block;
+    }
 
-  .contact-right{
-    width: 86%;
-    display: inline-block;
-    margin-left: 7%;
-    margin-right: 7%;
-    margin-top: 3%;
-  }
+    .contact-mini-right {
+        width: 75%;
+        display: inline-block;
+        padding-top: 5%;
+        vertical-align: top;
+    }
 
-  .contact-icon{
-    width: 60%;
-  }
+    .contact-right {
+        width: 86%;
+        display: inline-block;
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
 
-  .post-experience{
-    width: 30%;
-    margin-top: 8%;
-    margin-bottom: 2%;
-    display: inline-block;
-  }
+    .contact-icon {
+        width: 60%;
+    }
 
-  //Mobile view for the awards card
-  #reconocimientos{
-    background-color: white;
-    height: 140%;
-    border-radius: 22px;
-    margin-top: 5%;
-  }
+    .post-experience {
+        width: 30%;
+        margin-top: 8%;
+        margin-bottom: 2%;
+        display: inline-block;
+    }
 
-  .description-card{
-    margin-left: 16px;
-    font-weight: bold;
-  }
+    //Mobile view for the awards card
+    #reconocimientos {
+        background-color: white;
+        height: 140%;
+        border-radius: 22px;
+        margin-top: 5%;
+    }
 
-  .back-card{
-    margin-left: 10%;
-    margin-right: 10%;
-    font-style: italic;
-  }
+    .description-card {
+        margin-left: 16px;
+        font-weight: bold;
+    }
 
-  @import url('https://fonts.googleapis.com/css?family=Bangers');
-  *,*::before,*::after{
-  margin:0;
-  box-sizing:border-box;
-  }
+    .back-card {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-style: italic;
+    }
 
-  .reward{
-    width: 4em;
-  }
+    @import url("https://fonts.googleapis.com/css?family=Bangers");
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-  .first_card{
-    margin-top: -15%;
-  }
+    .reward {
+        width: 4em;
+    }
 
-  .card{
-    height: 16%;
-    width: 86%;
-    transform-style:preserve-3d;
-  }
+    .first_card {
+        margin-top: -15%;
+    }
 
-  .back{
-    font-size: x-small;
-  }
+    .card {
+        height: 16%;
+        width: 86%;
+        transform-style: preserve-3d;
+    }
 
-  .left-card{
-      display: inline-block;
-      width: 80%;
-      font-size: large;
-  }
+    .back {
+        font-size: x-small;
+    }
 
-  .right-card{
-    display: inline-block;
-    width: 20%;
-  }
+    .left-card {
+        display: inline-block;
+        width: 80%;
+        font-size: large;
+    }
 
-  .sm-link__label{
-    display: block;
-    font-size: medium;
-  }
+    .right-card {
+        display: inline-block;
+        width: 20%;
+    }
 
+    .sm-link__label {
+        display: block;
+        font-size: medium;
+    }
 }
-
 
 /*-------------------------------------
 ---------------------------------------
@@ -916,8 +1064,8 @@ a.sm-link{
 ---------------------------------------
 ---------------------------------------*/
 
-@media only screen and (max-width: 1025px){
-  .back{
-    font-size: x-small;
-  }
+@media only screen and (max-width: 1025px) {
+    .back {
+        font-size: x-small;
+    }
 }
