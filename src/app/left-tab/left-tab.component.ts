@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import * as myGlobals from "../../globals"; //Global variables
 import { TabHeaderComponent } from "../tab-header/tab-header.component";
 import { TranslateService } from "@ngx-translate/core";
 
@@ -10,13 +9,6 @@ import { TranslateService } from "@ngx-translate/core";
     styleUrls: ["./left-tab.component.scss"],
 })
 export class LeftTabComponent implements OnInit {
-    isCheckedDark = true;
-    isChecked2 = false;
-
-    //Importing the globals variables
-    name = myGlobals.name;
-    job = myGlobals.job;
-
     constructor(
         public tabHeader: TabHeaderComponent,
         public translate: TranslateService
