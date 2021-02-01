@@ -3,11 +3,13 @@
     <!--The first tab is set to containt the home-->
     <div id="inicio" class="home">
         <!--Dark mode-->
-        <button class="nightModeButton" (click)="darkMode()">
+        <button id="nightModeButton" (click)="darkMode()">
             <img
                 class="button-image"
                 src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c399.png"
-            />Dark Mode
+            />
+            <span *ngIf="!isDark">Dark mode</span>
+            <span *ngIf="isDark">Light mode</span>
         </button>
 
         <!--Select language-->
@@ -51,10 +53,7 @@
     <div id="sobre" class="about-me">
         <app-tab-header [parentData]="about"></app-tab-header>
         <div class="about-photo">
-            <img
-                class="profile-picture"
-                src="../../assets/images/IMGP0592.jpg"
-            />
+            <img class="profile-picture" src="../../assets/images/IMGP0592.jpg" />
         </div>
         <div class="about-text">
             <div class="about-hello">
@@ -71,9 +70,7 @@
                     {{ "full_name" | translate }}
                     <br />
                     <span style="color: rgb(68, 68, 68)"
-                        ><b
-                            >{{ "about_me.birthday_title" | translate }}:</b
-                        ></span
+                        ><b>{{ "about_me.birthday_title" | translate }}:</b></span
                     >
                     1999
                 </div>
@@ -290,9 +287,7 @@
                 (click)="openDialog(1)"
                 src="../../assets/images/t3f_icon_deg.png"
             />
-            <span class="text-post"
-                >Voluntario evento tecnológico T3chfest</span
-            >
+            <span class="text-post">Voluntario evento tecnológico T3chfest</span>
         </div>
         <div class="post-experience right-post">
             <img
@@ -390,9 +385,7 @@
                                 href="https://www.google.es/maps/place/Madrid/@40.4378698,-3.8196201,11z/data=!3m1!4b1!4m5!3m4!1s0xd422997800a3c81:0xc436dec1618c2269!8m2!3d40.4167754!4d-3.7037902"
                                 class="sm-link sm-link_padding-bottom sm-link3"
                             >
-                                <span class="sm-link__label"
-                                    >Madrid, España</span
-                                >
+                                <span class="sm-link__label">Madrid, España</span>
                             </a>
                         </div>
                     </div>
@@ -461,9 +454,7 @@
 
             <form id="dark-form" class="contact-form">
                 <mat-form-field class="example-full-width">
-                    <mat-label>{{
-                        "contact.your_email" | translate
-                    }}</mat-label>
+                    <mat-label>{{ "contact.your_email" | translate }}</mat-label>
                     <input
                         matInput
                         [formControl]="emailFormControl"
@@ -507,9 +498,7 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label>{{
-                        "contact.your_message" | translate
-                    }}</mat-label>
+                    <mat-label>{{ "contact.your_message" | translate }}</mat-label>
                     <textarea
                         matInput
                         placeholder="Ex. Hola, me gustaría conocer..."
@@ -523,9 +512,9 @@
             <a
                 href="mailto:kikelozano8@gmail.com?Subject={{
                     subject
-                }}&body=Hola%20{{ name }},%20soy%20{{
-                    name_email
-                }}.%0A%0A%20%20%20{{ text }}"
+                }}&body=Hola%20{{ name }},%20soy%20{{ name_email }}.%0A%0A%20%20%20{{
+                    text
+                }}"
                 ><button
                     mat-raised-button
                     color="warn"

@@ -96,6 +96,9 @@ export class RightTabComponent implements OnInit {
             document.getElementById("contacto").style.backgroundColor = "#151C21";
             document.getElementById("light-form").style.display = "none";
             document.getElementById("dark-form").style.display = "block";
+            document.getElementById("nightModeButton").style.backgroundColor =
+                "white";
+            document.getElementById("nightModeButton").style.color = "#333333";
             this.leftTab.toDark();
         } else {
             console.log("To light...");
@@ -120,6 +123,10 @@ export class RightTabComponent implements OnInit {
             document.getElementById("contacto").style.backgroundColor = "white";
             document.getElementById("light-form").style.display = "block";
             document.getElementById("dark-form").style.display = "none";
+            document.getElementById("nightModeButton").style.backgroundColor =
+                "#333333";
+            document.getElementById("nightModeButton").style.color = "white";
+            this.leftTab.toLight();
         }
     }
 }
