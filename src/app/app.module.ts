@@ -11,6 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 import { TabHeaderComponent } from './tab-header/tab-header.component';
 import { TimelineComponent } from './timeline/timeline.component'; 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -37,6 +38,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     MatInputModule,
     MatSlideToggleModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
