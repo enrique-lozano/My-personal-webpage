@@ -36,14 +36,17 @@ export class RightTabComponent implements OnInit {
   public subject:string;
   public text:string;
 
+  public selectLang:string;
+
 
   constructor(public dialog: MatDialog,  private renderer: Renderer2, public translate: TranslateService) { 
-    translate.addLangs(['en', 'es']);
+    translate.addLangs(['es', 'en']);
     translate.setDefaultLang('es');
   }
 
   switchLang(lang: string) { //Translation
     this.translate.use(lang);
+    this.selectLang = lang;
   }
 
   //Function to open the popup
