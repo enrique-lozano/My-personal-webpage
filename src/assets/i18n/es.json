@@ -7,6 +7,8 @@
     "first_button": "Conoce más sobre mí",
     "loc_title": "Localización",
     "email_title": "Email",
+    "dark_mode": "Modo oscuro",
+    "light_mode": "Modo Claro",
     "about_me": {
         "title": "Sobre mi",
         "hello": "Hola,",

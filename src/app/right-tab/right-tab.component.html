@@ -8,8 +8,8 @@
                 class="button-image"
                 src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c399.png"
             />
-            <span *ngIf="!isDark">Dark mode</span>
-            <span *ngIf="isDark">Light mode</span>
+            <span *ngIf="!isDark">{{ "dark_mode" | translate }}</span>
+            <span *ngIf="isDark">{{ "light_mode" | translate }}</span>
         </button>
 
         <!--Select language-->
