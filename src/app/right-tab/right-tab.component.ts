@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import * as myGlobals from '../../globals'; //Global variables
 import {MatDialog} from '@angular/material/dialog';
 import {FormControl, Validators} from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-right-tab',
@@ -36,7 +37,14 @@ export class RightTabComponent implements OnInit {
   public text:string;
 
 
-  constructor(public dialog: MatDialog,  private renderer: Renderer2) { }
+  constructor(public dialog: MatDialog,  private renderer: Renderer2, public translate: TranslateService) { 
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) { //Translation
+    this.translate.use(lang);
+  }
 
   //Function to open the popup
   openDialog(variable: number) {
