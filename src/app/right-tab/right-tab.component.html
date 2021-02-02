@@ -4,10 +4,7 @@
     <div id="inicio" class="home">
         <!--Dark mode-->
         <button id="nightModeButton" (click)="darkMode()">
-            <img
-                class="button-image"
-                src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c399.png"
-            />
+            <img class="button-image" src="../../assets/icons/dark_mode.png" />
             <span *ngIf="!isDark">{{ "dark_mode" | translate }}</span>
             <span *ngIf="isDark">{{ "light_mode" | translate }}</span>
         </button>
