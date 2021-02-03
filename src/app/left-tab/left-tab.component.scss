@@ -1,9 +1,9 @@
-//Left Container for links 
-.main-tab{
+//Left Container for links
+.main-tab {
     width: 20%;
     height: 90%;
     margin: 5%;
-    margin-top: 3%;
+    margin-top: 2.5%;
     background-color: rgb(50, 72, 244);
     border-radius: 22px;
     color: white;
@@ -11,13 +11,13 @@
     position: fixed;
 }
 
-span{
+span {
     vertical-align: text-top;
 }
 
 //Individual parts of the left tab
 
-a{
+a {
     color: white;
     vertical-align: text-top;
     font-size: large;
@@ -25,42 +25,42 @@ a{
 }
 
 //Profile picture
-.face-image{
+.face-image {
     height: 20%;
 }
 
-.profile-picture{
+.profile-picture {
     height: 6em;
     width: 6em;
     border-radius: 100%;
     margin: 10%;
-    border: 0.2em solid white
+    border: 0.2em solid white;
 }
 
 //Jobs
-.name{
+.name {
     height: 13%;
 }
 
-.name-font{
+.name-font {
     font-weight: bold;
     font-size: x-large;
     margin-left: 10%;
     margin-top: 5%;
 }
 
-.job{
-    text-transform: uppercase;  
+.job {
+    text-transform: uppercase;
     margin-left: 10%;
     font-size: large;
 }
 
 //Links
-.page-links{
+.page-links {
     height: 52%;
 }
 
-.category{
+.category {
     font-size: large;
     margin-top: 3.5%;
     cursor: pointer;
@@ -70,14 +70,14 @@ a{
     transition-duration: 0.5s;
 }
 
-.category:hover{
+.category:hover {
     -ms-transform: scale(1.15); /* IE 9 */
     -webkit-transform: scale(1.15); /* Safari 3-8 */
-    transform: scale(1.15); 
+    transform: scale(1.15);
     //background-color: blue; //Transition to another color
 }
 
-.icon{
+.icon {
     height: 1.4em;
     width: 1.4em;
     margin-left: 10%;
@@ -85,12 +85,12 @@ a{
 }
 
 //Social media links
-.social-media{
+.social-media {
     height: 15%;
     text-align: center;
 }
 
-.social-icon{
+.social-icon {
     height: 1.7em;
     width: 1.7em;
     margin: 5%;
@@ -102,9 +102,9 @@ a{
 }
 
 .social-icon:hover {
-    -webkit-transform : rotate(360deg) scale(1.4); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform     : rotate(360deg) scale(1.4); /* IE 9 */
-    transform         : rotate(360deg) scale(1.4); /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: rotate(360deg) scale(1.4); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg) scale(1.4); /* IE 9 */
+    transform: rotate(360deg) scale(1.4); /* Firefox 16+, IE 10+, Opera */
 }
 
 .overlay {
@@ -117,91 +117,93 @@ a{
     background-color: rgba(0, 30, 227, 0.92);
     overflow-x: hidden;
     transition: 0.5s;
-  }
-  
-  .overlay-content {
+}
+
+.overlay-content {
     position: relative;
     top: 25%;
     width: 100%;
     text-align: center;
     margin-top: 30px;
-  }
-  
-  .overlay a {
+}
+
+.overlay a {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
-  
-  .overlay a:hover, .overlay a:focus {
+}
+
+.overlay a:hover,
+.overlay a:focus {
     color: #f1f1f1;
-  }
-  
-  .overlay .closebtn {
+}
+
+.overlay .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
     font-size: 60px;
-  }
+}
 
-  .title_settings{
+.title_settings {
     font-size: 50px;
     font-weight: bold;
     color: white;
     inline-size: block;
     line-height: 1em;
-  }
-
-  mat-slide-toggle{
-      margin-top: 250%;
-  }
-
-  .selector{
-    height: 60px;
-    margin: 0 5%;
-  }
-
-  .flags{
-    height: 60px;
-    margin: 0 5%;
-  }
-
-  .aux{
-    height: auto;
-    vertical-align: bottom;
-  }
-
-  .aux-top{
-    height: 50%;
-  }
-
-  .aux-bottom{
-     height: 50%; 
-     color: rgba(0, 30, 227, 0);
 }
 
-  .aux-container{
-    display: inline-block;
-  }
+mat-slide-toggle {
+    margin-top: 250%;
+}
 
-  
+.selector {
+    height: 60px;
+    margin: 0 5%;
+}
+
+.flags {
+    height: 60px;
+    margin: 0 5%;
+}
+
+.aux {
+    height: auto;
+    vertical-align: bottom;
+}
+
+.aux-top {
+    height: 50%;
+}
+
+.aux-bottom {
+    height: 50%;
+    color: rgba(0, 30, 227, 0);
+}
+
+.aux-container {
+    display: inline-block;
+}
+
 /*-------------------------------------
 ---------------------------------------
             MOBILE VIEW
 ---------------------------------------
 ---------------------------------------*/
 
-@media only screen and (max-width: 600px){
-    .main-tab{
+@media only screen and (max-width: 600px) {
+    .main-tab {
         display: none;
     }
-    .overlay a {font-size: 20px}
+    .overlay a {
+        font-size: 20px;
+    }
     .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
     }
 }
