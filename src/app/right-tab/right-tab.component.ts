@@ -32,6 +32,8 @@ export class RightTabComponent implements OnInit {
     public subject: string;
     public text: string;
 
+    public currentLang: string; //Only used to dowload the CV in different languages
+
     constructor(
         public dialog: MatDialog,
         private renderer: Renderer2,
@@ -45,6 +47,7 @@ export class RightTabComponent implements OnInit {
     switchLang(lang: string) {
         //Translation
         this.translate.use(lang);
+        this.currentLang = this.translate.currentLang;
     }
 
     //Function to open the popup
