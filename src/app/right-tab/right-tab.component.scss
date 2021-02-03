@@ -50,10 +50,12 @@
 }
 
 .git-button {
-    margin-left: 15%;
+    margin-top: 7%;
 }
 
 .buttons {
+    position: absolute;
+    bottom: 12%;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -816,8 +818,12 @@ a.sm-link {
         font-size: 1.1em;
     }
 
+    .buttons {
+        position: relative;
+    }
+
     .git-button {
-        margin-left: 0%;
+        margin-left: 2%;
     }
 
     //The classes for the card set to fix the about me
