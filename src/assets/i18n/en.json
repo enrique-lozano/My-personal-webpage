@@ -1,4 +1,5 @@
 {
+    "home": "Home",
     "name": "I'm Enrique",
     "full_name": "Enrique Lozano",
     "job": "Computer Engineer",
@@ -20,11 +21,18 @@
         "hire_button": "Hire me"
     },
     "education": {
-        "title": "Education"
+        "title": "Education",
+        "uc3m": "University Carlos III of Madrid",
+        "uc3m_studies": "Bachelor in Computer Science and Engineering",
+        "warsaw": "Warsaw, Poland",
+        "madrid": "Madrid, Spain"
     },
     "skills": {
         "title": "Skills",
         "important": "Highlighted",
+        "ai": "Artificial Intelligence",
+        "web_app_dev": "Web/app development",
+        "db": "Databases",
         "office": "Systems and office technology",
         "frameworks": "Languages and Frameworks",
         "other_tools": "Other tools",
@@ -38,6 +46,7 @@
         "your_email": "Your email",
         "your_name": "Your name",
         "subject": "Subject",
-        "your_message": "Your message"
+        "your_message": "Your message",
+        "my_linkedin": "My LinkedIn"
     }
 }
