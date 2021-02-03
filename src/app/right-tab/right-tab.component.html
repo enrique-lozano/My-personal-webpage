@@ -89,7 +89,23 @@
                 </div>
             </div>
             <div class="about-buttons">
-                <a target="_blank" href="../../assets/Documents/CV1_ES.pdf"
+                <a
+                    *ngIf="currentLang == 'es'"
+                    target="_blank"
+                    href="../../assets/Documents/CV1_ES.pdf"
+                    ><button
+                        mat-raised-button
+                        color="warn"
+                        class="button"
+                        style="margin-right: 20%"
+                    >
+                        {{ "about_me.cv_button" | translate }}
+                    </button></a
+                >
+                <a
+                    *ngIf="currentLang != 'es'"
+                    target="_blank"
+                    href="../../assets/Documents/CV1_EN.pdf"
                     ><button
                         mat-raised-button
                         color="warn"
