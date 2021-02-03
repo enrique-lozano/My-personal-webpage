@@ -1,10 +1,12 @@
 {
+    "home": "Home",
     "name": "I'm Enrique",
     "full_name": "Enrique Lozano",
     "job": "Computer Engineer",
     "email": "kikelozano8@gmail.com",
     "presentation": "Computer Engineering student. I consider myself an open and sociable person, with a great passion for technology and eager to learn new knowledge and live new experiences.",
     "first_button": "Know more about me",
+    "second_button": "Visit my GitHub",
     "loc_title": "Ubication",
     "email_title": "Email",
     "dark_mode": "Dark mode",
@@ -19,11 +21,18 @@
         "hire_button": "Hire me"
     },
     "education": {
-        "title": "Education"
+        "title": "Education",
+        "uc3m": "University Carlos III of Madrid",
+        "uc3m_studies": "Bachelor in Computer Science and Engineering",
+        "warsaw": "Warsaw, Poland",
+        "madrid": "Madrid, Spain"
     },
     "skills": {
         "title": "Skills",
         "important": "Highlighted",
+        "ai": "Artificial Intelligence",
+        "web_app_dev": "Web/app development",
+        "db": "Databases",
         "office": "Systems and office technology",
         "frameworks": "Languages and Frameworks",
         "other_tools": "Other tools",
@@ -37,6 +46,7 @@
         "your_email": "Your email",
         "your_name": "Your name",
         "subject": "Subject",
-        "your_message": "Your message"
+        "your_message": "Your message",
+        "my_linkedin": "My LinkedIn"
     }
 }

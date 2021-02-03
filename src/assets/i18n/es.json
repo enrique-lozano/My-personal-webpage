@@ -1,4 +1,5 @@
 {
+    "home": "Inicio",
     "name": "Soy Enrique",
     "full_name": "Enrique Lozano",
     "job": "Ingeniero Informático",
@@ -20,11 +21,18 @@
         "hire_button": "Contrátame"
     },
     "education": {
-        "title": "Educación"
+        "title": "Educación",
+        "uc3m": "Universidad Carlos III de Madrid",
+        "uc3m_studies": "Grado en Ingeniería Informática",
+        "warsaw": "Varsovia, Polonia",
+        "madrid": "Madrid, España"
     },
     "skills": {
         "title": "Habilidades",
         "important": "Destacados",
+        "ai": "Inteligencia Artificial",
+        "web_app_dev": "Desarrollo de webs/apps",
+        "db": "Bases de Datos",
         "office": "Sistemas y Ofimática",
         "frameworks": "Lenguajes y Frameworks",
         "other_tools": "Otras herramientas",
@@ -38,6 +46,7 @@
         "your_email": "Tu email",
         "your_name": "Tu nombre",
         "subject": "Asunto",
-        "your_message": "Tu mensaje"
+        "your_message": "Tu mensaje",
+        "my_linkedin": "Mi LinkedIn"
     }
 }

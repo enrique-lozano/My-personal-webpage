@@ -15,7 +15,9 @@
     <div class="page-links">
         <a [routerLink]="['']" fragment="inicio"
             ><div class="category">
-                <img class="icon" src="../../assets/icons/home.png" />Inicio
+                <img class="icon" src="../../assets/icons/home.png" />{{
+                    "home" | translate
+                }}
             </div></a
         >
         <a [routerLink]="['']" fragment="sobre"
