@@ -93,6 +93,7 @@
                     *ngIf="currentLang == 'es'"
                     target="_blank"
                     href="../../assets/Documents/CV1_ES.pdf"
+                    (click)="hola()"
                     ><button
                         mat-raised-button
                         color="warn"
@@ -106,6 +107,7 @@
                     *ngIf="currentLang != 'es'"
                     target="_blank"
                     href="../../assets/Documents/CV1_EN.pdf"
+                    (click)="hola()"
                     ><button
                         mat-raised-button
                         color="warn"

@@ -42,12 +42,17 @@ export class RightTabComponent implements OnInit {
     ) {
         translate.addLangs(["es", "en"]);
         translate.setDefaultLang("es");
+        this.currentLang = "es";
     }
 
     switchLang(lang: string) {
         //Translation
         this.translate.use(lang);
-        this.currentLang = this.translate.currentLang;
+        this.currentLang = lang;
+    }
+
+    hola() {
+        console.log(this.currentLang);
     }
 
     //Function to open the popup
