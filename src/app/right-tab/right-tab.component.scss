@@ -16,6 +16,7 @@
     border-radius: 22px;
     color: white;
     position: relative;
+    width: 100%;
 }
 
 .container_name {
@@ -47,6 +48,7 @@
 .button {
     padding-left: 3%;
     padding-right: 3%;
+    margin-right: 3%;
 }
 
 .git-button {
@@ -786,7 +788,7 @@ a.sm-link {
     //The classes for the card set to fit the home
     .home {
         background-color: rgb(50, 72, 244);
-        height: 100%;
+        height: 97%;
         border-radius: 22px;
         color: white;
         position: relative;
@@ -820,10 +822,6 @@ a.sm-link {
 
     .buttons {
         position: relative;
-    }
-
-    .git-button {
-        margin-left: 2%;
     }
 
     //The classes for the card set to fix the about me
