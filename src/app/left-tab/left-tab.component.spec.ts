@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LeftTabComponent } from './left-tab.component';
 
@@ -6,7 +6,7 @@ describe('LeftTabComponent', () => {
   let component: LeftTabComponent;
   let fixture: ComponentFixture<LeftTabComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LeftTabComponent ]
     })
