@@ -1,4 +1,4 @@
-# LozanoWebPage
+# My personal webpage 🧍💻
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1. The project was updated in Febrary 2021 to Angular 11. To check how the updates are done, visit https://update.angular.io/?v=10.2-11.0.
 
