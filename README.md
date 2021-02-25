@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Build & Hosting
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. To deploy the app in the web using Firebase use `firebase deploy`.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. To deploy the app in the web using Firebase use `firebase deploy`. You should install first the firebase-tools via `npm install -g firebase-tools`
 
 ## Running unit tests
 
