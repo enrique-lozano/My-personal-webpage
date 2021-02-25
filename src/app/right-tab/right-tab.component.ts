@@ -21,7 +21,7 @@ export class RightTabComponent implements OnInit {
     public about = "Sobre mi";
     public education = "Educación";
     public skills = "Habilidades";
-    public rewards = "Reconocimientos";
+    public rewards = "Certificados y proyectos";
     public experience = "Experiencia";
     public contact = "Contacto";
     public main_skills = "Principales habilidades";
@@ -49,10 +49,6 @@ export class RightTabComponent implements OnInit {
         //Translation
         this.translate.use(lang);
         this.currentLang = lang;
-    }
-
-    hola() {
-        console.log(this.currentLang);
     }
 
     //Function to open the popup
