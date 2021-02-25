@@ -38,6 +38,10 @@
         "other_tools": "Other tools",
         "languages": "Languages"
     },
+    "rewards": {
+        "title": "Certificates and projects",
+        "show-certif": "See certificate"
+    },
     "experience": {
         "title": "Experience"
     },
