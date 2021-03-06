@@ -87,6 +87,12 @@ export class RightTabComponent implements OnInit {
             document.getElementById("nightModeButton").style.backgroundColor =
                 "white";
             document.getElementById("nightModeButton").style.color = "#333333";
+            var headers = document.getElementsByClassName(
+                "header"
+            ) as HTMLCollectionOf<HTMLElement>;
+            for (var i = 0, len = headers.length; i < len; i++) {
+                headers[i].style.color = "white";
+            }
             this.leftTab.toDark();
         } else {
             console.log("To light...");
@@ -114,6 +120,12 @@ export class RightTabComponent implements OnInit {
             document.getElementById("nightModeButton").style.backgroundColor =
                 "#333333";
             document.getElementById("nightModeButton").style.color = "white";
+            var headers = document.getElementsByClassName(
+                "header"
+            ) as HTMLCollectionOf<HTMLElement>;
+            for (var i = 0, len = headers.length; i < len; i++) {
+                headers[i].style.color = "black";
+            }
             this.leftTab.toLight();
         }
     }
