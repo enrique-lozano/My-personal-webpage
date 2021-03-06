@@ -3,28 +3,18 @@ import { MatDialog } from "@angular/material/dialog";
 import { FormControl, Validators } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 
-import { TabHeaderComponent } from "../tab-header/tab-header.component";
 import { LeftTabComponent } from "../left-tab/left-tab.component";
 
 @Component({
     selector: "app-right-tab",
     templateUrl: "./right-tab.component.html",
-    providers: [TabHeaderComponent, LeftTabComponent],
+    providers: [LeftTabComponent],
     styleUrls: ["./right-tab.component.scss"],
 })
 export class RightTabComponent implements OnInit {
     ngOnInit(): void {}
 
     emailFormControl = new FormControl("", [Validators.required, Validators.email]);
-
-    //Binding variables
-    public about = "Sobre mi";
-    public education = "Educación";
-    public skills = "Habilidades";
-    public rewards = "Certificados y proyectos";
-    public experience = "Experiencia";
-    public contact = "Contacto";
-    public main_skills = "Principales habilidades";
 
     //Varibles for the form
     public email: string;

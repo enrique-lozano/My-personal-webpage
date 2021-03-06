@@ -11,7 +11,6 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatInputModule } from "@angular/material/input";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { TabHeaderComponent } from "./tab-header/tab-header.component";
 import { TimelineComponent } from "./timeline/timeline.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SpeedDialFabComponent } from "./speed-dial-fab/speed-dial-fab.component";
@@ -25,7 +24,6 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
         AppComponent,
         LeftTabComponent,
         RightTabComponent,
-        TabHeaderComponent,
         TimelineComponent,
         SpeedDialFabComponent,
     ],
@@ -49,7 +47,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
             },
         }),
     ],
-    providers: [TabHeaderComponent, RightTabComponent],
+    providers: [RightTabComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

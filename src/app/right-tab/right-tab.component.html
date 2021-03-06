@@ -53,7 +53,11 @@
     </div>
 
     <div id="sobre" class="about-me">
-        <app-tab-header [parentData]="about"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{
+                "about_me.title" | translate
+            }}</span>
+        </div>
         <div class="about-photo">
             <img class="profile-picture" src="../../assets/images/IMGP0592.jpg" />
         </div>
@@ -125,7 +129,11 @@
     </div>
 
     <div id="educacion" class="time">
-        <app-tab-header [parentData]="education"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{
+                "education.title" | translate
+            }}</span>
+        </div>
         <app-timeline></app-timeline>
         <br />
     </div>
@@ -152,7 +160,9 @@
 
     <!--This tab is dedicated to the skill set-->
     <div id="habilidades" class="skills">
-        <app-tab-header [parentData]="skills"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{ "skills.title" | translate }}</span>
+        </div>
 
         <mat-expansion-panel class="skill-set first">
             <mat-expansion-panel-header>
@@ -242,20 +252,25 @@
     </div>
 
     <div id="reconocimientos">
-        <app-tab-header [parentData]="rewards"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{ "rewards.title" | translate }}</span>
+        </div>
         <div class="card">
-            <h2>Cloud Computing</h2>
-            <span>Google Activate, 2021 - </span>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="./../../assets/Documents/cert_google1.pdf"
-                class="sm-link sm-link_padding-bottom sm-link3"
-            >
-                <span class="sm-link__label">{{
-                    "rewards.show-certif" | translate
-                }}</span>
-            </a>
+            <div class="left">
+                <h2>Cloud Computing</h2>
+                <span>Google Activate, 2021 - </span>
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="./../../assets/Documents/cert_google1.pdf"
+                    class="sm-link sm-link_padding-bottom sm-link3"
+                >
+                    <span class="sm-link__label">{{
+                        "rewards.show-certif" | translate
+                    }}</span>
+                </a>
+            </div>
+
             <div class="img2">
                 <img src="./../../assets/icons/medalla.png" alt="medalla" />
             </div>
@@ -284,7 +299,11 @@
 
     <!--This tab is dedicated to the experience tab-->
     <div id="experiencia" class="experience">
-        <app-tab-header [parentData]="experience"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{
+                "experience.title" | translate
+            }}</span>
+        </div>
         <div class="post-experience left-post">
             <img
                 class="post-picture"
@@ -305,7 +324,9 @@
 
     <!--This tab is dedicated to the contact-me tab-->
     <div id="contacto" class="about-me last">
-        <app-tab-header [parentData]="contact"></app-tab-header>
+        <div class="header">
+            <span class="underline--magical">{{ "contact.title" | translate }}</span>
+        </div>
         <div class="contact-left">
             <div class="contact-mini">
                 <div class="contact-mini-left">
