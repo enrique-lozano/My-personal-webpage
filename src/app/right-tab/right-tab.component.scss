@@ -220,9 +220,10 @@
 }
 
 .profile-picture {
-    height: 12em;
+    //height: 12em;
     width: 12em;
-    border-radius: 100%;
+    max-width: 75%;
+    border-radius: 15%;
     margin: 19%;
     margin-top: 7%;
     border: 0.2em solid white;

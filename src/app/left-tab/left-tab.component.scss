@@ -34,30 +34,29 @@ a {
     width: 6em;
     border-radius: 100%;
     margin: 10%;
-    border: 0.2em solid white;
+    border: 2px solid white;
 }
 
 //Jobs
 .name {
     height: 18%;
+    padding: 8%;
 }
 
 .name-font {
     font-weight: bold;
     font-size: x-large;
-    margin-left: 10%;
     margin-top: 5%;
 }
 
 .job {
     text-transform: uppercase;
-    margin-left: 10%;
     font-size: large;
 }
 
 //Links
 .page-links {
-    height: 47%;
+    height: 40%;
 }
 
 .category {

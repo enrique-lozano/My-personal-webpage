@@ -82,6 +82,8 @@ export class RightTabComponent implements OnInit {
             }
             document.getElementById("experiencia").style.backgroundColor = "#151C21";
             document.getElementById("contacto").style.backgroundColor = "#151C21";
+            document.getElementById("reconocimientos").style.backgroundColor =
+                "#151C21";
             document.getElementById("light-form").style.display = "none";
             document.getElementById("dark-form").style.display = "block";
             document.getElementById("nightModeButton").style.backgroundColor =
@@ -114,6 +116,7 @@ export class RightTabComponent implements OnInit {
                 skill[i].style.color = "black";
             }
             document.getElementById("experiencia").style.backgroundColor = "white";
+            document.getElementById("contacto").style.backgroundColor = "white";
             document.getElementById("contacto").style.backgroundColor = "white";
             document.getElementById("light-form").style.display = "block";
             document.getElementById("dark-form").style.display = "none";
