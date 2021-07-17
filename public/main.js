@@ -1,0 +1,104 @@
+//determines if the user has a set theme
+function detectColorScheme() {
+    var theme = "light"; //default to light
+
+    //local storage is used to override OS theme settings
+    if (localStorage.getItem("theme")) {
+        if (localStorage.getItem("theme") == "dark") {
+            var theme = "dark";
+        }
+    } else if (!window.matchMedia) {
+        return false; // matchMedia method not supported
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        //OS theme setting detected as dark
+        var theme = "dark";
+        localStorage.setItem("theme", "dark");
+    }
+
+    //dark theme preferred, set document with a `data-theme` attribute
+    if (theme == "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    }
+}
+detectColorScheme();
+
+//Google translator
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+}
+
+$(document).ready(function () {
+    // SCROLL UP BUTTON
+    $("#scroll-up").click(function () {
+        window.scrollTo(0, 0);
+    });
+
+    var oldValue = 0;
+    window.addEventListener("scroll", function (e) {
+        newValue = window.pageYOffset;
+
+        if (oldValue - newValue < 0) {
+            $("#scroll-up").show("fast", function () {
+                // Animation complete.
+            });
+        } else if (oldValue - newValue > 0) {
+            $("#scroll-up").hide("fast", function () {
+                // Animation complete.
+            });
+        }
+
+        // Update the old value
+        oldValue = newValue;
+    });
+
+    $(window).scroll(function () {
+        // sticky navbar on scroll script
+        if (this.scrollY > 20 && localStorage.getItem("theme") == "light") {
+            $(".navbar").addClass("nav-on-scroll");
+        } else {
+            $(".navbar").removeClass("nav-on-scroll");
+        }
+    });
+
+    // DARK MODE
+    $(".dark-mode-icon").click(function () {
+        if (localStorage.getItem("theme") == "dark") {
+            localStorage.setItem("theme", "light");
+            document.documentElement.setAttribute("data-theme", "light");
+            $(".dark-mode-icon").attr("src", "icons/moon.svg");
+        } else {
+            localStorage.setItem("theme", "dark");
+            document.documentElement.setAttribute("data-theme", "dark");
+            $(".dark-mode-icon").attr("src", "icons/sun.svg");
+        }
+    });
+
+    // CHANGE BETWEEN TABS IN QUALIFICATION
+    $("#education-button").click(function () {
+        $(".qualification-button").removeClass("qualification-active");
+        $("#education-button").addClass("qualification-active");
+
+        $(".qualification-content").removeClass("qualification-active");
+        $("#education").addClass("qualification-active");
+    });
+
+    $("#work-button").click(function () {
+        $(".qualification-button").removeClass("qualification-active");
+        $("#work-button").addClass("qualification-active");
+
+        $(".qualification-content").removeClass("qualification-active");
+        $("#work").addClass("qualification-active");
+    });
+
+    $(".icon-menu").click(function () {
+        console.log("HOLA");
+    });
+
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["Computer Scientist and Engineer", "Web Developer", "App Devoloper", "Data Analyst"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+    });
+});

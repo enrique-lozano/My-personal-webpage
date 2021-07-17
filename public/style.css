@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+    --text-color: rgb(5, 5, 5);
+    --background-color: white;
+    --background-nav-color: white;
+    --text-nav-color: #254067;
+    --primary-color: #254067;
+    --primary-color-svg: invert(19%) sepia(60%) saturate(644%) hue-rotate(176deg) brightness(95%)
+        contrast(88%);
+    --qual-active-svg: invert(100%) sepia(93%) saturate(0%) hue-rotate(205deg) brightness(109%) contrast(101%);
+    --qual-svg: invert(0%) sepia(7%) saturate(27%) hue-rotate(73deg) brightness(99%) contrast(101%);
+    --primary-color-darker: #182c47;
+}
+
+[data-theme="dark"] {
+    --text-color: white;
+    --background-color: black;
+    --background-nav-color: rgb(36, 36, 36);
+    --text-nav-color: white;
+    --primary-color: #254067;
+    --primary-color-svg: invert(100%) sepia(93%) saturate(0%) hue-rotate(205deg) brightness(109%)
+        contrast(101%);
+    --qual-active-svg: invert(100%) sepia(93%) saturate(0%) hue-rotate(205deg) brightness(109%) contrast(101%);
+    --qual-svg: invert(100%) sepia(93%) saturate(0%) hue-rotate(205deg) brightness(109%) contrast(101%);
+    --primary-color-darker: #182c47;
+}
+
+/* ================= GENERAL STYLES =================== */
+body,
+html {
+    font-size: calc(8px + 0.5vh + 0.25vw);
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: all 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #1c70a8;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3.1rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ================== CLASS STYLES ================== */
+
+.navbar {
+    display: inline-flex;
+    position: fixed;
+    z-index: 999;
+    background-color: var(--background-nav-color);
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    transition: all 0.3s;
+}
+
+.navbar a {
+    color: var(--text-nav-color);
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 1.1em;
+}
+.navbar a:hover {
+    transform: scale(1.2);
+}
+
+.home-link {
+    padding-left: 8vw;
+    width: 47%;
+}
+
+.hidden-link {
+    padding-right: 4vw;
+    text-align: center;
+}
+
+.dark-mode-icon,
+.menu-icon {
+    transition: 0.3s;
+    cursor: pointer;
+    max-height: 3vh;
+    filter: var(--primary-color-svg);
+}
+
+.menu-icon {
+    display: none;
+}
+
+.dark-mode-icon:hover {
+    transform: scale(1.2);
+}
+
+.nav-on-scroll {
+    border-bottom: 1px solid gainsboro;
+}
+
+#presentation {
+    width: 100%;
+    max-height: 90vh;
+    margin-top: 10vh;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#presentation .split {
+    width: 50%;
+    height: 100%;
+}
+
+#presentation .split img {
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+.btn {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 35px;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.12);
+    background-color: var(--primary-color-darker);
+}
+
+.hire {
+    display: inline-flex;
+    align-items: left;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 12vh;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+#about-me .text {
+    padding-left: 5vw;
+}
+
+#about-me .profile-img {
+    max-height: 50vh;
+    border-radius: 25px;
+}
+
+#about-me .svg {
+    max-height: 5vh;
+    margin-right: 1vw;
+    filter: var(--primary-color-svg);
+}
+
+.about-me-container {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.about-me-img {
+    width: auto;
+}
+
+.about-me-text {
+    padding-left: 5vw;
+    text-align: justify;
+}
+
+.about-me-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 1.2vh;
+}
+
+.cv-button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.download-cv img {
+    max-height: 2vh;
+    padding-right: 2vw;
+}
+
+/*----------- QUALIFICATION -----------
+---------------------------------------
+---------------------------------------
+*/
+.qualification-tabs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid var(--primary-color);
+}
+
+.qualification-button {
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1.2vh 0;
+    border-radius: 14px;
+    transition: all 0.3s;
+}
+
+.qualification-button img {
+    margin-right: 1vw;
+    vertical-align: middle;
+    filter: var(--qual-svg);
+    max-width: 2em;
+}
+
+.qualification-data {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    text-align: justify;
+}
+
+.qualification-data a {
+    text-decoration: underline;
+}
+.qualification-data p {
+    margin-top: 1vh;
+}
+
+.qualification-header {
+    margin-bottom: 1vh;
+}
+
+.qualification-calendar {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.qualification-calendar img {
+    margin-right: 1vw;
+    filter: var(--qual-svg);
+}
+
+.rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translate(6px, -7px);
+}
+
+.qualification-content {
+    display: none;
+}
+
+.qualification-active {
+    display: block !important;
+}
+
+.qualification-tabs .qualification-active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.qualification-tabs .qualification-active img {
+    filter: var(--qual-active-svg);
+}
+
+/*-------------- CONTACT --------------
+---------------------------------------
+---------------------------------------
+*/
+
+.contact-info {
+    width: 25%;
+    display: inline-flex;
+    margin-bottom: 1vh;
+    align-items: center;
+}
+
+.contact-info img {
+    max-height: 6vh;
+    margin-right: 10px;
+    filter: var(--primary-color-svg);
+}
+
+.contact-info a {
+    transition: all 0.3;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.mail-form input,
+.mail-form textarea {
+    width: 96%;
+    margin-bottom: 1rem;
+    padding: 15px 2%;
+    border: 1px solid gainsboro;
+    background-color: var(--background-nav-color);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.mail-form input:focus,
+.mail-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+footer {
+    margin-top: 10vh;
+    padding: 3vh 4vw;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.scrollup {
+    max-height: 1.8rem;
+    max-width: 1.8rem;
+    cursor: pointer;
+    position: fixed;
+    right: 1rem;
+    bottom: 3rem;
+    background-color: var(--primary-color);
+    opacity: 0.85;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+    z-index: 10;
+}
+
+.scrollup:hover {
+    background-color: var(--primary-color-darker);
+}
+
+@media (max-width: 1199px) {
+    .home-link {
+        width: 40%;
+    }
+
+    .contact-info {
+        width: 50%;
+    }
+}
+
+@media (max-width: 999px) {
+    .home-link {
+        width: 35%;
+    }
+}
+
+@media (max-width: 768px) {
+    #presentation .split {
+        width: 100%;
+        text-align: center;
+    }
+
+    #presentation .split img {
+        max-width: 100%;
+        max-height: 50vh;
+    }
+
+    #presentation .split:first-of-type {
+        margin-top: 3vh;
+    }
+
+    .hire {
+        align-items: center;
+    }
+
+    .hidden-link {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 5vw;
+    }
+
+    .home-link {
+        width: 65%;
+    }
+
+    #about-me .profile-img {
+        max-height: 30vh;
+        margin-bottom: 5vh;
+    }
+
+    .about-me-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about-me-icons {
+        justify-content: center;
+    }
+
+    .cv-button-container {
+        justify-content: center;
+    }
+
+    .download-cv {
+        width: 70%;
+        justify-content: center;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+}
