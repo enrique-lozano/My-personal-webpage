@@ -328,6 +328,51 @@ h6 {
     filter: var(--qual-active-svg);
 }
 
+/*-------------- SKILLS --------------
+---------------------------------------
+---------------------------------------
+*/
+
+.accordion {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+}
+
+.active,
+.accordion:hover {
+    background-color: var(--primary-color-darker);
+}
+
+.panel {
+    padding: 20px 18px;
+    background-color: var(--background-color);
+    overflow: hidden;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.skill {
+    border: 1px solid gainsboro;
+    color: var(--text-color);
+    margin-right: 1vw;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-bottom: 2vh;
+}
+
+.skill:hover {
+    color: white;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
 /*-------------- CONTACT --------------
 ---------------------------------------
 ---------------------------------------
