@@ -22,12 +22,18 @@ function detectColorScheme() {
 }
 detectColorScheme();
 
-//Google translator
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
-}
-
 $(document).ready(function () {
+    $("#send-mail").click(function () {
+        var link =
+            "mailto:kikelozano8@gmail.com" +
+            "&subject=" +
+            encodeURIComponent(document.getElementById("subject").value) +
+            "&body=" +
+            encodeURIComponent(document.getElementById("body").value);
+
+        window.location.href = link;
+    });
+
     // SCROLL UP BUTTON
     $("#scroll-up").click(function () {
         window.scrollTo(0, 0);
