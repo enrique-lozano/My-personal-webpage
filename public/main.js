@@ -26,7 +26,7 @@ $(document).ready(function () {
     $("#send-mail").click(function () {
         var link =
             "mailto:kikelozano8@gmail.com" +
-            "&subject=" +
+            "?subject=" +
             encodeURIComponent(document.getElementById("subject").value) +
             "&body=" +
             encodeURIComponent(document.getElementById("body").value);
