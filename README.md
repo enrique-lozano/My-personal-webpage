@@ -1,4 +1,4 @@
-# My personal webapage 💥💯
+# My personal webapage 💥🚀
 
 Personal page that I use to make myself known to the world. Developed in pure HTML + JS + CSS. The hosting is done thanks to Firebase.
 
