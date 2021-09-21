@@ -428,7 +428,7 @@ footer {
     max-width: 1.8rem;
     cursor: pointer;
     position: fixed;
-    right: 1rem;
+    right: 2rem;
     bottom: 3rem;
     background-color: var(--primary-color);
     opacity: 0.85;

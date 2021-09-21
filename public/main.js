@@ -1,23 +1,16 @@
-//determines if the user has a set theme
+// Determines if the user has a set theme
 function detectColorScheme() {
-    var theme = "light"; //default to light
-
     //local storage is used to override OS theme settings
-    if (localStorage.getItem("theme")) {
-        if (localStorage.getItem("theme") == "dark") {
-            var theme = "dark";
-        }
-    } else if (!window.matchMedia) {
-        return false; // matchMedia method not supported
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        //OS theme setting detected as dark
-        var theme = "dark";
-        localStorage.setItem("theme", "dark");
-    }
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "light"); // Default to light
 
-    //dark theme preferred, set document with a `data-theme` attribute
-    if (theme == "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
+        if (!window.matchMedia) {
+            // matchMedia method not supported
+            return false;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            // OS theme setting detected as dark
+            localStorage.setItem("theme", "dark");
+        }
     }
 }
 detectColorScheme();
@@ -26,7 +19,7 @@ $(document).ready(function () {
     $("#send-mail").click(function () {
         var link =
             "mailto:kikelozano8@gmail.com" +
-            "&subject=" +
+            "?subject=" +
             encodeURIComponent(document.getElementById("subject").value) +
             "&body=" +
             encodeURIComponent(document.getElementById("body").value);
@@ -67,6 +60,13 @@ $(document).ready(function () {
     });
 
     // DARK MODE
+    if (localStorage.getItem("theme") == "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        $(".dark-mode-icon").attr("src", "icons/sun.svg");
+    } else if (localStorage.getItem("theme") == "dark") {
+        document.documentElement.setAttribute("data-theme", "light");
+        $(".dark-mode-icon").attr("src", "icons/moon.svg");
+    }
     $(".dark-mode-icon").click(function () {
         if (localStorage.getItem("theme") == "dark") {
             localStorage.setItem("theme", "light");
