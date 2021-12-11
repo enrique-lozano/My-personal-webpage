@@ -178,7 +178,7 @@ const messages = {
 			},
 		},
 		skills: {
-			title: 'Conocimientos y herramientoas',
+			title: 'Conocimientos y herramientas',
 			subtitle: 'Todas las herramientas que sé manejar, haz clic en cada una de las burbujas para conocer más sobre ellas',
 		},
 		contact: {
