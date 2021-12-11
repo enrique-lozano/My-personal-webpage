@@ -40,7 +40,7 @@ export default class DarkModeToggle extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$toggleWidth: 1.8rem;
+$toggleWidth: 2.2rem;
 $padding: 0px;
 $border-radius: 0.75rem;
 
@@ -63,7 +63,7 @@ $border-radius: 0.75rem;
 	#background-of-selected,
 	label {
 		width: $toggleWidth;
-		height: 40px;
+		height: 42px;
 		text-align: center;
 		display: inline-flex;
 		z-index: 2;

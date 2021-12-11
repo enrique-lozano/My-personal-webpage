@@ -19,6 +19,10 @@
 				<div @click="goto('Projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
 				<div @click="goto('Qualification')" class="w-full py-4 border-b border-gray-300">{{ $t('qualification.title') }}</div>
 				<div @click="goto('Contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
+				<div class="flex text-center absolute bottom-12 right-12 left-12">
+					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
+					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
+				</div>
 			</div>
 			<label title="Menu" for="__menu" class="hamburger"><div class="hamburger-icon"></div></label>
 		</div>
@@ -130,6 +134,10 @@ export default class Home extends Vue {
 	changeLang(event: any) {
 		this.$i18n.locale = event.target.value;
 	}
+
+	changeLangInMenu(lang: string) {
+		this.$i18n.locale = lang;
+	}
 }
 </script>
 
@@ -151,6 +159,9 @@ nav {
 		margin-bottom: 4px;
 		color: var(--primary);
 		cursor: pointer;
+		@media (max-width: 800px) {
+			display: none;
+		}
 	}
 }
 
