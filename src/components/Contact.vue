@@ -50,7 +50,7 @@ export default class AboutMe extends Vue {
 .contact-link {
 	display: flex;
 	align-items: center;
-	margin: 8px 0;
+	margin: 12px 0;
 
 	img {
 		max-width: 1.8rem;
