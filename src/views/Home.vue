@@ -17,7 +17,9 @@
 			<input id="__menu" type="checkbox" />
 			<div class="mobile-menu flex flex-col flex-wrap p-12">
 				<div @click="goto('Projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
-				<div @click="goto('Qualification')" class="w-full py-4 border-b border-gray-300">{{ $t('qualification.title') }}</div>
+				<div @click="goto('Qualification')" class="w-full py-4 border-b border-gray-300">
+					{{ $t('qualification.title') }}
+				</div>
 				<div @click="goto('Contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
 				<div class="flex text-center absolute bottom-12 right-12 left-12">
 					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
