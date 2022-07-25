@@ -26,7 +26,9 @@
 					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
 				</div>
 			</div>
-			<label title="Menu" for="__menu" class="hamburger"><div class="hamburger-icon"></div></label>
+			<label title="Menu" for="__menu" class="hamburger">
+				<div class="hamburger-icon"></div>
+			</label>
 		</div>
 	</nav>
 
@@ -98,7 +100,7 @@ import { useI18n } from 'vue-i18n';
 	methods: {
 		goto(refName: string) {
 			// Close the menu in case we have it open (in mobile)
-			const menuButton = document.getElementById('__menu') as any;
+			const menuButton = document.getElementById('__menu') as HTMLInputElement;
 			menuButton.checked = false;
 
 			// ---- Go to ref ----
@@ -233,6 +235,10 @@ nav {
 		width: 100%;
 		left: 0;
 	}
+}
+
+#__menu {
+	display: none;
 }
 
 .hamburger {
