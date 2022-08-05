@@ -48,7 +48,9 @@
 				<template v-for="(n, i) in 2" :key="i">
 					<div>
 						<h4 class="qualification-header">{{ $t('qualification.education.' + i + '.site') }}</h4>
-						<a :href="$t('qualification.education.' + i + '.web')" target="_blank">{{ $t('qualification.education.' + i + '.webPlaceholder') }}</a>
+						<a :href="$t('qualification.education.' + i + '.web')" target="_blank">{{
+							$t('qualification.education.' + i + '.webPlaceholder')
+						}}</a>
 						<div class="qualification-calendar">
 							<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
 							{{ $t('qualification.education.' + i + '.years') }}
@@ -148,6 +150,10 @@ $border-radius: 0.5rem;
 	}
 }
 
+.dark .qualification-calendar img {
+	filter: brightness(0) invert(1);
+}
+
 .qualification-data {
 	display: grid;
 	grid-template-columns: 1fr max-content 1fr;
@@ -165,6 +171,7 @@ $border-radius: 0.5rem;
 	.qualification-calendar {
 		display: flex;
 		align-items: center;
+		margin-top: 6px;
 
 		img {
 			margin-right: 5px;
