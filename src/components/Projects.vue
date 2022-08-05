@@ -5,15 +5,22 @@
 	</div>
 
 	<swiper :breakpoints="swiperOptions.breakpoints" :spaceBetween="swiperOptions.spaceBetween" @swiper="onSwiper">
-		<swiper-slide v-for="i in [0, 1]" :key="i">
-			<figure class="md:flex shadow-lg rounded-xl p-8 md:p-0">
-				<img class="m-auto rounded-xl md:rounded-none md:rounded-l-xl w-auto" style="max-height: 40vh" :src="require('@/assets/images/' + $t('projects.projects.' + i + '.title') + '.png')" alt="" width="384" height="512" />
+		<swiper-slide v-for="i in [0, 1]" :key="i" style="align-self: stretch; height: auto">
+			<figure class="md:flex border rounded-xl p-8 md:p-0 h-full" style="border-color: rgba(0, 0, 0, 0.2)">
+				<img
+					class="m-auto rounded-xl md:rounded-none md:rounded-l-xl w-auto"
+					style="max-height: 40vh"
+					:src="require('@/assets/images/' + $t('projects.projects.' + i + '.title') + '.png')"
+					alt=""
+					width="384"
+					height="512"
+				/>
 				<div class="pt-6 md:p-8 md:text-left">
 					<h3 class="mb-1">{{ $t('projects.projects.' + i + '.title') }}</h3>
 					<p class="mb-2 text-justify">{{ $t('projects.projects.' + i + '.description') }}</p>
 					<div class="flex">
 						<a :href="$t('projects.projects.' + i + '.link')" target="_blank" class="font-medium">
-							{{ $t('projects.projects.knowMore') }}
+							{{ $t('projects.projects.knowMore') }} ➔
 						</a>
 					</div>
 				</div>

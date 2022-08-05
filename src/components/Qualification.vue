@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<swiper :slides-per-view="1" :allowTouchMove="false" @swiper="onSwiper">
+	<swiper :autoHeight="true" :slides-per-view="1" :allowTouchMove="false" @swiper="onSwiper">
 		<swiper-slide>
 			<!---------- JOBS ----------->
 
