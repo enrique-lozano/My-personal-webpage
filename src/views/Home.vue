@@ -1,7 +1,7 @@
 <template>
 	<nav class="z-10 flex items-center justify-between fixed w-full bg-light top-0 h-20 padding-x">
 		<div>
-			<img class="logo py-5" @click="goto('home')" src="./../assets/images/personalLogo.png" />
+			<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
 		</div>
 		<div class="flex items-center">
 			<select name="lang" id="lang" @change="changeLang($event)" v-model="$i18n.locale">
@@ -148,13 +148,20 @@ export default class Home extends Vue {
 <style scoped lang="scss">
 $navHeight: 5rem;
 
+.dark nav img.logo {
+	background-color: var(--black);
+	filter: brightness(0.95);
+}
+
 nav {
 	height: $navHeight;
 	font-size: 1.1rem;
 	z-index: 3;
 
 	img.logo {
-		height: $navHeight;
+		height: calc(0.6 * $navHeight);
+		padding: 6px;
+		border-radius: 0.325rem;
 	}
 
 	select {

@@ -47,6 +47,10 @@ export default class AboutMe extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.dark .contact-link img {
+	filter: brightness(0) invert(1);
+}
+
 .contact-link {
 	display: flex;
 	align-items: center;
