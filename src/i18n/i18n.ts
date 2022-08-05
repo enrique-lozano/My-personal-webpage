@@ -26,12 +26,14 @@ const messages = {
 				knowMore: 'Saber mas',
 				0: {
 					title: 'Monekin',
-					description: 'An application whose objective is to help control our expenses and improve the individual economy of each person. Safe, beautiful, cloud-based and with dozens of stats and possibilities.',
+					description:
+						'An application whose objective is to help control our expenses and improve the individual economy of each person. Safe, beautiful, cloud-based and with dozens of stats and possibilities.',
 					link: 'https://play.google.com/store/apps/details?id=com.monekin.app',
 				},
 				1: {
 					title: 'SnackScan',
-					description: 'A free, ad-free tool that makes it easy to scan food products. With SnackScan you can analyze more than 1 million products, thanks to an open and free database, managed by all and created by Open Food Facts.',
+					description:
+						'A free, ad-free tool that makes it easy to scan food products. With SnackScan you can analyze more than 1 million products, thanks to an open and free database, managed by all and created by Open Food Facts.',
 					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app',
 				},
 			},
@@ -68,7 +70,8 @@ const messages = {
 					web: 'https://www.uc3m.es/inicio',
 					webPlaceholder: 'Go to site',
 					years: '2017-2021',
-					description: 'Throughout this study plan I acquired knowledge in the most diverse fields of computer science: software development, artificial intelligence, databases, user interfaces, neural networks, algebra, heuristics, cybersecurity, machine language ...',
+					description:
+						'Throughout this study plan I acquired knowledge in the most diverse fields of computer science: software development, artificial intelligence, databases, user interfaces, neural networks, algebra, heuristics, cybersecurity, machine language ...',
 				},
 				1: {
 					title: 'Computer science',
@@ -76,7 +79,8 @@ const messages = {
 					web: 'https://www.pw.edu.pl/',
 					webPlaceholder: 'Go to site',
 					years: '2019-2020',
-					description: 'In the months of my Erasmus I learned to fend for myself in a country very different from mine. I also acquired knowledge through an educational environment other than Spanish, more oriented to practice.',
+					description:
+						'In the months of my Erasmus I learned to fend for myself in a country very different from mine. I also acquired knowledge through an educational environment other than Spanish, more oriented to practice.',
 				},
 			},
 		},
@@ -122,12 +126,14 @@ const messages = {
 				knowMore: 'Saber mas',
 				0: {
 					title: 'Monekin',
-					description: 'Una aplicación cuyo objetivo es ayudar a controlar nuestros gastos y mejorar la economía individual de cada persona. Seguro, hermoso, basado en la nube y con docenas de estadísticas y posibilidades.',
+					description:
+						'Una aplicación cuyo objetivo es ayudar a controlar nuestros gastos y mejorar la economía individual de cada persona. Seguro, hermoso, basado en la nube y con docenas de estadísticas y posibilidades.',
 					link: 'https://play.google.com/store/apps/details?id=com.monekin.app',
 				},
 				1: {
 					title: 'SnackScan',
-					description: 'Una herramienta gratuita y sin publicidad que facilita el escaneo de productos alimenticios. Con SnackScan puedes analizar más de 1 millón de productos, gracias a una base de datos abierta y gratuita, gestionada por todos y creada por Open Food Facts.',
+					description:
+						'Una herramienta gratuita y sin publicidad que facilita el escaneo de productos alimenticios. Con SnackScan puedes analizar más de 1 millón de productos, gracias a una base de datos abierta y gratuita, gestionada por todos y creada por Open Food Facts.',
 					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app',
 				},
 			},
@@ -173,7 +179,8 @@ const messages = {
 					web: 'https://www.pw.edu.pl/',
 					webPlaceholder: 'Ir al sitio',
 					years: '2019-2020',
-					description: 'En los meses de mi Erasmus aprendí a valerme por mí mismo en un país muy diferente al mío. También adquirí conocimientos a través de un entorno educativo diferente al español, más orientado a la práctica.',
+					description:
+						'En los meses de mi Erasmus aprendí a valerme por mí mismo en un país muy diferente al mío. También adquirí conocimientos a través de un entorno educativo diferente al español, más orientado a la práctica.',
 				},
 			},
 		},
@@ -194,9 +201,14 @@ const messages = {
 		},
 	},
 };
+
+const avalaibleLocales = ['es', 'en'];
+const fallbackLocale = 'en';
+const initialLang = avalaibleLocales.find((x) => x == navigator.language.split('-')[0]) ?? fallbackLocale;
+
 const i18n = createI18n({
-	locale: navigator.language,
-	fallbackLocale: 'en',
+	locale: initialLang,
+	fallbackLocale: fallbackLocale,
 	messages,
 });
 export default i18n;
