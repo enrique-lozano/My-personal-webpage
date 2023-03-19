@@ -1,80 +1,94 @@
 <template>
-	<nav class="z-10 flex items-center justify-between fixed w-full bg-light top-0 h-20 padding-x">
-		<div>
-			<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
-		</div>
-		<div class="flex items-center">
-			<select name="lang" id="lang" v-model="$i18n.locale">
-				<option value="es">ES</option>
-				<option value="en">EN</option>
-			</select>
-			<div class="right-links">
-				<span @click="goto('projects')">{{ $t('projects.title') }}</span>
-				<span @click="goto('qualification')">{{ $t('qualification.title') }}</span>
-				<span @click="goto('contact')">{{ $t('contact.title') }}</span>
-			</div>
-			<DarkModeToggle class="md:ml-8" />
-			<input id="__menu" type="checkbox" />
-			<div class="mobile-menu flex flex-col flex-wrap p-12">
-				<div @click="goto('projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
-				<div @click="goto('qualification')" class="w-full py-4 border-b border-gray-300">
-					{{ $t('qualification.title') }}
+	<nav class="bg-light z-10 fixed top-0">
+		<div class="padding-x w-full">
+			<div class="flex items-center justify-between w-full">
+				<div>
+					<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
 				</div>
-				<div @click="goto('contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
-				<div class="flex text-center absolute bottom-12 right-12 left-12">
-					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
-					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
+				<div class="flex items-center">
+					<select name="lang" id="lang" v-model="$i18n.locale">
+						<option value="es">ES</option>
+						<option value="en">EN</option>
+					</select>
+					<div class="right-links">
+						<span @click="goto('projects')">{{ $t('projects.title') }}</span>
+						<span @click="goto('qualification')">{{ $t('qualification.title') }}</span>
+						<span @click="goto('contact')">{{ $t('contact.title') }}</span>
+					</div>
+					<DarkModeToggle class="md:ml-8" />
+					<input id="__menu" type="checkbox" />
+					<div class="mobile-menu flex flex-col flex-wrap p-12">
+						<div @click="goto('projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
+						<div @click="goto('qualification')" class="w-full py-4 border-b border-gray-300">
+							{{ $t('qualification.title') }}
+						</div>
+						<div @click="goto('contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
+						<div class="flex text-center absolute bottom-12 right-12 left-12">
+							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
+							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
+						</div>
+					</div>
+					<label title="Menu" for="__menu" class="hamburger">
+						<div class="hamburger-icon"></div>
+					</label>
 				</div>
 			</div>
-			<label title="Menu" for="__menu" class="hamburger">
-				<div class="hamburger-icon"></div>
-			</label>
 		</div>
 	</nav>
 
-	<div ref="home" class="home bg-light relative padding-x">
-		<img class="" src="../assets/images/person-removebg.png" alt="" />
+	<div ref="home" class="bg-light relative">
+		<div class="padding-x home">
+			<img class="" src="../assets/images/person-removebg.png" alt="" />
 
-		<div class="text-justify">
-			<div class="my-8 titles">
-				<span>{{ $t('home.line1') }}</span>
-				<h1 class="my-2">Enrique Lozano</h1>
-				<h4>
-					{{ $t('typedMessages.before') }}
-					<span class="typing" style="text-decoration: underline"></span>
-				</h4>
-			</div>
+			<div class="text-justify">
+				<div class="my-8 titles">
+					<span>{{ $t('home.line1') }}</span>
+					<h1 class="my-2">Enrique Lozano</h1>
+					<h4>
+						{{ $t('typedMessages.before') }}
+						<span class="typing" style="text-decoration: underline"></span>
+					</h4>
+				</div>
 
-			<p class="my-2">{{ $t('aboutMe.p1') }}</p>
-			<p>{{ $t('aboutMe.p2') }}</p>
+				<p class="my-2">{{ $t('aboutMe.p1') }}</p>
+				<p>{{ $t('aboutMe.p2') }}</p>
 
-			<div class="my-8 action-buttons">
-				<button @click="goto('projects')" class="flat-button" style="width: fit-content">
-					{{ $t('home.button1') }}
-				</button>
-				<a :href="getImageUrl(`/docs/CV1_EN.pdf`)" target="_blank" download="CV_Enrique_Lozano">
-					<button class="stroked-button" style="width: fit-content">
-						{{ $t('home.button2') }}
+				<div class="my-8 action-buttons">
+					<button @click="goto('projects')" class="flat-button" style="width: fit-content">
+						{{ $t('home.button1') }}
 					</button>
-				</a>
+					<a :href="getImageUrl(`/docs/CV1_EN.pdf`)" target="_blank" download="CV_Enrique_Lozano">
+						<button class="stroked-button" style="width: fit-content">
+							{{ $t('home.button2') }}
+						</button>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div ref="projects" class="py-12 padding-x bg-white">
-		<Projects />
+	<div ref="projects" class="py-12 bg-white">
+		<div class="padding-x">
+			<Projects />
+		</div>
 	</div>
 
-	<div ref="qualification" class="py-12 padding-x bg-light">
-		<Qualification />
+	<div ref="qualification" class="py-12 bg-light">
+		<div class="padding-x">
+			<Qualification />
+		</div>
 	</div>
 
-	<div ref="skills" class="py-12 padding-x bg-white">
-		<Skills />
+	<div ref="skills" class="py-12 bg-white">
+		<div class="padding-x">
+			<Skills />
+		</div>
 	</div>
 
-	<div ref="contact" class="py-12 padding-x bg-light">
-		<Contact />
+	<div ref="contact" class="py-12 bg-light">
+		<div class="padding-x">
+			<Contact />
+		</div>
 	</div>
 </template>
 
@@ -164,7 +178,10 @@ $navHeight: 5rem;
 nav {
 	height: $navHeight;
 	font-size: 1.1rem;
+	width: 100%;
 	z-index: 3;
+	display: flex;
+	align-items: center;
 
 	img.logo {
 		height: calc(0.6 * $navHeight);
