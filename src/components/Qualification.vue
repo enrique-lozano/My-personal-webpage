@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<swiper :autoHeight="true" :slides-per-view="1" :allowTouchMove="false" @swiper="onSwiper">
+	<swiper id="qualification-swiper" :autoHeight="true" :slides-per-view="1" :allowTouchMove="false" @swiper="onSwiper">
 		<swiper-slide>
 			<!---------- JOBS ----------->
 
@@ -72,32 +72,23 @@
 	</swiper>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
+import { Swiper as ISwiper } from 'swiper/types';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.min.css';
+import { ref } from 'vue';
 
-// swiper core styles
-import 'swiper/swiper.min.css';
-@Options({
-	components: {
-		Swiper,
-		SwiperSlide,
-	},
-})
-export default class AboutMe extends Vue {
-	swiper: any;
-	onSwiper(swiper: any) {
-		this.swiper = swiper;
-	}
+const swiperRef = ref<undefined | ISwiper>(undefined);
 
-	slidePrev() {
-		this.swiper.slideTo(0);
-	}
+function onSwiper(el: ISwiper) {
+	swiperRef.value = el;
+}
 
-	slideNext() {
-		this.swiper.slideTo(1);
-	}
+function slidePrev() {
+	swiperRef.value?.slideTo(0);
+}
+
+function slideNext() {
+	swiperRef.value?.slideTo(1);
 }
 </script>
 
@@ -113,7 +104,7 @@ $border-radius: 0.5rem;
 	padding: $padding;
 	border-radius: $border-radius;
 	z-index: 0;
-	background-color: var(--light);
+	background-color: var(--white);
 
 	input {
 		display: none;
@@ -133,7 +124,7 @@ $border-radius: 0.5rem;
 	}
 
 	#background-of-selected {
-		background-color: var(--white);
+		background-color: var(--light);
 		position: absolute;
 		left: $padding;
 		top: $padding;
