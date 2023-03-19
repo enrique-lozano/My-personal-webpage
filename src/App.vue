@@ -39,7 +39,8 @@
 }
 
 .padding-x {
-	@apply px-4 md:px-6 lg:px-10 xl:px-16 2xl:px-40;
+	max-width: 1280px;
+	margin: auto;
 }
 
 h1 {
