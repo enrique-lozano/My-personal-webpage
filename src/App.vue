@@ -44,24 +44,39 @@
 	padding: 0 2rem;
 }
 
+section header {
+	margin-bottom: 2rem;
+
+	h2 {
+		margin-bottom: 8px;
+	}
+
+	span {
+		font-weight: 300;
+	}
+}
+
 h1 {
-	@apply text-5xl;
-	font-family: 'Nunito', sans-serif;
+	@apply text-5xl font-semibold;
 }
 
 h2 {
 	@apply text-4xl;
 }
+
 h3 {
-	@apply text-xl font-semibold;
+	@apply text-2xl font-semibold;
 }
+
 h4 {
 	@apply text-lg font-medium;
 }
 
 input,
 textarea {
-	@apply p-2.5 border bg-light border-gray-300 rounded-lg shadow-sm w-full;
+	@apply p-2.5 rounded-lg shadow-sm w-full;
+
+	border: 1px solid var(--light);
 }
 
 button {

@@ -1,8 +1,8 @@
 <template>
-	<div class="text-center mb-8">
+	<header class="text-center mb-8">
 		<h2>{{ $t('contact.title') }}</h2>
 		<span>{{ $t('contact.subtitle') }}</span>
-	</div>
+	</header>
 
 	<div class="flex flex-wrap">
 		<div class="w-full md:w-1/2 md:pr-8 lg:pr-12">

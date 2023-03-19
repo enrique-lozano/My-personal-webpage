@@ -36,7 +36,7 @@
 		</div>
 	</nav>
 
-	<div ref="home" class="bg-light relative">
+	<section ref="home" class="bg-light relative">
 		<div class="padding-x home">
 			<img class="" src="../assets/images/person-removebg.png" alt="" />
 
@@ -53,7 +53,7 @@
 				<p class="my-2">{{ $t('aboutMe.p1') }}</p>
 				<p>{{ $t('aboutMe.p2') }}</p>
 
-				<div class="my-8 action-buttons">
+				<div class="action-buttons">
 					<button @click="goto('projects')" class="flat-button" style="width: fit-content">
 						{{ $t('home.button1') }}
 					</button>
@@ -65,31 +65,31 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div ref="projects" class="py-12 bg-white">
+	<section ref="projects" class="py-20 bg-white">
 		<div class="padding-x">
 			<Projects />
 		</div>
-	</div>
+	</section>
 
-	<div ref="qualification" class="py-12 bg-light">
+	<section ref="qualification" class="py-20 bg-light">
 		<div class="padding-x">
 			<Qualification />
 		</div>
-	</div>
+	</section>
 
-	<div ref="skills" class="py-12 bg-white">
+	<section ref="skills" class="py-20 bg-white">
 		<div class="padding-x">
 			<Skills />
 		</div>
-	</div>
+	</section>
 
-	<div ref="contact" class="py-12 bg-light">
+	<section ref="contact" class="py-20 bg-light">
 		<div class="padding-x">
 			<Contact />
 		</div>
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup>
@@ -326,7 +326,7 @@ nav {
 }
 
 .home {
-	padding-top: calc($navHeight + 2rem);
+	padding-top: calc($navHeight + 4rem);
 	display: flex;
 
 	img {
@@ -339,6 +339,9 @@ nav {
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		margin-bottom: 5rem;
+		margin-top: 2rem;
 	}
 
 	@media (max-width: 1024px) {
