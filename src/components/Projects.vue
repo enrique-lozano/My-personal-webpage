@@ -6,16 +6,16 @@
 
 	<swiper :breakpoints="swiperOptions.breakpoints" :spaceBetween="swiperOptions.spaceBetween" @swiper="onSwiper">
 		<swiper-slide v-for="i in [0, 1]" :key="i" style="align-self: stretch; height: auto">
-			<figure class="md:flex border rounded-xl p-8 md:p-0 h-full" style="border-color: rgba(0, 0, 0, 0.2)">
+			<div class="border rounded-xl p-4 h-full" style="border-color: rgba(0, 0, 0, 0.2)">
 				<img
-					class="m-auto rounded-xl md:rounded-none md:rounded-l-xl w-auto"
-					style="max-height: 40vh"
+					class="m-auto rounded-xl w-auto"
+					style="max-width: min(100%, 275px)"
 					:src="getImageUrl('images/' + $t('projects.projects.' + i + '.title') + '.png')"
 					alt=""
 					width="384"
 					height="512"
 				/>
-				<div class="pt-6 md:p-8 md:text-left">
+				<div class="pt-6 p-4 md:text-left">
 					<h3 class="mb-1">{{ $t('projects.projects.' + i + '.title') }}</h3>
 					<p class="mb-2 text-justify">{{ $t('projects.projects.' + i + '.description') }}</p>
 					<div class="flex">
@@ -24,7 +24,7 @@
 						</a>
 					</div>
 				</div>
-			</figure>
+			</div>
 		</swiper-slide>
 	</swiper>
 </template>

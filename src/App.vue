@@ -41,6 +41,7 @@
 .padding-x {
 	max-width: 1280px;
 	margin: auto;
+	padding: 0 2rem;
 }
 
 h1 {
