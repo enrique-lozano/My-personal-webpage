@@ -94,7 +94,7 @@ function slideNext() {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$toggleWidth: 35vw;
+$toggleWidth: min(35vw, 250px);
 $padding: 6px;
 $border-radius: 0.5rem;
 
@@ -129,7 +129,7 @@ $border-radius: 0.5rem;
 		left: $padding;
 		top: $padding;
 		z-index: -1;
-		transition: transform 0.5s ease-in-out;
+		transition: transform 0.25s ease-in-out;
 	}
 
 	#rad1:checked ~ #background-of-selected {
