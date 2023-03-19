@@ -1,12 +1,12 @@
 <template>
-	<div class="text-center mb-8">
+	<header class="text-center mb-8">
 		<h2>{{ $t('skills.title') }}</h2>
 		<span>{{ $t('skills.subtitle') }}</span>
-	</div>
+	</header>
 
 	<div class="flex flex-wrap justify-center">
 		<a :href="skill.link" target="_blank" v-for="skill in skills" :key="skill.name">
-			<div class="bubble rounded-lg border shadow-lg">
+			<div class="bubble rounded-lg shadow-lg">
 				<img class="" :src="skill.icon" alt="" />
 				<span>{{ skill.name }}</span>
 			</div></a
@@ -133,6 +133,7 @@ const skills = [
 	padding: 0.45rem 0.75rem;
 	transition: all 0.3s;
 	cursor: pointer;
+	border: 1px solid var(--light);
 
 	img {
 		max-height: 2rem;

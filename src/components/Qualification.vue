@@ -1,10 +1,10 @@
 <template>
-	<div class="text-center">
+	<header class="text-center">
 		<h2>{{ $t('qualification.title') }}</h2>
 		<span>{{ $t('qualification.subtitle') }}</span>
-	</div>
+	</header>
 
-	<div class="text-center my-8">
+	<div class="text-center mb-8">
 		<div id="radios">
 			<input id="rad1" type="radio" name="radioBtn" checked />
 			<label for="rad1" @click="slidePrev()">{{ $t('qualification.jobs.title') }}</label>
@@ -19,54 +19,52 @@
 			<!---------- JOBS ----------->
 
 			<div class="qualification-data">
-				<template v-for="(n, i) in 2" :key="i">
-					<div>
-						<h4 class="qualification-header">{{ $t('qualification.jobs.' + i + '.site') }}</h4>
-						<a :href="$t('qualification.jobs.' + i + '.web')" target="_blank">{{ $t('qualification.jobs.' + i + '.webPlaceholder') }}</a>
-						<div class="qualification-calendar">
-							<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
-							{{ $t('qualification.jobs.' + i + '.years') }}
+				<div class="outer">
+					<template v-for="(n, i) in 2" :key="i">
+						<div class="card">
+							<div class="info">
+								<h3 class="title">{{ $t('qualification.jobs.' + i + '.title') }}</h3>
+
+								<h4 class="qualification-header">{{ $t('qualification.jobs.' + i + '.site') }}</h4>
+								<a :href="$t('qualification.jobs.' + i + '.web')" target="_blank">{{
+									$t('qualification.jobs.' + i + '.webPlaceholder')
+								}}</a>
+								<div class="qualification-calendar">
+									<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
+									{{ $t('qualification.jobs.' + i + '.years') }}
+								</div>
+
+								<p>{{ $t('qualification.jobs.' + i + '.description') }}</p>
+							</div>
 						</div>
-					</div>
-
-					<div>
-						<span class="rounder"></span>
-						<span class="line"></span>
-					</div>
-
-					<div>
-						<h4 class="qualification-header">{{ $t('qualification.jobs.' + i + '.title') }}</h4>
-						<p>{{ $t('qualification.jobs.' + i + '.description') }}</p>
-					</div>
-				</template>
+					</template>
+				</div>
 			</div>
 		</swiper-slide>
 		<swiper-slide>
 			<!---------- EDUCATION ----------->
 
 			<div class="qualification-data">
-				<template v-for="(n, i) in 2" :key="i">
-					<div>
-						<h4 class="qualification-header">{{ $t('qualification.education.' + i + '.site') }}</h4>
-						<a :href="$t('qualification.education.' + i + '.web')" target="_blank">{{
-							$t('qualification.education.' + i + '.webPlaceholder')
-						}}</a>
-						<div class="qualification-calendar">
-							<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
-							{{ $t('qualification.education.' + i + '.years') }}
+				<div class="outer">
+					<template v-for="(n, i) in 2" :key="i">
+						<div class="card">
+							<div class="info">
+								<h3 class="title">{{ $t('qualification.education.' + i + '.title') }}</h3>
+
+								<h4 class="qualification-header">{{ $t('qualification.education.' + i + '.site') }}</h4>
+								<a :href="$t('qualification.education.' + i + '.web')" target="_blank">{{
+									$t('qualification.education.' + i + '.webPlaceholder')
+								}}</a>
+								<div class="qualification-calendar">
+									<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
+									{{ $t('qualification.education.' + i + '.years') }}
+								</div>
+
+								<p>{{ $t('qualification.education.' + i + '.description') }}</p>
+							</div>
 						</div>
-					</div>
-
-					<div>
-						<span class="rounder"></span>
-						<span class="line"></span>
-					</div>
-
-					<div>
-						<h4 class="qualification-header">{{ $t('qualification.education.' + i + '.title') }}</h4>
-						<p>{{ $t('qualification.education.' + i + '.description') }}</p>
-					</div>
-				</template>
+					</template>
+				</div>
 			</div>
 		</swiper-slide>
 	</swiper>
@@ -146,13 +144,49 @@ $border-radius: 0.5rem;
 }
 
 .qualification-data {
-	display: grid;
-	grid-template-columns: 1fr max-content 1fr;
-	column-gap: 1.5rem;
-	text-align: justify;
+	/* Outer Layer with the timeline border */
+	.outer {
+		border-left: 4px solid var(--primary);
+		max-width: 95%;
+		margin: auto;
+	}
+
+	/* Card container */
+	.card {
+		position: relative;
+		margin: 0 0 20px 20px;
+		padding: 10px;
+		border-radius: 8px;
+	}
+
+	/* Information about the timeline */
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 0px;
+	}
+
+	/* Title of the card */
+	.title {
+		color: var(--primary);
+		position: relative;
+	}
+
+	/* Timeline dot  */
+	.title::before {
+		content: '';
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		top: 0.25em;
+		background: white;
+		border-radius: 999px;
+		left: -39px;
+		border: 3px solid var(--primary);
+	}
 
 	p {
-		margin-bottom: 22px;
+		margin: 22px 0px;
 	}
 
 	a {
@@ -167,22 +201,6 @@ $border-radius: 0.5rem;
 		img {
 			margin-right: 5px;
 		}
-	}
-
-	.rounder {
-		display: inline-block;
-		width: 13px;
-		height: 13px;
-		@apply bg-primary;
-		border-radius: 50%;
-	}
-
-	.line {
-		display: block;
-		width: 1px;
-		height: 100%;
-		@apply bg-primary;
-		transform: translate(6px, -7px);
 	}
 }
 </style>
