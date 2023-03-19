@@ -10,30 +10,27 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
+import { onMounted } from 'vue';
 
-@Options({
-	mounted: () => {
-		// If dark mode is on at the init of the app, we set the checked button to dark
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.getElementById('dark')?.click();
-		}
-	},
-})
-export default class DarkModeToggle extends Vue {
-	toggleDarkMode(goTo: 'Dark' | 'Light') {
-		// Dark mode currently on
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			if (goTo == 'Dark') return;
-			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
-		} else {
-			//LIght mode currently on
-			if (goTo == 'Light') return;
-			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
-		}
+onMounted(() => {
+	// If dark mode is on at the init of the app, we set the checked button to dark
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.getElementById('dark')?.click();
+	}
+});
+
+function toggleDarkMode(goTo: 'Dark' | 'Light') {
+	// Dark mode currently on
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		if (goTo == 'Dark') return;
+		document.documentElement.classList.remove('dark');
+		localStorage.theme = 'light';
+	} else {
+		//LIght mode currently on
+		if (goTo == 'Light') return;
+		document.documentElement.classList.add('dark');
+		localStorage.theme = 'dark';
 	}
 }
 </script>

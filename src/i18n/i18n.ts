@@ -5,7 +5,7 @@ const messages = {
 		home: {
 			line1: 'Hey there! My name is',
 			button1: 'Know more',
-			button2: 'Download my CV',
+			button2: 'Download my CV'
 		},
 		typedMessages: {
 			before: "I'm a",
@@ -13,12 +13,12 @@ const messages = {
 			1: 'Web developer',
 			2: 'App developer',
 			3: 'Data analyst',
-			4: 'Sofware developer',
+			4: 'Sofware developer'
 		},
 		aboutMe: {
 			title: 'About me',
-			innerTextHtml:
-				'<p class="mb-2">Graduated in Computer Science and Engineering from the Carlos III University of Madrid. I consider an open and sociable person, with a great passion for technology and eager to learn new knowledge and live new experiences.</p><p>I have extensive experience in developing applications, especially with the use of web programming languages and technologies. I also have a certain knowledge base of a multitude of languages and tools, which you can see below.</p>',
+			p1: 'Graduated in Computer Science and Engineering from the Carlos III University of Madrid. I consider an open and sociable person, with a great passion for technology and eager to learn new knowledge and live new experiences.',
+			p2: 'I have extensive experience in developing applications, especially with the use of web programming languages and technologies. I also have a certain knowledge base of a multitude of languages and tools, which you can see below.'
 		},
 		projects: {
 			title: 'My projects',
@@ -29,15 +29,15 @@ const messages = {
 					title: 'Monekin',
 					description:
 						'An application whose objective is to help control our expenses and improve the individual economy of each person. Safe, beautiful, cloud-based and with dozens of stats and possibilities.',
-					link: 'https://play.google.com/store/apps/details?id=com.monekin.app',
+					link: 'https://play.google.com/store/apps/details?id=com.monekin.app'
 				},
 				1: {
 					title: 'SnackScan',
 					description:
 						'A free, ad-free tool that makes it easy to scan food products. With SnackScan you can analyze more than 1 million products, thanks to an open and free database, managed by all and created by Open Food Facts.',
-					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app',
-				},
-			},
+					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app'
+				}
+			}
 		},
 		qualification: {
 			title: 'Qualification',
@@ -51,7 +51,7 @@ const messages = {
 					webPlaceholder: 'Go to site',
 					years: '2021',
 					description:
-						'Maintenance of various services and applications in NodeJS, JavaScript, Express and other web development languages and frameworks. Management of databases such as PostgreSQL. Planning and development of a web application for hiring employees in Laravel. Other support tasks.',
+						'Maintenance of various services and applications in NodeJS, JavaScript, Express and other web development languages and frameworks. Management of databases such as PostgreSQL. Planning and development of a web application for hiring employees in Laravel. Other support tasks.'
 				},
 				1: {
 					title: 'Volunteer',
@@ -59,8 +59,8 @@ const messages = {
 					web: 'https://t3chfest.es/',
 					webPlaceholder: 'Go to site',
 					years: '2019',
-					description: 'Volunteer at T3chfest, the Computer Science and new technology fair at Carlos III University of Madrid',
-				},
+					description: 'Volunteer at T3chfest, the Computer Science and new technology fair at Carlos III University of Madrid'
+				}
 			},
 
 			education: {
@@ -72,7 +72,7 @@ const messages = {
 					webPlaceholder: 'Go to site',
 					years: '2017-2021',
 					description:
-						'Throughout this study plan I acquired knowledge in the most diverse fields of computer science: software development, artificial intelligence, databases, user interfaces, neural networks, algebra, heuristics, cybersecurity, machine language ...',
+						'Throughout this study plan I acquired knowledge in the most diverse fields of computer science: software development, artificial intelligence, databases, user interfaces, neural networks, algebra, heuristics, cybersecurity, machine language ...'
 				},
 				1: {
 					title: 'Computer science',
@@ -81,13 +81,13 @@ const messages = {
 					webPlaceholder: 'Go to site',
 					years: '2019-2020',
 					description:
-						'In the months of my Erasmus I learned to fend for myself in a country very different from mine. I also acquired knowledge through an educational environment other than Spanish, more oriented to practice.',
-				},
-			},
+						'In the months of my Erasmus I learned to fend for myself in a country very different from mine. I also acquired knowledge through an educational environment other than Spanish, more oriented to practice.'
+				}
+			}
 		},
 		skills: {
 			title: 'Skills and tools',
-			subtitle: 'All the tools that I know how to manage, click on each of the bubbles to learn more about them',
+			subtitle: 'All the tools that I know how to manage, click on each of the bubbles to learn more about them'
 		},
 		contact: {
 			title: 'Contact',
@@ -96,16 +96,16 @@ const messages = {
 			links: {
 				email: 'Send me an email',
 				linkedin: 'Connect with me',
-				github: 'See my projects',
+				github: 'See my projects'
 			},
-			sendMailButton: 'Send mail',
-		},
+			sendMailButton: 'Send mail'
+		}
 	},
 	es: {
 		home: {
 			line1: 'Hola! Mi nombre es',
 			button1: 'Saber más',
-			button2: 'Descarga mi CV',
+			button2: 'Descarga mi CV'
 		},
 		typedMessages: {
 			before: 'Soy',
@@ -113,12 +113,12 @@ const messages = {
 			1: 'Desarrollador web',
 			2: 'Desarrollador de apps',
 			3: 'Analista de datos',
-			4: 'Desarrollador de software',
+			4: 'Desarrollador de software'
 		},
 		aboutMe: {
 			title: 'Sobre mi',
-			innerTextHtml:
-				'<p class="mb-2"> Licenciada en Ciencias de la Computación e Ingeniería por la Universidad Carlos III de Madrid. Me considero una persona abierta y sociable, con una gran pasión por la tecnología y con muchas ganas de aprender nuevos conocimientos y vivir nuevas experiencias.</p><p>Cuento con una amplia experiencia en el desarrollo de aplicaciones, especialmente con el uso de lenguajes y tecnologías de programación web. También tengo cierta base de conocimientos de una multitud de lenguajes y herramientas, que puede ver a continuación. </p>',
+			p1: 'Licenciado en Ingeniería Informatica. Me considero una persona abierta y sociable, con una gran pasión por la tecnología y con muchas ganas de aprender nuevos conocimientos y vivir nuevas experiencias.',
+			p2: 'Cuento con una amplia experiencia en el desarrollo de aplicaciones, especialmente con el uso de lenguajes y tecnologías de programación web. También tengo cierta base de conocimientos de una multitud de lenguajes y herramientas, que puede ver a continuación.'
 		},
 		projects: {
 			title: 'Mis projectos',
@@ -129,15 +129,15 @@ const messages = {
 					title: 'Monekin',
 					description:
 						'Una aplicación cuyo objetivo es ayudar a controlar nuestros gastos y mejorar la economía individual de cada persona. Seguro, hermoso, basado en la nube y con docenas de estadísticas y posibilidades.',
-					link: 'https://play.google.com/store/apps/details?id=com.monekin.app',
+					link: 'https://play.google.com/store/apps/details?id=com.monekin.app'
 				},
 				1: {
 					title: 'SnackScan',
 					description:
 						'Una herramienta gratuita y sin publicidad que facilita el escaneo de productos alimenticios. Con SnackScan puedes analizar más de 1 millón de productos, gracias a una base de datos abierta y gratuita, gestionada por todos y creada por Open Food Facts.',
-					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app',
-				},
-			},
+					link: 'https://play.google.com/store/apps/details?id=com.snackscan.app'
+				}
+			}
 		},
 		qualification: {
 			title: 'Calificación',
@@ -151,7 +151,7 @@ const messages = {
 					webPlaceholder: 'Ir al sitio',
 					years: '2021',
 					description:
-						'Mantenimiento de diversos servicios y aplicaciones en NodeJS, JavaScript, Express y otros lenguajes y frameworks de desarrollo web. Manejo de bases de datos como PostgreSQL. Planificación y desarrollo de una aplicación web para la contratación de empleados en Laravel. Otras tareas de apoyo.',
+						'Mantenimiento de diversos servicios y aplicaciones en NodeJS, JavaScript, Express y otros lenguajes y frameworks de desarrollo web. Manejo de bases de datos como PostgreSQL. Planificación y desarrollo de una aplicación web para la contratación de empleados en Laravel. Otras tareas de apoyo.'
 				},
 				1: {
 					title: 'Voluntario',
@@ -159,8 +159,8 @@ const messages = {
 					web: 'https://t3chfest.es/',
 					webPlaceholder: 'Ir al sitio',
 					years: '2019',
-					description: 'Voluntariado en T3chfest, la feria de Informática y Nuevas Tecnologías de la Universidad Carlos III de Madrid',
-				},
+					description: 'Voluntariado en T3chfest, la feria de Informática y Nuevas Tecnologías de la Universidad Carlos III de Madrid'
+				}
 			},
 
 			education: {
@@ -172,7 +172,7 @@ const messages = {
 					webPlaceholder: 'Ir al sitio',
 					years: '2017-2021',
 					description:
-						'A lo largo de este plan de estudios adquirí conocimientos en los más diversos campos de la informática: desarrollo de software, inteligencia artificial, bases de datos, interfaces de usuario, redes neuronales, álgebra, heurística, ciberseguridad, lenguaje ensamblador ...',
+						'A lo largo de este plan de estudios adquirí conocimientos en los más diversos campos de la informática: desarrollo de software, inteligencia artificial, bases de datos, interfaces de usuario, redes neuronales, álgebra, heurística, ciberseguridad, lenguaje ensamblador ...'
 				},
 				1: {
 					title: 'Computer science',
@@ -181,13 +181,13 @@ const messages = {
 					webPlaceholder: 'Ir al sitio',
 					years: '2019-2020',
 					description:
-						'En los meses de mi Erasmus aprendí a valerme por mí mismo en un país muy diferente al mío. También adquirí conocimientos a través de un entorno educativo diferente al español, más orientado a la práctica.',
-				},
-			},
+						'En los meses de mi Erasmus aprendí a valerme por mí mismo en un país muy diferente al mío. También adquirí conocimientos a través de un entorno educativo diferente al español, más orientado a la práctica.'
+				}
+			}
 		},
 		skills: {
 			title: 'Conocimientos y herramientas',
-			subtitle: 'Todas las herramientas que sé manejar, haz clic en cada una de las burbujas para conocer más sobre ellas',
+			subtitle: 'Todas las herramientas que sé manejar, haz clic en cada una de las burbujas para conocer más sobre ellas'
 		},
 		contact: {
 			title: 'Contacto',
@@ -196,11 +196,11 @@ const messages = {
 			links: {
 				email: 'Envíame un correo electrónico',
 				linkedin: 'Conecta conmigo',
-				github: 'Ver mis proyectos',
+				github: 'Ver mis proyectos'
 			},
-			sendMailButton: 'Enviar correo',
-		},
-	},
+			sendMailButton: 'Enviar correo'
+		}
+	}
 };
 
 const avalaibleLocales = ['es', 'en'];
@@ -208,8 +208,10 @@ const fallbackLocale = 'en';
 const initialLang = avalaibleLocales.find((x) => x == navigator.language.split('-')[0]) ?? fallbackLocale;
 
 const i18n = createI18n({
+	legacy: false,
 	locale: initialLang,
 	fallbackLocale: fallbackLocale,
-	messages,
+	messages
 });
+
 export default i18n;

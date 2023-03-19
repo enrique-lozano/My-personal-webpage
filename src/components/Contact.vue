@@ -9,39 +9,44 @@
 			<p class="text-justify mb-5">{{ $t('contact.text') }}</p>
 			<div class="contact-link">
 				<img src="./../assets/icons/email.svg" alt="" />
-				<a target="_blank" href="mailto:kikelozano8@gmail.com">{{ $t('contact.links.email') }}</a>
+				<a target="_blank" href="mailto:kikelozano8@gmail.com">
+					{{ $t('contact.links.email') }}
+				</a>
 			</div>
 			<div class="contact-link">
 				<img src="./../assets/icons/linkedin.svg" alt="" />
-				<a target="_blank" href="https://www.linkedin.com/in/enrique-lozano-cebriano/">{{ $t('contact.links.linkedin') }}</a>
+				<a target="_blank" href="https://www.linkedin.com/in/enrique-lozano-cebriano/">
+					{{ $t('contact.links.linkedin') }}
+				</a>
 			</div>
 			<div class="contact-link">
 				<img src="./../assets/icons/github.svg" alt="" />
-				<a target="_blank" href="https://github.com/enriqueloz88">{{ $t('contact.links.github') }}</a>
+				<a target="_blank" href="https://github.com/enriqueloz88">
+					{{ $t('contact.links.github') }}
+				</a>
 			</div>
 		</div>
 		<form class="w-full mt-6 md:mt-0 md:w-1/2">
-			<input v-model="name" type="text" placeholder="Name" class="w-full" />
-			<input v-model="subject" id="subject" type="text" placeholder="Subject" class="w-full" />
-			<textarea v-model="body" name="" id="body" rows="4" placeholder="Message" class="w-full"></textarea>
-			<button @click="sendMail()" class="flat-button" id="send-mail" style="float: right">{{ $t('contact.sendMailButton') }}</button>
+			<input v-model="name" type="text" placeholder="Name" class="w-full bg-white" />
+			<input v-model="subject" id="subject" type="text" placeholder="Subject" class="w-full bg-white" />
+			<textarea v-model="body" name="" id="body" rows="4" placeholder="Message" class="w-full bg-white"></textarea>
+			<button @click="sendMail()" class="flat-button" id="send-mail" style="float: right">
+				{{ $t('contact.sendMailButton') }}
+			</button>
 		</form>
 	</div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
+import { ref } from 'vue';
 
-@Options({})
-export default class AboutMe extends Vue {
-	subject = '';
-	name = '';
-	body = '';
+const subject = ref('');
+const name = ref('');
+const body = ref('');
 
-	sendMail() {
-		var link = 'mailto:kikelozano8@gmail.com' + '?subject=' + this.subject + '&body=' + this.body;
-		window.location.href = link;
-	}
+function sendMail() {
+	var link = 'mailto:kikelozano8@gmail.com' + '?subject=' + subject.value + '&body=' + body.value;
+	window.location.href = link;
 }
 </script>
 

@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="flex flex-wrap justify-center">
-		<a :href="skill.link" target="_blank" v-for="skill in skills" :key="skill">
+		<a :href="skill.link" target="_blank" v-for="skill in skills" :key="skill.name">
 			<div class="bubble rounded-lg border shadow-lg">
 				<img class="" :src="skill.icon" alt="" />
 				<span>{{ skill.name }}</span>
@@ -14,114 +14,113 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
+const getImageUrl = (name: string) => {
+	return new URL(`../assets/skills/${name}`, import.meta.url).href;
+};
 
-@Options({})
-export default class AboutMe extends Vue {
-	skills = [
-		{
-			name: 'Ionic Framework',
-			link: 'https://ionicframework.com/',
-			icon: require('@/assets/skills/ionic.png'),
-		},
-		{
-			name: 'Angular',
-			link: 'https://angular.io/',
-			icon: require('@/assets/skills/angular.png'),
-		},
-		{
-			name: 'Bootstrap',
-			link: 'https://getbootstrap.com/',
-			icon: require('@/assets/skills/bootstrap.png'),
-		},
-		{
-			name: 'C / C++',
-			link: 'https://en.wikipedia.org/wiki/C%2B%2B',
-			icon: require('@/assets/skills/c.png'),
-		},
-		{
-			name: 'CSS',
-			link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-			icon: require('@/assets/skills/css-3.png'),
-		},
-		{
-			name: 'Firebase',
-			link: 'https://firebase.google.com/',
-			icon: require('@/assets/skills/firebase.png'),
-		},
-		{
-			name: 'Google Play Console',
-			link: 'https://developer.android.com/distribute/console?hl=es',
-			icon: require('@/assets/skills/GooglePlay.svg'),
-		},
-		{
-			name: 'HTML',
-			link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-			icon: require('@/assets/skills/html-5.png'),
-		},
-		{
-			name: 'Java',
-			link: 'https://www.java.com/es/',
-			icon: require('@/assets/skills/java.png'),
-		},
-		{
-			name: 'Javascript',
-			link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-			icon: require('@/assets/skills/js.png'),
-		},
-		{
-			name: 'Laravel',
-			link: 'https://laravel.com/',
-			icon: require('@/assets/skills/laravel.png'),
-		},
-		{
-			name: 'Neural Networks / AI',
-			link: 'https://ai.google/',
-			icon: require('@/assets/skills/neural.png'),
-		},
-		{
-			name: 'Node JS',
-			link: 'https://nodejs.org/en/about/',
-			icon: require('@/assets/skills/node-js.png'),
-		},
-		{
-			name: 'Office',
-			link: 'https://www.office.com/',
-			icon: require('@/assets/skills/office.png'),
-		},
-		{
-			name: 'PostgreSQL',
-			link: 'https://www.postgresql.org/',
-			icon: require('@/assets/skills/postgre.png'),
-		},
-		{
-			name: 'Python',
-			link: 'https://www.python.org/downloads/',
-			icon: require('@/assets/skills/python.png'),
-		},
-		{
-			name: 'SASS / SCSS',
-			link: 'https://sass-lang.com/',
-			icon: require('@/assets/skills/sass.png'),
-		},
-		{
-			name: 'Tailwind',
-			link: 'https://tailwindcss.com/',
-			icon: require('@/assets/skills/tailwind.png'),
-		},
-		{
-			name: 'Typescript',
-			link: 'https://www.typescriptlang.org/',
-			icon: require('@/assets/skills/typescript.png'),
-		},
-		{
-			name: 'Vue',
-			link: 'https://vuejs.org/',
-			icon: require('@/assets/skills/vue.png'),
-		},
-	];
-}
+const skills = [
+	{
+		name: 'Ionic Framework',
+		link: 'https://ionicframework.com/',
+		icon: getImageUrl('ionic.png')
+	},
+	{
+		name: 'Angular',
+		link: 'https://angular.io/',
+		icon: getImageUrl('angular.png')
+	},
+	{
+		name: 'Bootstrap',
+		link: 'https://getbootstrap.com/',
+		icon: getImageUrl('bootstrap.png')
+	},
+	{
+		name: 'C / C++',
+		link: 'https://en.wikipedia.org/wiki/C%2B%2B',
+		icon: getImageUrl('c.png')
+	},
+	{
+		name: 'CSS',
+		link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+		icon: getImageUrl('css-3.png')
+	},
+	{
+		name: 'Firebase',
+		link: 'https://firebase.google.com/',
+		icon: getImageUrl('firebase.png')
+	},
+	{
+		name: 'Google Play Console',
+		link: 'https://developer.android.com/distribute/console?hl=es',
+		icon: getImageUrl('GooglePlay.svg')
+	},
+	{
+		name: 'HTML',
+		link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+		icon: getImageUrl('html-5.png')
+	},
+	{
+		name: 'Java',
+		link: 'https://www.java.com/es/',
+		icon: getImageUrl('java.png')
+	},
+	{
+		name: 'Javascript',
+		link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+		icon: getImageUrl('js.png')
+	},
+	{
+		name: 'Laravel',
+		link: 'https://laravel.com/',
+		icon: getImageUrl('laravel.png')
+	},
+	{
+		name: 'Neural Networks / AI',
+		link: 'https://ai.google/',
+		icon: getImageUrl('neural.png')
+	},
+	{
+		name: 'Node JS',
+		link: 'https://nodejs.org/en/about/',
+		icon: getImageUrl('node-js.png')
+	},
+	{
+		name: 'Office',
+		link: 'https://www.office.com/',
+		icon: getImageUrl('office.png')
+	},
+	{
+		name: 'PostgreSQL',
+		link: 'https://www.postgresql.org/',
+		icon: getImageUrl('postgre.png')
+	},
+	{
+		name: 'Python',
+		link: 'https://www.python.org/downloads/',
+		icon: getImageUrl('python.png')
+	},
+	{
+		name: 'SASS / SCSS',
+		link: 'https://sass-lang.com/',
+		icon: getImageUrl('sass.png')
+	},
+	{
+		name: 'Tailwind',
+		link: 'https://tailwindcss.com/',
+		icon: getImageUrl('tailwind.png')
+	},
+	{
+		name: 'Typescript',
+		link: 'https://www.typescriptlang.org/',
+		icon: getImageUrl('typescript.png')
+	},
+	{
+		name: 'Vue',
+		link: 'https://vuejs.org/',
+		icon: getImageUrl('vue.png')
+	}
+];
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

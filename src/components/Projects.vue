@@ -1,5 +1,5 @@
 <template>
-	<div class="mb-2">
+	<div class="mb-8">
 		<h2>{{ $t('projects.title') }}</h2>
 		<span>{{ $t('projects.subtitle') }}</span>
 	</div>
@@ -10,7 +10,7 @@
 				<img
 					class="m-auto rounded-xl md:rounded-none md:rounded-l-xl w-auto"
 					style="max-height: 40vh"
-					:src="require('@/assets/images/' + $t('projects.projects.' + i + '.title') + '.png')"
+					:src="getImageUrl('images/' + $t('projects.projects.' + i + '.title') + '.png')"
 					alt=""
 					width="384"
 					height="512"
@@ -29,53 +29,50 @@
 	</swiper>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.min.css';
 
-// swiper core styles
-import 'swiper/swiper.min.css';
 import { SwiperOptions } from 'swiper';
-@Options({
-	components: {
-		Swiper,
-		SwiperSlide,
-	},
-})
-export default class AboutMe extends Vue {
-	swiper: any;
-	onSwiper(swiper: any) {
-		this.swiper = swiper;
-	}
 
-	swiperOptions: SwiperOptions = {
-		spaceBetween: 20,
-		breakpoints: {
-			1250: {
-				slidesPerView: 2.3,
-			},
-			1050: {
-				slidesPerView: 2.1,
-			},
-			850: {
-				slidesPerView: 1.7,
-			},
-			750: {
-				slidesPerView: 1.5,
-			},
-			650: {
-				slidesPerView: 1.3,
-			},
-			550: {
-				slidesPerView: 1.2,
-			},
-			0: {
-				slidesPerView: 1.1,
-			},
-		},
-	};
+import { Swiper as ISwiper } from 'swiper/types';
+import { ref } from 'vue';
+
+const getImageUrl = (name: string) => {
+	return new URL(`../assets/${name}`, import.meta.url).href;
+};
+
+const swiperRef = ref<undefined | ISwiper>(undefined);
+
+function onSwiper(el: ISwiper) {
+	swiperRef.value = el;
 }
+
+const swiperOptions: SwiperOptions = {
+	spaceBetween: 20,
+	breakpoints: {
+		1250: {
+			slidesPerView: 2.3
+		},
+		1050: {
+			slidesPerView: 2.1
+		},
+		850: {
+			slidesPerView: 1.7
+		},
+		750: {
+			slidesPerView: 1.5
+		},
+		650: {
+			slidesPerView: 1.3
+		},
+		550: {
+			slidesPerView: 1.2
+		},
+		0: {
+			slidesPerView: 1.1
+		}
+	}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

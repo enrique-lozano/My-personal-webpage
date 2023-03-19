@@ -4,23 +4,23 @@
 			<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
 		</div>
 		<div class="flex items-center">
-			<select name="lang" id="lang" @change="changeLang($event)" v-model="$i18n.locale">
+			<select name="lang" id="lang" v-model="$i18n.locale">
 				<option value="es">ES</option>
 				<option value="en">EN</option>
 			</select>
 			<div class="right-links">
-				<span @click="goto('Projects')">{{ $t('projects.title') }}</span>
-				<span @click="goto('Qualification')">{{ $t('qualification.title') }}</span>
-				<span @click="goto('Contact')">{{ $t('contact.title') }}</span>
+				<span @click="goto('projects')">{{ $t('projects.title') }}</span>
+				<span @click="goto('qualification')">{{ $t('qualification.title') }}</span>
+				<span @click="goto('contact')">{{ $t('contact.title') }}</span>
 			</div>
 			<DarkModeToggle class="md:ml-8" />
 			<input id="__menu" type="checkbox" />
 			<div class="mobile-menu flex flex-col flex-wrap p-12">
-				<div @click="goto('Projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
-				<div @click="goto('Qualification')" class="w-full py-4 border-b border-gray-300">
+				<div @click="goto('projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
+				<div @click="goto('qualification')" class="w-full py-4 border-b border-gray-300">
 					{{ $t('qualification.title') }}
 				</div>
-				<div @click="goto('Contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
+				<div @click="goto('contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
 				<div class="flex text-center absolute bottom-12 right-12 left-12">
 					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
 					<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
@@ -33,115 +33,123 @@
 	</nav>
 
 	<div ref="home" class="home bg-light relative padding-x">
-		<div class="flex lg:items-center lg:w-1/2 h-full justify-center lg:justify-start text-center lg:text-left">
-			<div class="mt-4 lg:mt-0">
+		<img class="" src="../assets/images/person-removebg.png" alt="" />
+
+		<div class="text-justify">
+			<div class="my-8 titles">
 				<span>{{ $t('home.line1') }}</span>
-				<h1>Enrique Lozano</h1>
+				<h1 class="my-2">Enrique Lozano</h1>
 				<h4>
 					{{ $t('typedMessages.before') }}
 					<span class="typing" style="text-decoration: underline"></span>
 				</h4>
+			</div>
 
-				<div class="mt-4 flex flex-wrap flex-col lg:flex-row items-center lg:items-start">
-					<button @click="goto('AboutMe')" class="flat-button my-1 lg:my-0 lg:mr-2" style="width: fit-content">
-						{{ $t('home.button1') }}</button
-					><a :href="require('@/assets/docs/CV1_EN.pdf')" target="_blank" download="CV_Enrique_Lozano">
-						<button class="stroked-button my-1 lg:my-0" style="width: fit-content">
-							{{ $t('home.button2') }}
-						</button>
-					</a>
-				</div>
+			<p class="my-2">{{ $t('aboutMe.p1') }}</p>
+			<p>{{ $t('aboutMe.p2') }}</p>
+
+			<div class="my-8 action-buttons">
+				<button @click="goto('projects')" class="flat-button" style="width: fit-content">
+					{{ $t('home.button1') }}
+				</button>
+				<a :href="getImageUrl(`/docs/CV1_EN.pdf`)" target="_blank" download="CV_Enrique_Lozano">
+					<button class="stroked-button" style="width: fit-content">
+						{{ $t('home.button2') }}
+					</button>
+				</a>
 			</div>
 		</div>
-		<img class="absolute right-0 bottom-0" src="../assets/images/person-removebg.png" alt="" />
 	</div>
 
-	<div ref="AboutMe" class="py-6 padding-x bg-white">
-		<AboutMe />
-	</div>
-
-	<div ref="Projects" class="py-6 padding-x bg-light">
+	<div ref="projects" class="py-12 padding-x bg-white">
 		<Projects />
 	</div>
 
-	<div ref="Qualification" class="py-6 padding-x bg-white">
+	<div ref="qualification" class="py-12 padding-x bg-light">
 		<Qualification />
 	</div>
 
-	<div ref="Skills" class="py-6 padding-x bg-light">
+	<div ref="skills" class="py-12 padding-x bg-white">
 		<Skills />
 	</div>
 
-	<div ref="Contact" class="py-6 padding-x bg-white">
+	<div ref="contact" class="py-12 padding-x bg-light">
 		<Contact />
 	</div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import AboutMe from '@/components/AboutMe.vue'; // @ is an alias to /src
-import Contact from '@/components/Contact.vue';
-import Projects from '@/components/Projects.vue';
-import Qualification from '@/components/Qualification.vue';
-import Skills from '@/components/Skills.vue';
-import DarkModeToggle from '@/components/DarkModeToggle.vue';
+<script lang="ts" setup>
 import Typed from 'typed.js';
-import { useI18n } from 'vue-i18n';
+import { onMounted, ref, Ref } from 'vue';
+import Contact from './../components/Contact.vue';
+import DarkModeToggle from './../components/DarkModeToggle.vue';
+import Projects from './../components/Projects.vue';
+import Qualification from './../components/Qualification.vue';
+import Skills from './../components/Skills.vue';
 
-@Options({
-	components: {
-		AboutMe,
-		Contact,
-		Projects,
-		Qualification,
-		Skills,
-		DarkModeToggle,
-	},
-	methods: {
-		goto(refName: string) {
-			// Close the menu in case we have it open (in mobile)
-			const menuButton = document.getElementById('__menu') as HTMLInputElement;
-			menuButton.checked = false;
+import i18n from '../i18n/i18n';
 
-			// ---- Go to ref ----
-			var element = this.$refs[refName];
-			var top = element.offsetTop;
+onMounted(() => {
+	new Typed('.typing', {
+		strings: [
+			i18n.global.t('typedMessages.0'),
+			i18n.global.t('typedMessages.1'),
+			i18n.global.t('typedMessages.2'),
+			i18n.global.t('typedMessages.3'),
+			i18n.global.t('typedMessages.4')
+		],
+		typeSpeed: 100,
+		backSpeed: 35,
+		loop: true
+	});
 
-			// 5 because is the navHeight in rem
-			window.scrollTo(0, top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize));
-		},
-	},
-	mounted: () => {
-		/* --------------------------------------------------
-		------------------- ON PAGE LOAD --------------------
-		--------------------------------------------------- */
-		const { tm } = useI18n();
+	// Get light/dark mode
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.documentElement.classList.add('dark');
+		localStorage.theme = 'dark';
+	} else {
+		document.documentElement.classList.remove('dark');
+		localStorage.theme = 'light';
+	}
+});
 
-		new Typed('.typing', {
-			strings: [tm('typedMessages.0'), tm('typedMessages.1'), tm('typedMessages.2'), tm('typedMessages.3'), tm('typedMessages.4')],
-			typeSpeed: 100,
-			backSpeed: 35,
-			loop: true,
-		});
+const getImageUrl = (name: string) => {
+	return new URL(`../assets/${name}`, import.meta.url).href;
+};
 
-		// Get light/dark mode
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.documentElement.classList.add('dark');
-			localStorage.theme = 'dark';
-		} else {
-			document.documentElement.classList.remove('dark');
-			localStorage.theme = 'light';
+function changeLangInMenu(lang: 'es' | 'en') {
+	i18n.global.locale.value = lang;
+}
+
+const projects: Ref<HTMLElement | null> = ref(null);
+const qualification: Ref<HTMLElement | null> = ref(null);
+const skills: Ref<HTMLElement | null> = ref(null);
+const contact: Ref<HTMLElement | null> = ref(null);
+
+const refs = {
+	projects: projects,
+	qualification: qualification,
+	skills: skills,
+	contact: contact
+};
+
+function goto(refName: string) {
+	// Close the menu in case we have it open (in mobile)
+	const menuButton = document.getElementById('__menu') as HTMLInputElement;
+	menuButton.checked = false;
+
+	Object.keys(refs).forEach((k) => {
+		const key = k as 'projects' | 'qualification' | 'skills' | 'contact';
+
+		if (key == refName) {
+			if (refs[key] && refs[key].value) {
+				const top = refs[key].value!.offsetTop;
+
+				// 5 because is the navHeight in rem
+				window.scrollTo(0, top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize));
+			}
 		}
-	},
-})
-export default class Home extends Vue {
-	changeLang(event: any) {
-		this.$i18n.locale = event.target.value;
-	}
-
-	changeLangInMenu(lang: string) {
-		this.$i18n.locale = lang;
-	}
+	});
 }
 </script>
 
@@ -301,20 +309,39 @@ nav {
 }
 
 .home {
-	margin-top: $navHeight;
-	height: calc(100vh - $navHeight);
+	padding-top: calc($navHeight + 2rem);
+	display: flex;
 
 	img {
-		max-height: 80%;
-		@media (min-width: 768px) {
-			max-height: 80%;
+		max-height: 100%;
+		max-width: 50%;
+		aspect-ratio: 1;
+	}
+
+	.action-buttons {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	@media (max-width: 1024px) {
+		flex-wrap: wrap;
+
+		.titles {
+			text-align: center;
 		}
-		@media (min-width: 1024px) {
-			max-height: 100%;
+
+		.action-buttons {
+			justify-content: center;
+			flex-wrap: wrap;
 		}
-		@media (max-width: 1024px) {
-			left: 0;
+
+		img {
+			max-width: 100%;
 			margin: auto;
+			max-height: 30vh;
+			border-radius: 100%;
+			border: 1px solid gainsboro;
 		}
 	}
 }
