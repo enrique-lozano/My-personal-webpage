@@ -57,7 +57,7 @@
 					<button @click="goto('projects')" class="flat-button" style="width: fit-content">
 						{{ $t('home.button1') }}
 					</button>
-					<a :href="getImageUrl(`/docs/CV1_EN.pdf`)" target="_blank" download="CV_Enrique_Lozano">
+					<a :href="getImageUrl(`docs/CV1_${i18n.global.locale.value.toUpperCase()}.pdf`)" target="_blank" download="CV_Enrique_Lozano.pdf">
 						<button class="stroked-button" style="width: fit-content">
 							{{ $t('home.button2') }}
 						</button>
