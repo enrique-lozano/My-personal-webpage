@@ -38,6 +38,11 @@
 	@apply text-black transition-colors duration-700;
 }
 
+html,
+body {
+	background-color: var(--light);
+}
+
 .padding-x {
 	max-width: 1280px;
 	margin: auto;
