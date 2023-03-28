@@ -45,6 +45,15 @@ const messages = {
 			jobs: {
 				title: 'Job experience',
 				0: {
+					title: 'Front-End Developer',
+					site: 'Satec',
+					web: 'https://www.satec.es/en/',
+					webPlaceholder: 'Go to site',
+					years: '2021-2023',
+					description:
+						'Development of the HealthPoint health platform and the Castilla la Mancha Health Card application, both with the Angular framework. Use of other Front-end frameworks such as Vue and React.'
+				},
+				1: {
 					title: 'IT Support and Development Intern',
 					site: 'IMDEA Networks',
 					web: 'https://networks.imdea.org/',
@@ -53,7 +62,7 @@ const messages = {
 					description:
 						'Maintenance of various services and applications in NodeJS, JavaScript, Express and other web development languages and frameworks. Management of databases such as PostgreSQL. Planning and development of a web application for hiring employees in Laravel. Other support tasks.'
 				},
-				1: {
+				2: {
 					title: 'Volunteer',
 					site: 'T3chfest',
 					web: 'https://t3chfest.es/',
@@ -145,6 +154,15 @@ const messages = {
 			jobs: {
 				title: 'Experiencia laboral',
 				0: {
+					title: 'Desarrollador front-end',
+					site: 'Satec',
+					web: 'https://www.satec.es/es/',
+					webPlaceholder: 'Ir al sitio',
+					years: '2021-2023',
+					description:
+						'Desarrollo de la plataforma de salud HealthPoint y la aplicación Tarjeta Sanitaria de Castilla la Mancha, ambas con el framework Angular. Uso de otros frameworks front-end como Vue y React.'
+				},
+				1: {
 					title: 'Beca de soporte IT y desarrollo',
 					site: 'IMDEA Networks',
 					web: 'https://networks.imdea.org/',
@@ -153,7 +171,7 @@ const messages = {
 					description:
 						'Mantenimiento de diversos servicios y aplicaciones en NodeJS, JavaScript, Express y otros lenguajes y frameworks de desarrollo web. Manejo de bases de datos como PostgreSQL. Planificación y desarrollo de una aplicación web para la contratación de empleados en Laravel. Otras tareas de apoyo.'
 				},
-				1: {
+				2: {
 					title: 'Voluntario',
 					site: 'T3chfest',
 					web: 'https://t3chfest.es/',

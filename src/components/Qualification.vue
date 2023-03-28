@@ -20,7 +20,7 @@
 
 			<div class="qualification-data">
 				<div class="outer">
-					<template v-for="(n, i) in 2" :key="i">
+					<template v-for="(n, i) in 3" :key="i">
 						<div class="card">
 							<div class="info">
 								<h3 class="title">{{ $t('qualification.jobs.' + i + '.title') }}</h3>
