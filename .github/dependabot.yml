@@ -8,3 +8,6 @@ updates:
       target-branch: main
 
       open-pull-requests-limit: 3
+
+      commit-message:
+          prefix: '⬆️ '
