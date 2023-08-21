@@ -46,9 +46,19 @@ const skills = [
 		icon: getImageUrl('css-3.png')
 	},
 	{
+		name: 'Dart',
+		link: 'https://dart.dev/',
+		icon: getImageUrl('dart.svg')
+	},
+	{
 		name: 'Firebase',
 		link: 'https://firebase.google.com/',
 		icon: getImageUrl('firebase.png')
+	},
+	{
+		name: 'Flutter',
+		link: 'https://flutter.dev/',
+		icon: getImageUrl('flutter.svg')
 	},
 	{
 		name: 'Google Play Console',
@@ -137,6 +147,7 @@ const skills = [
 
 	img {
 		max-height: 2rem;
+		aspect-ratio: 1;
 	}
 
 	span {
