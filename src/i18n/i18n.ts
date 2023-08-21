@@ -24,7 +24,7 @@ const messages = {
 			title: 'My projects',
 			subtitle: 'Projects I have worked on or am currently working on',
 			projects: {
-				knowMore: 'Saber mas',
+				knowMore: 'Know more',
 				0: {
 					title: 'Monekin',
 					description:
