@@ -29,7 +29,7 @@
 					<font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
 				</a>
 
-				<span> Ver todos </span>
+				<span> {{ $t('projects.projects.seeAll') }} </span>
 			</div>
 		</swiper-slide>
 	</swiper>

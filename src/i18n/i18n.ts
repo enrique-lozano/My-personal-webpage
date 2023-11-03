@@ -25,6 +25,7 @@ const messages = {
 			subtitle: 'Projects I have worked on or am currently working on',
 			projects: {
 				knowMore: 'Know more',
+				seeAll: 'See all',
 				0: {
 					title: 'Monekin',
 					description:
@@ -134,6 +135,7 @@ const messages = {
 			subtitle: 'Proyectos en los que he trabajado o estoy trabajando',
 			projects: {
 				knowMore: 'Saber mas',
+				seeAll: 'Ver todos',
 				0: {
 					title: 'Monekin',
 					description:
