@@ -93,18 +93,20 @@ import APP_LINKS from '../constants/constants';
 import i18n from '../i18n/i18n';
 
 onMounted(() => {
-	new Typed('.typing', {
-		strings: [
-			i18n.global.t('typedMessages.0'),
-			i18n.global.t('typedMessages.1'),
-			i18n.global.t('typedMessages.2'),
-			i18n.global.t('typedMessages.3'),
-			i18n.global.t('typedMessages.4')
-		],
-		typeSpeed: 100,
-		backSpeed: 35,
-		loop: true
-	});
+	setTimeout(() => {
+		new Typed('.typing', {
+			strings: [
+				i18n.global.t('typedMessages.0'),
+				i18n.global.t('typedMessages.1'),
+				i18n.global.t('typedMessages.2'),
+				i18n.global.t('typedMessages.3'),
+				i18n.global.t('typedMessages.4')
+			],
+			typeSpeed: 100,
+			backSpeed: 35,
+			loop: true
+		});
+	}, 200);
 
 	// Get light/dark mode
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
