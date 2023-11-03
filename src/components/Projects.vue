@@ -23,6 +23,15 @@
 				</div>
 			</div>
 		</swiper-slide>
+		<swiper-slide style="align-self: center; height: auto">
+			<div class="show-more-button-container">
+				<a role="button" target="_blank" :href="APP_LINKS.gitHubURL" class="button-icon show-more-button">
+					<font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
+				</a>
+
+				<span> Ver todos </span>
+			</div>
+		</swiper-slide>
 	</swiper>
 </template>
 
@@ -33,6 +42,7 @@ import { SwiperOptions } from 'swiper';
 
 import { Swiper as ISwiper } from 'swiper/types';
 import { ref } from 'vue';
+import APP_LINKS from '../constants/constants';
 
 const getImageUrl = (name: string) => {
 	return new URL(`../assets/${name}`, import.meta.url).href;
@@ -76,6 +86,30 @@ const swiperOptions: SwiperOptions = {
 <style scoped lang="scss">
 .swiper-container {
 	padding: 16px 0px;
+}
+
+.show-more-button-container {
+	display: flex;
+	width: fit-content;
+	gap: 6px;
+	align-items: center;
+	flex-direction: column;
+	margin-left: 1rem;
+
+	.show-more-button {
+		border: none;
+		//background-color: var(--light);
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		border-radius: 100%;
+		display: inline-flex;
+		padding: 12px;
+
+		.svg-inline--fa {
+			font-size: 24px;
+			width: 24px;
+			height: 24px;
+		}
+	}
 }
 
 .project-logo {
