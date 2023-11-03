@@ -203,6 +203,7 @@ $spanSize: 16px;
 	padding-top: calc($navHeight + 2rem);
 	display: flex;
 	min-height: 100vh;
+	min-height: 100svh;
 	position: relative;
 
 	@media (max-width: 1024px) {
@@ -219,6 +220,7 @@ $spanSize: 16px;
 			height: 100%;
 			object-fit: cover;
 			max-height: calc(100vh - $navHeight - 2rem);
+			max-height: calc(100svh - $navHeight - 2rem);
 
 			@media (max-width: 1024px) {
 				max-height: 30vh;

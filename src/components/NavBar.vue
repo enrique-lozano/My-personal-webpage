@@ -148,6 +148,7 @@ nav {
 .mobile-menu {
 	background-color: var(--light);
 	height: calc(100vh - $navHeight);
+	height: calc(100svh - $navHeight);
 	left: 100%;
 	position: fixed;
 	top: $navHeight;
