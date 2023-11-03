@@ -57,7 +57,11 @@ function sendMail() {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .contact-link {
-	margin: 4px 0;
+	margin: 8px 0;
+
+	svg {
+		font-size: 24px;
+	}
 }
 
 form {
