@@ -12,7 +12,7 @@
 		<div class="info">
 			<div class="flex items-center gap-3 mb-2">
 				<div>
-					<img class="card-img" :src="getImageUrl(imgSrc)" alt="" />
+					<img class="card-img" :src="imgSrc" alt="" />
 				</div>
 
 				<div>
@@ -45,10 +45,6 @@ defineProps<{
 	description: string;
 	imgSrc: string;
 }>();
-
-const getImageUrl = (name: string) => {
-	return new URL(`${name}`, import.meta.url).href;
-};
 </script>
 
 <style scoped lang="scss">

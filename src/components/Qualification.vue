@@ -26,7 +26,7 @@
 						:description="$t('qualification.jobs.' + i + '.description')"
 						:years="$t('qualification.jobs.' + i + '.years')"
 						:company="$t('qualification.jobs.' + i + '.site')"
-						:img-src="`../assets/images/qualification-logos/jobs/img${i}.png`"
+						:img-src="`/images/qualification-logos/jobs/img${i}.png`"
 					>
 					</QualificationItem>
 				</template>
@@ -44,7 +44,7 @@
 							:description="$t('qualification.education.' + i + '.description')"
 							:years="$t('qualification.education.' + i + '.years')"
 							:company="$t('qualification.education.' + i + '.site')"
-							:img-src="`../assets/images/qualification-logos/education/img${i}.png`"
+							:img-src="`/images/qualification-logos/education/img${i}.png`"
 						>
 						</QualificationItem>
 					</template>
