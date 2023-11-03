@@ -49,7 +49,7 @@ const messages = {
 					site: 'Satec',
 					web: 'https://www.satec.es/en/',
 					webPlaceholder: 'Go to site',
-					years: '2021-2023',
+					years: '2021 ⤳ 2023',
 					description:
 						'Development of the HealthPoint health platform and the Castilla la Mancha Health Card application, both with the Angular framework. Use of other Front-end frameworks such as Vue and React.'
 				},
@@ -79,7 +79,7 @@ const messages = {
 					site: 'University Carlos III of Madrid',
 					web: 'https://www.uc3m.es/inicio',
 					webPlaceholder: 'Go to site',
-					years: '2017-2021',
+					years: '2017 ⤳ 2021',
 					description:
 						'Throughout this study plan I acquired knowledge in the most diverse fields of computer science: software development, artificial intelligence, databases, user interfaces, neural networks, algebra, heuristics, cybersecurity, machine language ...'
 				},
@@ -88,7 +88,7 @@ const messages = {
 					site: 'Politechnika Warszawska',
 					web: 'https://www.pw.edu.pl/',
 					webPlaceholder: 'Go to site',
-					years: '2019-2020',
+					years: '2019 ⤳ 2020',
 					description:
 						'In the months of my Erasmus I learned to fend for myself in a country very different from mine. I also acquired knowledge through an educational environment other than Spanish, more oriented to practice.'
 				}
@@ -158,7 +158,7 @@ const messages = {
 					site: 'Satec',
 					web: 'https://www.satec.es/es/',
 					webPlaceholder: 'Ir al sitio',
-					years: '2021-2023',
+					years: '2021 ⤳ 2023',
 					description:
 						'Desarrollo de la plataforma de salud HealthPoint y la aplicación Tarjeta Sanitaria de Castilla la Mancha, ambas con el framework Angular. Uso de otros frameworks front-end como Vue y React.'
 				},
@@ -188,7 +188,7 @@ const messages = {
 					site: 'Universidad Carlos III de Madrid',
 					web: 'https://www.uc3m.es/inicio',
 					webPlaceholder: 'Ir al sitio',
-					years: '2017-2021',
+					years: '2017 ⤳ 2021',
 					description:
 						'A lo largo de este plan de estudios adquirí conocimientos en los más diversos campos de la informática: desarrollo de software, inteligencia artificial, bases de datos, interfaces de usuario, redes neuronales, álgebra, heurística, ciberseguridad, lenguaje ensamblador ...'
 				},
@@ -197,7 +197,7 @@ const messages = {
 					site: 'Politechnika Warszawska',
 					web: 'https://www.pw.edu.pl/',
 					webPlaceholder: 'Ir al sitio',
-					years: '2019-2020',
+					years: '2019 ⤳ 2020',
 					description:
 						'En los meses de mi Erasmus aprendí a valerme por mí mismo en un país muy diferente al mío. También adquirí conocimientos a través de un entorno educativo diferente al español, más orientado a la práctica.'
 				}

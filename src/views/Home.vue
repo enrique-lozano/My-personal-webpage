@@ -1,67 +1,48 @@
 <template>
-	<nav class="bg-light z-10 fixed top-0">
-		<div class="padding-x w-full">
-			<div class="flex items-center justify-between w-full">
-				<div>
-					<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
-				</div>
-				<div class="flex items-center">
-					<select name="lang" id="lang" v-model="$i18n.locale">
-						<option value="es">ES</option>
-						<option value="en">EN</option>
-					</select>
-					<div class="right-links">
-						<span @click="goto('projects')">{{ $t('projects.title') }}</span>
-						<span @click="goto('qualification')">{{ $t('qualification.title') }}</span>
-						<span @click="goto('contact')">{{ $t('contact.title') }}</span>
-					</div>
-					<DarkModeToggle class="md:ml-8" />
-					<input id="__menu" type="checkbox" />
-					<div class="mobile-menu flex flex-col flex-wrap p-12">
-						<div @click="goto('projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
-						<div @click="goto('qualification')" class="w-full py-4 border-b border-gray-300">
-							{{ $t('qualification.title') }}
-						</div>
-						<div @click="goto('contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
-						<div class="flex text-center absolute bottom-12 right-12 left-12">
-							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
-							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
-						</div>
-					</div>
-					<label title="Menu" for="__menu" class="hamburger">
-						<div class="hamburger-icon"></div>
-					</label>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<NavBar></NavBar>
 
 	<section ref="home" class="bg-light relative">
 		<div class="padding-x home">
-			<img class="" src="../assets/images/person-removebg.png" alt="" />
+			<div class="left-side">
+				<img class="profile-img" src="../assets/images/person-removebg.png" alt="" />
+			</div>
 
-			<div class="text-justify">
-				<div class="my-8 titles">
+			<div class="right-side">
+				<div class="titles">
 					<span>{{ $t('home.line1') }}</span>
 					<h1 class="my-2">Enrique Lozano</h1>
 					<h4>
 						{{ $t('typedMessages.before') }}
-						<span class="typing" style="text-decoration: underline"></span>
+						<h6 class="typing" style="text-decoration: underline; display: inline"></h6>
 					</h4>
 				</div>
 
-				<p class="my-2">{{ $t('aboutMe.p1') }}</p>
-				<p>{{ $t('aboutMe.p2') }}</p>
-
-				<div class="action-buttons">
-					<button @click="goto('projects')" class="flat-button" style="width: fit-content">
-						{{ $t('home.button1') }}
-					</button>
-					<a :href="getImageUrl(`docs/CV1_${i18n.global.locale.value.toUpperCase()}.pdf`)" target="_blank" download="CV_Enrique_Lozano.pdf">
-						<button class="stroked-button" style="width: fit-content">
-							{{ $t('home.button2') }}
-						</button>
+				<div class="buttons-container">
+					<a role="button" class="button-icon" type="button" target="_blank" :href="APP_LINKS.gitHubURL">
+						<font-awesome-icon icon="fa-brands fa-github" />
 					</a>
+
+					<a role="button" class="button-icon" type="button" target="_blank" :href="`mailto:${APP_LINKS.mail}`">
+						<font-awesome-icon icon="fa-regular fa-envelope" />
+					</a>
+
+					<a role="button" class="button-icon" type="button" target="_blank" :href="APP_LINKS.linkedinURL">
+						<font-awesome-icon icon="fa-brands fa-linkedin" />
+					</a>
+
+					<a
+						role="button"
+						class="button-icon"
+						type="button"
+						target="_blank"
+						:href="getImageUrl(`docs/CV1_${i18n.global.locale.value.toUpperCase()}.pdf`)"
+					>
+						<font-awesome-icon icon="fa-regular fa-file-pdf" />
+					</a>
+				</div>
+
+				<div class="know-more-container">
+					<div class="scroll-down mt-2"><span></span><span></span><span></span></div>
 				</div>
 			</div>
 		</div>
@@ -87,6 +68,12 @@
 
 	<section ref="contact" class="py-20 bg-light">
 		<div class="padding-x">
+			<AboutMe />
+		</div>
+	</section>
+
+	<section ref="contact" class="py-20 bg-white">
+		<div class="padding-x">
 			<Contact />
 		</div>
 	</section>
@@ -96,11 +83,13 @@
 import Typed from 'typed.js';
 import { onMounted, ref, Ref } from 'vue';
 import Contact from './../components/Contact.vue';
-import DarkModeToggle from './../components/DarkModeToggle.vue';
+import NavBar from './../components/NavBar.vue';
 import Projects from './../components/Projects.vue';
 import Qualification from './../components/Qualification.vue';
 import Skills from './../components/Skills.vue';
 
+import AboutMe from '../components/AboutMe.vue';
+import APP_LINKS from '../constants/constants';
 import i18n from '../i18n/i18n';
 
 onMounted(() => {
@@ -169,199 +158,113 @@ function goto(refName: string) {
 
 <style scoped lang="scss">
 $navHeight: 5rem;
+$spanSize: 16px;
 
-.dark nav img.logo {
-	background-color: var(--black);
-	filter: brightness(0.95);
-}
-
-nav {
-	height: $navHeight;
-	font-size: 1.1rem;
-	width: 100%;
-	z-index: 3;
-	display: flex;
-	align-items: center;
-
-	img.logo {
-		height: calc(0.6 * $navHeight);
-		padding: 6px;
-		border-radius: 0.325rem;
-	}
-
-	select {
-		background-color: var(--light);
-		margin-right: 16px;
-		margin-bottom: 4px;
-		color: var(--primary);
-		cursor: pointer;
-		@media (max-width: 800px) {
-			display: none;
-		}
-	}
-}
-
-#__menu:checked ~ .mobile-menu {
-	visibility: visible;
-	transform: translateX(-100%);
-	transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0s;
-}
-
-#__menu:checked ~ .hamburger .hamburger-icon {
-	transform: rotate(45deg);
-	transition: transform 150ms 150ms cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-#__menu:checked ~ .hamburger .hamburger-icon::before {
-	bottom: 0;
-	opacity: 0;
-	transition: bottom 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 0s 150ms;
-}
-
-#__menu:checked ~ .hamburger .hamburger-icon::after {
-	top: 0;
-	transform: rotate(-90deg);
-	transition: top 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), transform 150ms 150ms cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.mobile-menu {
-	background-color: var(--light);
-	height: calc(100vh - $navHeight);
-	left: 100%;
-	position: fixed;
-	top: $navHeight;
-	transform: translateX(0);
-	transform-origin: top left;
-	transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0s 0.3s;
-	visibility: hidden;
-	width: 100vw;
-	z-index: 2;
-}
-
-.right-links {
-	display: flex;
-	align-items: center;
-	@media (max-width: 800px) {
-		display: none;
-	}
-
+.scroll-down {
 	span {
-		margin: 0 10px;
-		position: relative;
-		cursor: pointer;
-		width: max-content;
-	}
-
-	span:after {
-		bottom: 0;
-		content: '';
 		display: block;
-		height: 2px;
-		left: 50%;
-		position: relative;
-		background: var(--black);
-		transition: width 0.3s ease 0s, left 0.3s ease 0s;
-		width: 0;
+		width: $spanSize;
+		height: $spanSize;
+		border-bottom: 2px solid var(--black);
+		border-right: 2px solid var(--black);
+		transform: rotate(45deg);
+		margin: -10px 16px;
+		animation: scroll-down 1.5s infinite;
 	}
-	span:hover:after {
-		width: 100%;
-		left: 0;
+
+	span:nth-child(2) {
+		animation-delay: -0.2s;
 	}
-}
 
-#__menu {
-	display: none;
-}
-
-.hamburger {
-	cursor: pointer;
-	display: inline-block;
-	height: 40px;
-	padding: 0 0.5rem;
-	position: relative;
-	margin-left: 2vw;
-
-	@media (min-width: 800px) {
-		display: none;
+	span:nth-child(3) {
+		animation-delay: -0.4s;
 	}
 }
 
-.hamburger::before {
-	content: ' ';
-	display: block;
-	height: 100%;
-	width: 1.5rem;
-}
+@keyframes scroll-down {
+	0% {
+		opacity: 0;
+		transform: rotate(45deg) translate(0px, 0px);
+	}
 
-.hamburger-icon {
-	background-color: var(--black);
-	border-radius: 1px;
-	height: 2px;
-	position: absolute;
-	right: 0.5rem;
-	top: calc(50% - 2px / 2);
-	transition: transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-	width: calc(100% - 1rem);
-}
+	50% {
+		opacity: 1;
+	}
 
-.hamburger-icon::after,
-.hamburger-icon::before {
-	background-color: var(--black);
-	border-radius: 1px;
-	content: '';
-	height: 100%;
-	left: 0;
-	position: absolute;
-	width: 100%;
-}
-
-.hamburger-icon::before {
-	bottom: 0.425rem;
-	transition: bottom 150ms 150ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0s 150ms;
-}
-
-.hamburger-icon::after {
-	top: 0.425rem;
-	transition: top 150ms 150ms cubic-bezier(0.165, 0.84, 0.44, 1), transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	100% {
+		opacity: 0;
+		transform: rotate(45deg) translate(18px, 18px);
+	}
 }
 
 .home {
-	padding-top: calc($navHeight + 4rem);
+	padding-top: calc($navHeight + 2rem);
 	display: flex;
-
-	img {
-		max-height: 100%;
-		max-width: 50%;
-		aspect-ratio: 1;
-	}
-
-	.action-buttons {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-
-		margin-bottom: 5rem;
-		margin-top: 2rem;
-	}
+	min-height: 100vh;
+	position: relative;
 
 	@media (max-width: 1024px) {
 		flex-wrap: wrap;
+	}
+
+	.left-side {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img.profile-img {
+			height: 100%;
+			object-fit: cover;
+			max-height: calc(100vh - $navHeight - 2rem);
+
+			@media (max-width: 1024px) {
+				max-height: 30vh;
+				padding-top: 8px;
+				border-radius: 100%;
+				border: 1px solid var(--light-tint);
+			}
+		}
+	}
+
+	.right-side {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+
+		padding-left: 2rem;
 
 		.titles {
-			text-align: center;
+			margin: 3vh 0;
 		}
 
-		.action-buttons {
-			justify-content: center;
-			flex-wrap: wrap;
+		@media (max-width: 1024px) {
+			align-items: center;
+			padding-left: 0;
+
+			.titles {
+				text-align: center;
+			}
 		}
 
-		img {
-			max-width: 100%;
-			margin: auto;
-			max-height: 30vh;
-			border-radius: 100%;
-			border: 1px solid gainsboro;
+		.buttons-container {
+			@apply flex items-center gap-3;
+
+			margin: 1vh;
+		}
+
+		padding-bottom: 140px;
+
+		.know-more-container {
+			@apply flex items-center mt-12;
+
+			padding-bottom: 64px;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			left: calc(50% - ($spanSize * 1.5));
 		}
 	}
 }

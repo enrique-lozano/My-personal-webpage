@@ -12,9 +12,13 @@
 					<h3 class="mb-1">{{ $t('projects.projects.' + i + '.title') }}</h3>
 					<p class="mb-2 text-justify">{{ $t('projects.projects.' + i + '.description') }}</p>
 					<div class="flex">
-						<a :href="$t('projects.projects.' + i + '.link')" target="_blank" class="font-medium">
-							{{ $t('projects.projects.knowMore') }} ➔
-						</a>
+						<div class="underline-on-hover">
+							<a :href="$t('projects.projects.' + i + '.link')" target="_blank" class="font-medium">
+								{{ $t('projects.projects.knowMore') }}
+
+								<font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -80,29 +84,5 @@ const swiperOptions: SwiperOptions = {
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-a {
-	position: relative;
-}
-
-a:after {
-	bottom: 0;
-	content: '';
-	display: block;
-	height: 2px;
-	left: 0%;
-	position: relative;
-	background: var(--primary);
-	transition: width 0.4s ease 0s, left 0.3s ease 0s;
-	width: 0;
-}
-
-a:hover:after {
-	width: 100%;
-	left: 0;
-}
-a:hover {
-	color: var(--primary);
 }
 </style>

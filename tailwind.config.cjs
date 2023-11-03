@@ -13,6 +13,9 @@ module.exports = {
 			light: {
 				DEFAULT: 'var(--light)'
 			},
+			lightTint: {
+				DEFAULT: 'var(--light-tint)'
+			},
 			black: 'var(--black)',
 			white: 'var(--white)',
 			gray: colors.neutral

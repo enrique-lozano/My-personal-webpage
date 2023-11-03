@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 const getImageUrl = (name: string) => {
-	return new URL(`../assets/skills/${name}`, import.meta.url).href;
+	return new URL(`../assets/icons/skills/${name}`, import.meta.url).href;
 };
 
 const skills = [
@@ -143,10 +143,11 @@ const skills = [
 	padding: 0.45rem 0.75rem;
 	transition: all 0.3s;
 	cursor: pointer;
-	border: 1px solid var(--light);
+	background-color: var(--light);
+	border: 1px solid var(--light-tint);
 
 	img {
-		max-height: 2rem;
+		max-height: 1.625rem;
 		aspect-ratio: 1;
 	}
 
