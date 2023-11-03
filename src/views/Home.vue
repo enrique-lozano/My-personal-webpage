@@ -1,5 +1,5 @@
 <template>
-	<NavBar></NavBar>
+	<NavBar @go-to="((id:string) => goto(id))" @change-lang="((lang: 'en' | 'es') => changeLangInMenu(lang))"></NavBar>
 
 	<section ref="home" class="bg-light relative">
 		<div class="padding-x home">

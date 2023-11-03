@@ -69,6 +69,7 @@ label {
 input {
 	position: absolute;
 	opacity: 0;
+	width: 1px;
 }
 
 .toggle {

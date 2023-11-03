@@ -3,29 +3,33 @@
 		<div class="padding-x w-full">
 			<div class="flex items-center justify-between w-full">
 				<div>
-					<img class="logo" @click="goto('home')" src="./../assets/images/personalLogo.png" />
+					<img class="logo" @click="$emit('goTo', 'home')" src="./../assets/images/personalLogo.png" />
 				</div>
 				<div class="flex items-center">
-					<select name="lang" id="lang" v-model="$i18n.locale">
+					<select name="lang" id="lang" v-model="$i18n.locale" @change="() => $emit('changeLang', $i18n.locale)">
 						<option value="es">ES</option>
 						<option value="en">EN</option>
 					</select>
 					<div class="right-links">
-						<span @click="goto('projects')">{{ $t('projects.title') }}</span>
-						<span @click="goto('qualification')">{{ $t('qualification.title') }}</span>
-						<span @click="goto('contact')">{{ $t('contact.title') }}</span>
+						<span @click="$emit('goTo', 'projects')">{{ $t('projects.title') }}</span>
+						<span @click="$emit('goTo', 'qualification')">{{ $t('qualification.title') }}</span>
+						<span @click="$emit('goTo', 'contact')">{{ $t('contact.title') }}</span>
 					</div>
 					<DarkModeToggle class="md:ml-8" />
 					<input id="__menu" type="checkbox" />
 					<div class="mobile-menu flex flex-col flex-wrap p-12">
-						<div @click="goto('projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
-						<div @click="goto('qualification')" class="w-full py-4 border-b border-gray-300">
+						<div @click="$emit('goTo', 'projects')" class="w-full py-4 border-b border-gray-300">{{ $t('projects.title') }}</div>
+						<div @click="$emit('goTo', 'qualification')" class="w-full py-4 border-b border-gray-300">
 							{{ $t('qualification.title') }}
 						</div>
-						<div @click="goto('contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
+						<div @click="$emit('goTo', 'contact')" class="w-full py-4 border-b border-gray-300">{{ $t('contact.title') }}</div>
 						<div class="flex text-center absolute bottom-12 right-12 left-12">
-							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="changeLangInMenu('es')">Español</div>
-							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="changeLangInMenu('en')">English</div>
+							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'es' }" @click="$emit('changeLang', 'es')">
+								Español
+							</div>
+							<div class="w-full" v-bind:class="{ 'text-primary': $i18n.locale === 'en' }" @click="$emit('changeLang', 'en')">
+								English
+							</div>
 						</div>
 					</div>
 					<label title="Menu" for="__menu" class="hamburger">
@@ -42,6 +46,11 @@ import { ref, Ref } from 'vue';
 import DarkModeToggle from './../components/DarkModeToggle.vue';
 
 import i18n from '../i18n/i18n';
+
+const emit = defineEmits<{
+	(e: 'goTo', id: string): void;
+	(e: 'changeLang', lang: string): void;
+}>();
 
 function changeLangInMenu(lang: 'es' | 'en') {
 	i18n.global.locale.value = lang;
