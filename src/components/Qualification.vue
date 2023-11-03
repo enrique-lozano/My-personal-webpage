@@ -19,26 +19,17 @@
 			<!---------- JOBS ----------->
 
 			<div class="qualification-data">
-				<div class="outer">
-					<template v-for="(n, i) in 3" :key="i">
-						<div class="card">
-							<div class="info">
-								<h3 class="title">{{ $t('qualification.jobs.' + i + '.title') }}</h3>
-
-								<h4 class="qualification-header">{{ $t('qualification.jobs.' + i + '.site') }}</h4>
-								<a :href="$t('qualification.jobs.' + i + '.web')" target="_blank">{{
-									$t('qualification.jobs.' + i + '.webPlaceholder')
-								}}</a>
-								<div class="qualification-calendar">
-									<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
-									{{ $t('qualification.jobs.' + i + '.years') }}
-								</div>
-
-								<p>{{ $t('qualification.jobs.' + i + '.description') }}</p>
-							</div>
-						</div>
-					</template>
-				</div>
+				<template v-for="(n, i) in 3" :key="i">
+					<QualificationItem
+						:position="$t('qualification.jobs.' + i + '.title')"
+						:url="$t('qualification.jobs.' + i + '.web')"
+						:description="$t('qualification.jobs.' + i + '.description')"
+						:years="$t('qualification.jobs.' + i + '.years')"
+						:company="$t('qualification.jobs.' + i + '.site')"
+						:img-src="`../assets/images/qualification-logos/jobs/img${i}.png`"
+					>
+					</QualificationItem>
+				</template>
 			</div>
 		</swiper-slide>
 		<swiper-slide>
@@ -47,22 +38,15 @@
 			<div class="qualification-data">
 				<div class="outer">
 					<template v-for="(n, i) in 2" :key="i">
-						<div class="card">
-							<div class="info">
-								<h3 class="title">{{ $t('qualification.education.' + i + '.title') }}</h3>
-
-								<h4 class="qualification-header">{{ $t('qualification.education.' + i + '.site') }}</h4>
-								<a :href="$t('qualification.education.' + i + '.web')" target="_blank">{{
-									$t('qualification.education.' + i + '.webPlaceholder')
-								}}</a>
-								<div class="qualification-calendar">
-									<img src="../assets/icons/calendar_month_black.svg" alt="calendar_icon" />
-									{{ $t('qualification.education.' + i + '.years') }}
-								</div>
-
-								<p>{{ $t('qualification.education.' + i + '.description') }}</p>
-							</div>
-						</div>
+						<QualificationItem
+							:position="$t('qualification.education.' + i + '.title')"
+							:url="$t('qualification.education.' + i + '.web')"
+							:description="$t('qualification.education.' + i + '.description')"
+							:years="$t('qualification.education.' + i + '.years')"
+							:company="$t('qualification.education.' + i + '.site')"
+							:img-src="`../assets/images/qualification-logos/education/img${i}.png`"
+						>
+						</QualificationItem>
 					</template>
 				</div>
 			</div>
@@ -74,6 +58,7 @@
 import { Swiper as ISwiper } from 'swiper/types';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { ref } from 'vue';
+import QualificationItem from './QualificationItem.vue';
 
 const swiperRef = ref<undefined | ISwiper>(undefined);
 
@@ -136,71 +121,6 @@ $border-radius: 0.5rem;
 
 	#rad2:checked ~ #background-of-selected {
 		transform: translateX($toggleWidth);
-	}
-}
-
-.dark .qualification-calendar img {
-	filter: brightness(0) invert(1);
-}
-
-.qualification-data {
-	/* Outer Layer with the timeline border */
-	.outer {
-		border-left: 4px solid var(--primary);
-		max-width: 95%;
-		margin: auto;
-	}
-
-	/* Card container */
-	.card {
-		position: relative;
-		margin: 0 0 20px 20px;
-		padding: 10px;
-		border-radius: 8px;
-	}
-
-	/* Information about the timeline */
-	.info {
-		display: flex;
-		flex-direction: column;
-		gap: 0px;
-	}
-
-	/* Title of the card */
-	.title {
-		color: var(--primary);
-		position: relative;
-	}
-
-	/* Timeline dot  */
-	.title::before {
-		content: '';
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		top: 0.25em;
-		background: white;
-		border-radius: 999px;
-		left: -39px;
-		border: 3px solid var(--primary);
-	}
-
-	p {
-		margin: 22px 0px;
-	}
-
-	a {
-		text-decoration: underline;
-	}
-
-	.qualification-calendar {
-		display: flex;
-		align-items: center;
-		margin-top: 6px;
-
-		img {
-			margin-right: 5px;
-		}
 	}
 }
 </style>

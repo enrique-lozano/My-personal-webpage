@@ -5,31 +5,34 @@
 	</header>
 
 	<div class="flex flex-wrap">
-		<div class="w-full md:w-1/2 md:pr-8 lg:pr-12">
+		<div class="w-full md:w-1/2 md:pr-8 lg:pr-12 flex flex-col">
 			<p class="text-justify mb-5">{{ $t('contact.text') }}</p>
-			<div class="contact-link">
-				<img src="./../assets/icons/email.svg" alt="" />
-				<a target="_blank" href="mailto:kikelozano8@gmail.com">
+			<div class="underline-on-hover contact-link">
+				<a target="_blank" :href="`mailto:${APP_LINKS.mail}`">
+					<font-awesome-icon icon="fa-regular fa-envelope" />
+
 					{{ $t('contact.links.email') }}
 				</a>
 			</div>
-			<div class="contact-link">
-				<img src="./../assets/icons/linkedin.svg" alt="" />
-				<a target="_blank" href="https://www.linkedin.com/in/enrique-lozano-cebriano/">
+			<div class="underline-on-hover contact-link">
+				<a target="_blank" :href="APP_LINKS.linkedinURL">
+					<font-awesome-icon icon="fa-brands fa-linkedin" />
+
 					{{ $t('contact.links.linkedin') }}
 				</a>
 			</div>
-			<div class="contact-link">
-				<img src="./../assets/icons/github.svg" alt="" />
-				<a target="_blank" href="https://github.com/enriqueloz88">
+			<div class="underline-on-hover contact-link">
+				<a target="_blank" :href="APP_LINKS.gitHubURL">
+					<font-awesome-icon icon="fa-brands fa-github" />
+
 					{{ $t('contact.links.github') }}
 				</a>
 			</div>
 		</div>
 		<form class="w-full mt-6 md:mt-0 md:w-1/2">
-			<input v-model="name" type="text" placeholder="Name" class="w-full bg-white" />
-			<input v-model="subject" id="subject" type="text" placeholder="Subject" class="w-full bg-white" />
-			<textarea v-model="body" name="" id="body" rows="4" placeholder="Message" class="w-full bg-white"></textarea>
+			<input v-model="name" type="text" placeholder="Name" class="w-full bg-light" />
+			<input v-model="subject" id="subject" type="text" placeholder="Subject" class="w-full bg-light" />
+			<textarea v-model="body" name="" id="body" rows="4" placeholder="Message" class="w-full bg-light"></textarea>
 			<button @click="sendMail()" class="flat-button" id="send-mail" style="float: right">
 				{{ $t('contact.sendMailButton') }}
 			</button>
@@ -39,51 +42,25 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import APP_LINKS from './../constants/constants';
 
 const subject = ref('');
 const name = ref('');
 const body = ref('');
 
 function sendMail() {
-	var link = 'mailto:kikelozano8@gmail.com' + '?subject=' + subject.value + '&body=' + body.value;
+	var link = `mailto:${APP_LINKS.mail}` + '?subject=' + subject.value + '&body=' + body.value;
 	window.location.href = link;
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.dark .contact-link img {
-	filter: brightness(0) invert(1);
-}
-
 .contact-link {
-	display: flex;
-	align-items: center;
-	margin: 12px 0;
+	margin: 8px 0;
 
-	img {
-		max-width: 1.8rem;
-		margin-right: 8px;
-		transition: all 0.1s;
-	}
-
-	a:after {
-		bottom: 0;
-		content: '';
-		display: block;
-		height: 2px;
-		left: 0%;
-		position: relative;
-		background: var(--primary);
-		transition: width 0.4s ease 0s, left 0.3s ease 0s;
-		width: 0;
-	}
-	a:hover:after {
-		width: 100%;
-		left: 0;
-	}
-	a:hover {
-		color: var(--primary);
+	svg {
+		font-size: 24px;
 	}
 }
 

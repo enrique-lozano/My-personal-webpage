@@ -1,12 +1,11 @@
 <template>
-	<div id="radios">
-		<input id="light" type="radio" name="radioBtn" @click="toggleDarkMode('Light')" checked />
-		<label for="light">
-			<img src="../assets/icons/sun.png" alt="calendar_icon" />
+	<div class="toggle-container">
+		<label for="toggle-input">
+			<input type="checkbox" id="toggle-input" name="toggle-input" @change="(event) => toggleDarkMode(event.target)" />
+			<font-awesome-icon icon="fa-solid fa-sun" class="sun" />
+			<font-awesome-icon icon="fa-solid fa-moon" class="moon" />
+			<span class="toggle"></span>
 		</label>
-		<input id="dark" type="radio" name="radioBtn" @click="toggleDarkMode('Dark')" />
-		<label for="dark"> <img src="../assets/icons/moon.png" alt="calendar_icon" /> </label>
-		<div id="background-of-selected"></div>
 	</div>
 </template>
 
@@ -14,13 +13,22 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-	// If dark mode is on at the init of the app, we set the checked button to dark
+	// If dark mode is on at the init of the app, we set the checked button/input to dark
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		document.getElementById('dark')?.click();
+		const input = document.getElementById('toggle-input');
+
+		if (input && input instanceof HTMLInputElement) {
+			input.checked = true;
+			toggleDarkMode(input);
+		}
 	}
 });
 
-function toggleDarkMode(goTo: 'Dark' | 'Light') {
+function toggleDarkMode(inputEl: any) {
+	if (!inputEl || !(inputEl instanceof HTMLInputElement)) return;
+
+	const goTo = inputEl.checked ? 'Dark' : 'Light';
+
 	// Dark mode currently on
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 		if (goTo == 'Dark') return;
@@ -37,55 +45,70 @@ function toggleDarkMode(goTo: 'Dark' | 'Light') {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$toggleWidth: 2.2rem;
+$toggleWidth: 3rem;
 $padding: 0px;
 $border-radius: 0.75rem;
 
-#radios {
-	position: relative;
-	display: inline-flex;
-	padding: $padding;
-	border-radius: $border-radius;
-	z-index: 0;
-	@apply bg-light border border-white;
+.toggle-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-	input {
-		display: none;
+label {
+	width: $toggleWidth;
+	height: $toggleWidth;
+	border-radius: 50%;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+}
+
+.toggle {
+	position: absolute;
+	display: block;
+	background-color: var(--light-tint);
+	border-radius: 50%;
+	z-index: -1;
+	transition: 1s;
+	width: $toggleWidth;
+	height: $toggleWidth;
+}
+
+input:checked {
+	& ~ .moon {
+		transform: rotate(360deg) scale(0);
+		transition-delay: 0s;
 	}
 
-	img {
-		max-width: 60%;
+	& ~ .sun {
+		transform: scale(1) rotate(360deg);
+		transition-delay: 0.4s;
 	}
+}
 
-	#background-of-selected,
-	label {
-		width: $toggleWidth;
-		height: 42px;
-		text-align: center;
-		display: inline-flex;
-		z-index: 2;
-		cursor: pointer;
-		border-radius: $border-radius;
-		align-items: center;
-		justify-content: center;
-	}
+.moon,
+.sun {
+	font-size: calc($toggleWidth * 0.6);
+	color: gray;
+	filter: drop-shadow(0 0 2px var(--light-tint));
+	transition: 1s ease;
+}
 
-	#background-of-selected {
-		background-color: var(--white);
-		position: absolute;
-		left: $padding;
-		top: $padding;
-		cursor: initial;
-		z-index: 3;
-		transition: transform 0.5s ease-in-out;
-	}
+.moon {
+	transition-delay: 0.4s;
+}
 
-	#light:checked ~ #background-of-selected {
-		transform: translateX(0);
-	}
-
-	#dark:checked ~ #background-of-selected {
-		transform: translateX($toggleWidth);
-	}
+.sun {
+	transform: scale(0);
+	position: absolute;
 }
 </style>
