@@ -4,7 +4,7 @@
 		<span>{{ $t('projects.subtitle') }}</span>
 	</header>
 
-	<swiper :breakpoints="swiperOptions.breakpoints" :spaceBetween="swiperOptions.spaceBetween" @swiper="onSwiper">
+	<swiper :spaceBetween="swiperOptions.spaceBetween" :slidesPerView="'auto'" @swiper="onSwiper">
 		<swiper-slide v-for="i in [0, 1]" :key="i" style="align-self: stretch; height: auto">
 			<div class="rounded-xl p-4 h-full" style="border: 1px solid var(--light)">
 				<img class="rounded-xl project-logo" :src="getImageUrl('images/' + $t('projects.projects.' + i + '.title') + '.png')" alt="" />
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 		</swiper-slide>
-		<swiper-slide style="align-self: center; height: auto">
+		<swiper-slide style="align-self: center; height: auto; width: 80px" class="swiper-no-swiping">
 			<div class="show-more-button-container">
 				<a role="button" target="_blank" :href="APP_LINKS.gitHubURL" class="button-icon show-more-button">
 					<font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
@@ -55,37 +55,30 @@ function onSwiper(el: ISwiper) {
 }
 
 const swiperOptions: SwiperOptions = {
-	spaceBetween: 20,
-	breakpoints: {
-		1250: {
-			slidesPerView: 2.3
-		},
-		1050: {
-			slidesPerView: 2.1
-		},
-		850: {
-			slidesPerView: 1.7
-		},
-		750: {
-			slidesPerView: 1.5
-		},
-		650: {
-			slidesPerView: 1.3
-		},
-		550: {
-			slidesPerView: 1.2
-		},
-		0: {
-			slidesPerView: 1.1
-		}
-	}
+	spaceBetween: 20
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.swiper-container {
-	padding: 16px 0px;
+.swiper-slide {
+	width: min(280px, calc(100vw - 7rem));
+
+	@media (min-width: 640px) {
+		width: 320px;
+	}
+
+	@media (min-width: 724px) {
+		width: 360px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 420px;
+	}
+
+	@media (min-width: 1280px) {
+		width: 480px;
+	}
 }
 
 .show-more-button-container {
