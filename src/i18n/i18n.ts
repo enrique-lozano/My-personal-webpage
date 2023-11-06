@@ -17,8 +17,8 @@ const messages = {
 		},
 		aboutMe: {
 			title: 'About me',
-			p1: 'Graduated in Computer Science and Engineering from the Carlos III University of Madrid. I consider an open and sociable person, with a great passion for technology and eager to learn new knowledge and live new experiences.',
-			p2: 'I have extensive experience in developing applications, especially with the use of web programming languages and technologies. I also have a certain knowledge base of a multitude of languages and tools, which you can see below.'
+			p1: 'Graduated in Computer Science and Engineering from the Carlos III University of Madrid, with more than two years of professional experience. I consider an open and sociable person, with a great passion for technology and eager to learn new knowledge and live new experiences.',
+			p2: 'I have extensive experience in developing applications, especially with the use of web programming languages and technologies. I also have a certain knowledge base of a multitude of languages and tools. Do not hesitate in getting in touch with me!'
 		},
 		projects: {
 			title: 'My projects',
@@ -127,8 +127,8 @@ const messages = {
 		},
 		aboutMe: {
 			title: 'Sobre mi',
-			p1: 'Licenciado en Ingeniería Informatica. Me considero una persona abierta y sociable, con una gran pasión por la tecnología y con muchas ganas de aprender nuevos conocimientos y vivir nuevas experiencias.',
-			p2: 'Cuento con una amplia experiencia en el desarrollo de aplicaciones, especialmente con el uso de lenguajes y tecnologías de programación web. También tengo cierta base de conocimientos de una multitud de lenguajes y herramientas, que puede ver a continuación.'
+			p1: 'Licenciado en Ingeniería Informatica con mas de dos años de experiencia profesional. Me considero una persona abierta y sociable, con gran pasión por la tecnología y con muchas ganas de aprender nuevos conocimientos y vivir nuevas experiencias.',
+			p2: 'Cuento con una amplia experiencia en el desarrollo de aplicaciones, especialmente con el uso de lenguajes y tecnologías de programación web. También tengo cierta base de conocimientos de una multitud de lenguajes y herramientas. Para cualquier consulta no dudes en contactar conmigo'
 		},
 		projects: {
 			title: 'Mis projectos',
