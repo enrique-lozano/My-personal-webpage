@@ -18,7 +18,7 @@
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
 		"@fortawesome/vue-fontawesome": "^3.0.3",
 		"simple-icons": "^9.19.0",
-		"swiper": "^9.4.1",
+		"swiper": "^11.0.3",
 		"typed.js": "^2.0.132",
 		"vue": "^3.3.7",
 		"vue-i18n": "^9.6.5",
