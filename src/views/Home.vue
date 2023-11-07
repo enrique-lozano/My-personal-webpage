@@ -35,7 +35,7 @@
 						class="button-icon"
 						type="button"
 						target="_blank"
-						:href="getImageUrl(`docs/CV1_${i18n.global.locale.value.toUpperCase()}.pdf`)"
+						:href="getImageUrl(`docs/CV-${i18n.global.locale.value.toUpperCase()}.pdf`)"
 					>
 						<font-awesome-icon icon="fa-regular fa-file-pdf" />
 					</a>
